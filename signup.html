@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>eSUPER - Registro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+
+    <header class="main-header">
+      <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+      <nav class="main-nav">
+        <a href="#" class="toggle-nav">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="faq2.html"><li>Faq</li></a>
+          <a href="login.html"><li>Log in</li></a>
+          <a href="signup.html"><li>Sign up</li></a>
+        </ul>
+      </nav>
+    </header>
+
+      <div class="main-container-bg-site">
+        <div class="main-container">
+          <div class="signup-main-container">
+
+            <div class="signup-text-box">
+              <h1 class="signup-title">Regístrate en eSuper</h1>
+              <h2 class="signup-subtitle">Supermercado desde la comodidad de tu casa.</h2>
+            </div>
+
+            <div class="signup-box">
+              <div class="social-signup">
+                <div class="signup-fb"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></div>
+                <div class="signup-ggl"><i class="fa fa-google fa-2x" aria-hidden="true"></i></div>
+                <!-- <div class="signup-lnk"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></div> -->
+              </div>
+
+              <div class="signup-line"><span>ó</span></div>
+
+              <form class="signup-form" id="signup" action="" method="post">
+                <fieldset>
+                  <ul>
+                    <li>
+                      <input autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico">
+                    </li>
+                    <div id="email-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un correo electrónico válido.</p></div>
+                    <li>
+                      <input autocomplete="off" type="text" name="fname" placeholder="Ingresa tu nombre">
+                    </li>
+                    <div id="fname-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un nombre válido.</p></div>
+                    <li>
+                      <input autocomplete="off" type="text" name="lname" placeholder="Ingresa tu apellido">
+                    </li>
+                    <div id="lname-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un apellido válido.</p></div>
+                    <li>
+                      <input autocomplete="off" type="text" name="username" placeholder="Crea un usuario">
+                    </li>
+                    <div id="uname-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un nombre de usuario válido.</p></div>
+                    <li>
+                      <input type="password" name="password1" placeholder="Crea una contraseña">
+                    </li>
+                    <div id="pass-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa una contraseña de 6 caracteres mínimo, una mayúscula, y un número.</p></div>
+                    <li>
+                      <input type="password" name="password2" placeholder="Repite la contraseña">
+                    </li>
+                    <div id="pass2-validate-div" class="signup-validate-div-hidden"><p>Las contraseñas coinciden!</p></div>
+                  </ul>
+                </fieldset>
+                <button type="submit" class="signup-submit" name="submit">Continuar</button>
+              </form>
+
+              <div class="signup-footer">
+                  <p>¿Ya estás registrado? <a class="signup-link" href="/login.html">Ingresa aquí</a> »</p>
+              </div>
+
+            </div> <!-- end signup-box -->
+
+          </div> <!-- end signup-main-container -->
+        </div> <!-- end main-container -->
+      </div>
+
+    <footer class="main-footer">
+      <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+      <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+      <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    </footer>
+    <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
+  </body>
+</html>
