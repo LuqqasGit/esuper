@@ -308,6 +308,12 @@ h1,h2,h3,h4,h5,h6{
   display: none;
 }
 
+.signup-imput-ok{
+  border: 1px solid #46a74e;
+  color: #35b33f;
+  background: url(../img/form-ok.png) 98% 5px no-repeat #ddf9e1;
+}
+
 /* End of SignUp Form */
 
 
