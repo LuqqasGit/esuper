@@ -42,13 +42,13 @@ if (!$errores) {
   $usuariosJSON = explode("\n", $getJSON);
   $userID = count($usuariosJSON);
 
-  $jsonReadDH = "https://www.digitalhouse.com/getUsuarios";
+  $jsonReadDH = "https://sprint.digitalhouse.com/getUsuarios";
   $getJSONDH = file_get_contents($jsonReadDH);
   $usuariosJSONDH = json_decode($getJSONDH, true);
   $userIDH = $usuariosJSONDH["cantidad"]+1;
 
   $arrayUser = [];
-  $arrayUser += ["IDE" => $userID, "IDH" => $userIDH, "email" => $email, "fname" => $fname, "lname" => $fname, "username" => $username, "password" => $userPassHash];
+  $arrayUser += ["id" => $userID, "email" => $email, "fname" => $fname, "lname" => $fname, "username" => $username, "password" => $userPassHash];
   $jsonUserPost = json_encode($arrayUser)."\n";
   addUser($json,$jsonUserPost);
   // $jsonWriteDH = "https://sprint.digitalhouse.com/nuevoUsuario";
