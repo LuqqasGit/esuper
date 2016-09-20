@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>eSUPER - Preguntas frecuentes</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-  </head>
-  <body>
-
-    <header class="main-header">
-      <a href="index.html"><img src="img/logo.png" alt="logo"></a>
-      <nav class="main-nav">
-        <a href="#" class="toggle-nav">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
-        <ul>
-          <a href="index.html"><li>Home</li></a>
-          <a href="faq2.html"><li>Faq</li></a>
-          <a href="login.html"><li>Log in</li></a>
-          <a href="signup.html"><li>Sign up</li></a>
-        </ul>
-      </nav>
-    </header>
+<?php
+$title = "eSUPER - FAQ";
+require_once("header.php");
+?>
 
     <div class="main-container-bg-site">
       <div class="main-container">

@@ -1,20 +1,9 @@
-function formValidate(){
+function signupValidate(){
   var formReg = document.getElementById("signup");
 
-  // Functions
-
-  function textFieldValidate(evt) {
-    var errorDiv = document.getElementById(evt.target.div);
-    if (this.value){
-      errorDiv.className = "signup-validate-div-hidden";
-      console.log("tru");
-    } else {
-      console.log("fal");
-      this.value = "";
-      errorDiv.className = "signup-validate-div";
-    }
-  }
-
+  // Email validate
+  var selectedEmail = formReg.querySelector('input[name="email"]');
+  selectedEmail.addEventListener("blur", emailValidate);
   function emailValidate() {
     var emailError = document.getElementById("email-validate-div");
     if (/^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/.test(selectedEmail.value)){
@@ -24,21 +13,6 @@ function formValidate(){
       emailError.className = "signup-validate-div";
     }
   }
-
-  function passwordValidate(){
-    var passError = document.getElementById("pass-validate-div");
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(selectedPassword.value)){
-      console.log("true");
-    }else {
-      console.log("false");
-    }
-  }
-
-
-
-  // Email validate
-  var selectedEmail = formReg.querySelector('input[name="email"]');
-  selectedEmail.addEventListener("blur", emailValidate);
 
   // First name validate
   var selectedName = formReg.querySelector('input[name="fname"]');
@@ -50,15 +24,39 @@ function formValidate(){
   selectedLname.div = "lname-validate-div";
   selectedLname.addEventListener("blur", textFieldValidate);
 
-  // User name validate
+  // User name validate (signup)
   var selectedUname = formReg.querySelector('input[name="username"]');
   selectedUname.div = "uname-validate-div";
   selectedUname.addEventListener("blur", textFieldValidate);
 
-  // Password Validate
-  var selectedPassword = formReg.querySelector('input[name="password1"]');
-  selectedPassword.addEventListener("blur", passwordValidate);
+  function textFieldValidate(evt) {
+    var errorDiv = document.getElementById(evt.target.div);
+    if (this.value){
+      errorDiv.className = "signup-validate-div-hidden";
+    } else {
+      this.value = "";
+      errorDiv.className = "signup-validate-div";
+    }
+  }
 
+  // // Submit button check
+  // var submitButton = document.querySelector('.signup-submit');
+  // submitButton.addEventListener("click", submitFunc);
+  // function submitFunc(){
+  //
+  // }
 
 } // End formValidate
-window.onload = formValidate;
+
+
+function loginValidate(){
+var formReg = document.getElementById("login");
+// User name validate (login)
+var selectedUlogin = formReg.querySelector('input[name="userlogin"]');
+console.log(selectedUlogin[0]);
+selectedUlogin.div = "userlogin-validate-div";
+selectedUlogin.addEventListener("blur", textFieldValidate);
+}
+
+window.onload = signupValidate;
+// window.onload = loginValidate;
