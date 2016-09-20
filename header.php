@@ -15,7 +15,7 @@ require_once("functions.php");
   <body>
 
     <header class="main-header">
-      <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+      <a href="index.php"><img src="img/logo.png" alt="logo"></a>
       <nav class="main-nav">
         <a href="#" class="toggle-nav">
           <i class="fa fa-bars" aria-hidden="true"></i>

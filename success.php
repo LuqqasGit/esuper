@@ -17,7 +17,7 @@ $userIDH = $_GET["userIDH"];
               <h2 class="signup-subtitle">Supermercado desde la comodidad de tu casa.</h2>
             </div>
 
-            <div class="signup-box" style="word-wrap: break-word">
+            <div class="signup-box">
 
               Gracias por registrarte, <?=$fname?> <?=$lname?>. Tu email es: <?=$email?>. <br><br>eSuper: Sos el usuario numero: <?=$userID?>. <br><br>DigitalHouse: Sos el usuario numero: <?=$userIDH?>
 
