@@ -18,6 +18,11 @@ a {
   text-decoration: none;
 }
 
+.wrapper {
+  min-height: 100vh;
+	position: relative;
+}
+
 .main-header, .main-footer {
   overflow: hidden;
   padding: 20px;
@@ -65,8 +70,8 @@ a {
   background-position: center;
 }
 
-.main-container-bg-site {
-  /*background-image: url(../img/bg-site.png);*/
+.main-container-bg-site, .main-container-bg {
+  padding-bottom:70px;
 }
 
 .main-container {
@@ -376,6 +381,13 @@ h1,h2,h3,h4,h5,h6{
   float: right;
 }
 /* End of LogIn Form */
+
+.main-footer {
+  width: 100%;
+  position:absolute;
+	bottom:0;
+	left:0;
+}
 
 .main-footer a {
   text-decoration: none;

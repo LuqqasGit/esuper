@@ -13,6 +13,7 @@ require_once("functions.php");
     <script src="js/script.js"></script>
   </head>
   <body>
+    <div class="wrapper">
 
     <header class="main-header">
       <a href="index.php"><img src="img/logo.png" alt="logo"></a>

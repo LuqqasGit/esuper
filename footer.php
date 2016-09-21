@@ -3,6 +3,7 @@
   <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
   <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 </footer>
+</div>
 <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
 </body>
 </html>
