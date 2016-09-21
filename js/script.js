@@ -1,9 +1,18 @@
-function signupValidate(){
-  var formReg = document.getElementById("signup");
+window.onload = function() {
+  var btnNav = document.getElementById('toggle-nav-button');
+  var navDiv = document.getElementById('nav-div');
+  var formLogin = document.getElementById("login");
+  var formSignUp = document.getElementById("signup");
+  if (formSignUp) {
+    var selectedEmail = formSignUp.querySelector('input[name="email"]');
+    var selectedName = formSignUp.querySelector('input[name="fname"]');
+    var selectedLname = formSignUp.querySelector('input[name="lname"]');
+    var selectedUname = formSignUp.querySelector('input[name="username"]');
+  }
+  if (formLogin) {
+    var selectedUlogin = formLogin.querySelector('input[name="userlogin"]');
+  }
 
-  // Email validate
-  var selectedEmail = formReg.querySelector('input[name="email"]');
-  selectedEmail.addEventListener("blur", emailValidate);
   function emailValidate() {
     var emailError = document.getElementById("email-validate-div");
     if (/^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/.test(selectedEmail.value)){
@@ -13,21 +22,6 @@ function signupValidate(){
       emailError.className = "signup-validate-div";
     }
   }
-
-  // First name validate
-  var selectedName = formReg.querySelector('input[name="fname"]');
-  selectedName.div = "fname-validate-div";
-  selectedName.addEventListener("blur", textFieldValidate);
-
-  // Last name validate
-  var selectedLname = formReg.querySelector('input[name="lname"]');
-  selectedLname.div = "lname-validate-div";
-  selectedLname.addEventListener("blur", textFieldValidate);
-
-  // User name validate (signup)
-  var selectedUname = formReg.querySelector('input[name="username"]');
-  selectedUname.div = "uname-validate-div";
-  selectedUname.addEventListener("blur", textFieldValidate);
 
   function textFieldValidate(evt) {
     var errorDiv = document.getElementById(evt.target.div);
@@ -39,24 +33,53 @@ function signupValidate(){
     }
   }
 
-  // // Submit button check
-  // var submitButton = document.querySelector('.signup-submit');
-  // submitButton.addEventListener("click", submitFunc);
-  // function submitFunc(){
-  //
-  // }
+  function signupValidate() {
+    // Email validate
+    selectedEmail.addEventListener("blur", emailValidate);
 
-} // End formValidate
+    // First name validate
+    selectedName.div = "fname-validate-div";
+    selectedName.addEventListener("blur", textFieldValidate);
 
+    // Last name validate
+    selectedLname.div = "lname-validate-div";
+    selectedLname.addEventListener("blur", textFieldValidate);
 
-function loginValidate(){
-var formReg = document.getElementById("login");
-// User name validate (login)
-var selectedUlogin = formReg.querySelector('input[name="userlogin"]');
-console.log(selectedUlogin[0]);
-selectedUlogin.div = "userlogin-validate-div";
-selectedUlogin.addEventListener("blur", textFieldValidate);
-}
+    // User name validate
+    selectedUname.div = "uname-validate-div";
+    selectedUname.addEventListener("blur", textFieldValidate);
 
-window.onload = signupValidate;
-// window.onload = loginValidate;
+    // // Submit button check
+    // var submitButton = document.querySelector('.signup-submit');
+    // submitButton.addEventListener("click", submitFunc);
+    // function submitFunc(){
+    //
+    // }
+
+  } // End formValidate()
+
+  function loginValidate() {
+  // User name validate (login)
+  console.log(selectedUlogin[0]);
+  selectedUlogin.div = "userlogin-validate-div";
+  selectedUlogin.addEventListener("blur", textFieldValidate);
+  }
+
+  btnNav.addEventListener('click', function() {
+
+    if (navDiv.style.display == 'none') {
+        navDiv.style.display = 'block';
+    } else {
+        navDiv.style.display = 'none';
+    }
+
+  });
+
+  if (formSignUp) {
+    signupValidate();
+  }
+
+  if (formLogin) {
+    loginValidate();
+  }
+};
