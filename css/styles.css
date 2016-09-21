@@ -66,7 +66,7 @@ a {
 }
 
 .main-container-bg-site {
-  background-image: url(../img/bg-site.png);
+  /*background-image: url(../img/bg-site.png);*/
 }
 
 .main-container {
@@ -485,6 +485,7 @@ h1,h2,h3,h4,h5,h6{
   }
 
   .main-nav ul {
+    display: none;
     margin-bottom: 20px;
   }
 

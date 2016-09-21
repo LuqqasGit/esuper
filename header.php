@@ -17,10 +17,10 @@ require_once("functions.php");
     <header class="main-header">
       <a href="index.php"><img src="img/logo.png" alt="logo"></a>
       <nav class="main-nav">
-        <a href="#" class="toggle-nav">
+        <a class="toggle-nav" id="toggle-nav-button">
           <i class="fa fa-bars" aria-hidden="true"></i>
         </a>
-        <ul>
+        <ul id="nav-div">
           <a href="index.php"><li>Home</li></a>
           <a href="faq2.php"><li>Faq</li></a>
           <a href="login.php"><li>Log in</li></a>
