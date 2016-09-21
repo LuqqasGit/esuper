@@ -83,13 +83,14 @@ a {
 }
 
 .main-container {
+  padding: 70px 0;
   margin: auto;
   max-width: 1200px;
   overflow: hidden;
 }
 
 .home-main-container {
-  padding: 70px 0;
+  padding: 2em;
   text-align: center;
 }
 
