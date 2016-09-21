@@ -5,7 +5,7 @@ require_once("functions.php");
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8">
     <title><?=$title?></title>
     <link rel="stylesheet" href="css/styles.css">
@@ -17,10 +17,13 @@ require_once("functions.php");
 
     <header class="main-header">
       <a href="index.php"><img src="img/logo.png" alt="logo"></a>
-      <nav class="main-nav">
-        <a class="toggle-nav" id="toggle-nav-button">
+      <div class="toggle-nav-div">
+        <button class="toggle-nav" id="toggle-nav-button">
           <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
+        </button>
+      </div>
+      <div style="clear:both"></div>
+      <nav class="main-nav">
         <ul id="nav-div">
           <a href="index.php"><li>Home</li></a>
           <a href="faq2.php"><li>Faq</li></a>

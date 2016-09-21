@@ -60,19 +60,12 @@ window.onload = function() {
 
   function loginValidate() {
   // User name validate (login)
-  console.log(selectedUlogin[0]);
   selectedUlogin.div = "userlogin-validate-div";
   selectedUlogin.addEventListener("blur", textFieldValidate);
   }
 
   btnNav.addEventListener('click', function() {
-
-    if (navDiv.style.display == 'none') {
-        navDiv.style.display = 'block';
-    } else {
-        navDiv.style.display = 'none';
-    }
-
+    navDiv.classList.toggle("show");
   });
 
   if (formSignUp) {
