@@ -387,13 +387,23 @@ h1,h2,h3,h4,h5,h6{
   position:absolute;
 	bottom:0;
 	left:0;
+  color: #fff;
+}
+
+.main-footer-icons {
+  font-size: 2.5em;
+  float: left;
 }
 
 .main-footer a {
-  text-decoration: none;
   color: #fff;
-  font-size: 2.5em;
+  text-decoration: none;
   margin-right: 10px;
+}
+
+.main-footer-copyright {
+  font-size: 2em;
+  float: right;
 }
 
 /* Media Screen resizes */
