@@ -111,7 +111,7 @@ if (!$errores) {
 
 
               <div class="signup-footer">
-                  <p>¿Ya estás registrado? <a class="signup-link" href="/login.html">Ingresa aquí</a> »</p>
+                  <p>¿Ya estás registrado? <a class="signup-link" href="/login.php">Ingresa aquí</a> »</p>
               </div>
 
             </div> <!-- end signup-box -->

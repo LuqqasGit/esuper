@@ -36,7 +36,7 @@ require_once("header.php");
                     <input type="checkbox" name="session" checked> <p>Recordarme</p>
                   </div>
                   <div class="login-forgot">
-                    <p><a class="signup-link" href="/forgot.html">¿Olvidaste tu contraseña?</a></p>
+                    <p><a class="signup-link" href="/forgot.php">¿Olvidaste tu contraseña?</a></p>
                   </div>
                 </div>
               </fieldset>
@@ -44,7 +44,7 @@ require_once("header.php");
             </form>
 
             <div class="signup-footer">
-                <p>¿No tenés cuenta? <a class="signup-link" href="/signup.html">Registrate aquí</a> »</p>
+                <p>¿No tenés cuenta? <a class="signup-link" href="/signup.php">Registrate aquí</a> »</p>
             </div>
           </div> <!-- end signup-box -->
         </div> <!-- end signup-main-container -->
