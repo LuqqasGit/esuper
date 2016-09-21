@@ -383,6 +383,7 @@ h1,h2,h3,h4,h5,h6{
 /* End of LogIn Form */
 
 .main-footer {
+  text-align: center;
   width: 100%;
   position:absolute;
 	bottom:0;
@@ -527,6 +528,12 @@ h1,h2,h3,h4,h5,h6{
     margin-top: -15px;
   }
 
+}
+
+@media (max-width: 470px){
+  .main-footer-icons, .main-footer-copyright {
+    float: none;
+  }
 }
 
 @media (max-width: 360px){
