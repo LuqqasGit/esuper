@@ -1,4 +1,5 @@
 <?php
+header("refresh:4;url=index.php");
 $title = "eSUPER - Forgot";
 require_once("header.php");
 ?>
