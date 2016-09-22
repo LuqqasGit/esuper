@@ -26,8 +26,8 @@ a {
 }
 
 .main-header, .main-footer {
+  padding: 0 10px;
   overflow: hidden;
-  padding: 20px;
   background-color: #1abc9c;
 }
 
@@ -44,7 +44,11 @@ a {
 .main-nav li {
   display: inline-block;
   text-transform: uppercase;
-  margin-left: 20px;
+  padding: 20px 10px;
+}
+
+.main-nav li:hover {
+  background-color: #18a78a;
 }
 
 .main-nav a, .toggle-nav {
@@ -391,6 +395,7 @@ h1,h2,h3,h4,h5,h6{
 /* End of LogIn Form */
 
 .main-footer {
+  padding: 0 20px;
   text-align: center;
   width: 100%;
   position:absolute;
@@ -404,10 +409,17 @@ h1,h2,h3,h4,h5,h6{
   float: left;
 }
 
+.main-footer-icons i, .main-footer-copyright {
+  padding: 20px 0;
+}
+
+.main-footer-icons i {
+  padding-right: 10px;
+}
+
 .main-footer a {
   color: #fff;
   text-decoration: none;
-  margin-right: 10px;
 }
 
 .main-footer-copyright {
