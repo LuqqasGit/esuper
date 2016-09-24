@@ -75,4 +75,13 @@ window.onload = function() {
   if (formLogin) {
     loginValidate();
   }
+
+    //frequently asked questions
+    var accordionFaq = document.getElementsByClassName("accordionFaq");
+    for (var i = 0; i < accordionFaq.length; i++) {
+        accordionFaq[i].onclick = function() {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
+    }
 };

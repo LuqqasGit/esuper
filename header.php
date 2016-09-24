@@ -26,7 +26,7 @@ require_once("functions.php");
       <nav class="main-nav">
         <ul id="nav-div">
           <a href="index.php"><li>Home</li></a>
-          <a href="faq2.php"><li>Faq</li></a>
+          <a href="faq.php"><li>Faq</li></a>
           <a href="login.php"><li>Log in</li></a>
           <a href="signup.php"><li>Sign up</li></a>
         </ul>

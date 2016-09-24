@@ -1,107 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>eSUPER - Preguntas Frecuentes</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+<?php
+$title = "eSUPER - FAQ";
+require_once("header.php");
+?>
 
-  </head>
-  <body>
+    <div class="main-container-bg-site">
+      <div class="main-container">
+        <div class="faq-main-container">
+            <h1 class="faq-title">Preguntas frecuentes</h1>
+            <section class="questions">
+                <article class="questions-and-answers">
+                    <button class="accordionFaq">¿Qué es eSUPER?</button>
+                    <div class="panel">
+                        <p>Amet temporibus id consequuntur repudiandae facere tenetur vero aspernatur? Impedit magni assumenda laborum exercitationem facere. Magnam dignissimos nostrum fuga aperiam eos atque minima magnam adipisci, aliquam! Velit laudantium illo tenetur.</p>
+                    </div>
+                </article>
+                <article class="questions-and-answers">
+                    <button class="accordionFaq">¿Es necesario registrarme para efectuar una compra?</button>
+                    <div class="panel">
+                        <p>Lorem repudiandae libero molestiae fugit odio sit omnis perspiciatis id obcaecati qui reiciendis. Impedit laborum officia aperiam dolorem ad. Itaque error a explicabo voluptas cupiditate placeat maiores distinctio. Exercitationem libero!</p>
+                    </div>
+                </article>
+                <article class="questions-and-answers">
+                    <button class="accordionFaq">¿Es seguro este sitio?</button>
+                    <div class="panel">
+                        <p>Dolor sit dolorum porro reprehenderit animi repellat itaque. Ipsum dolorum magni quod porro veritatis debitis amet eius accusamus dignissimos illum. Veritatis consequuntur quibusdam esse omnis sunt magni alias est ullam!</p>
+                    </div>
+                </article>
+                <article class="questions-and-answers">
+                    <button class="accordionFaq">¿Cómo recibo el pedido?</button>
+                    <div class="panel">
+                        <p>Elit veritatis pariatur tempora omnis possimus cum tempora. Culpa eveniet maxime porro velit distinctio, iste blanditiis deleniti. Minima ab blanditiis incidunt ducimus qui. Error deserunt porro voluptas quia at? Distinctio?</p>
+                    </div>
+                </article>
+                <article class="questions-and-answers">
+                    <button class="accordionFaq">¿El servicio funciona únicamente para Capital Federal?</button>
+                    <div class="panel">
+                        <p>Ipsum quas reiciendis aspernatur atque eum porro quaerat perferendis impedit velit obcaecati. Quisquam expedita incidunt rem vero consequuntur vero ab temporibus necessitatibus, fugiat quidem? Praesentium delectus odio est facere a.</p>
+                    </div>
+                </article>
+            </section>
+        </div><!-- .home-main-container -->
+      </div><!-- .main-container -->
+    </div><!-- .main-container-bg -->
 
-    <header class="main-header">
-      <a href="index.html"><img src="img/logo.png" alt="logo"></a>
-      <nav class="main-nav">
-        <a href="#" class="toggle-nav">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
-        <ul>
-          <a href="index.html"><li>Home</li></a>
-          <a href="faq2.html"><li>Faq</li></a>
-          <a href="login.html"><li>Log in</li></a>
-          <a href="signup.html"><li>Sign up</li></a>
-        </ul>
-      </nav>
-    </header>
-
-      <div class="main-container-bg-site">
-        <div class="main-container">
-          <div class="home-main-container">
-              <h1 class="home-title">Preguntas frecuentes</h1>
-              <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Es necesario registrarme para efectuar una compra?</a>
-                          </h4>
-                      </div>
-                      <div id="collapse1" class="panel-collapse collapse in">
-                          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Es seguro este sitio?</a>
-                          </h4>
-                      </div>
-                      <div id="collapse2" class="panel-collapse collapse">
-                          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Que medios de pago se pueden usar?</a>
-                          </h4>
-                      </div>
-                      <div id="collapse3" class="panel-collapse collapse">
-                          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Como recibo el producto</a>
-                          </h4>
-                      </div>
-                      <div id="collapse4" class="panel-collapse collapse">
-                          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                      </div>
-                  </div><div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Tienen sucursales fisicas?</a>
-                          </h4>
-                      </div>
-                      <div id="collapse5" class="panel-collapse collapse">
-                          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                      </div>
-                  </div>
-              </div>
-          </div><!-- .home-main-container -->
-        </div><!-- .main-container -->
-      </div><!-- .main-container-bg -->
-
-    <footer class="main-footer">
-      <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-      <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-      <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
-  </body>
-</html>
+<?php
+require_once("footer.php");
+?>

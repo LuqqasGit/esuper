@@ -333,16 +333,47 @@ h1,h2,h3,h4,h5,h6{
 
 /* End of SignUp Form */
 
-
-/*para no usar un height fijo de 700px */
+/* faq styles */
 .faq-main-container {
     padding: 2em;
     text-align: center;
 }
 
-.preguntas {
+.questions {
     padding: 1em;
     margin: 1em;
+}
+
+.accordionFaq {
+    color: blue;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: 0.4s;
+    background: rgba(26,188,156,0.6);
+}
+
+.accordionFaq.active {
+    background-color: #1abc9c;
+}
+
+.accordionFaq:hover {
+    background-color: #1abc9c;
+}
+
+.panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    border-radius: 15px;
+    outline: none;
+    background: rgba(26,188,156,0.6);
+}
+
+.panel.show {
+    opacity: 1;
+    max-height: 500px;
 }
 
 .faq-title {
@@ -352,8 +383,7 @@ h1,h2,h3,h4,h5,h6{
   text-shadow: 2px 2px #34495e;
 }
 
-.preguntas-y-respuestas {
-    background: rgba(26,188,156,0.6);
+.questions-and-answers {
     border-radius: 5px;
     margin-bottom: 2em;
     padding: 0.5em 1em;
@@ -362,14 +392,21 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.preguntas-y-respuestas h2 {
+.questions-and-answers button {
     font-size: 2.2em;
+    color: black;
+    font-weight: bold;
     margin-bottom: 0.3em;
+    padding: 0.5em;
+    border-radius: 15px;
+    border: none;
+    outline: none;
 }
 
 
-.preguntas-y-respuestas p {
+.questions-and-answers p {
     font-size: 1.8em;
+    padding: 0.5em;
 }
 /* End of faq styles */
 
