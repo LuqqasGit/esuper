@@ -26,7 +26,7 @@ require_once("header.php");
                   <li>
                     <input type="email" name="userlogin" placeholder="Correo electrónico / Usuario">
                   </li>
-                  <div id="userlogin-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un correo electrónico válido.</p></div>
+                  <div id="userlogin-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un correo electrónico o un usuario válido.</p></div>
                   <li>
                     <input type="password" name="password" placeholder="Contraseña">
                   </li>

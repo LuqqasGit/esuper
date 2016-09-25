@@ -25,10 +25,10 @@ function validarUsuario(){
       $validArray["usererror"] = "signup-validate-div";
 
     }
-    if(!preg_match('/^\S*(?=\S{6,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST["password1"])) {
+    if(!preg_match('/^\S*(?=\S{6,})(?=\S*[a-z])(?=\S*[\d])\S*$/', $_POST["password1"])) {
       $validArray["passerror1"] = "signup-validate-div";
     }
-    if(!preg_match('/^\S*(?=\S{6,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $_POST["password2"])) {
+    if(!preg_match('/^\S*(?=\S{6,})(?=\S*[a-z])(?=\S*[\d])\S*$/', $_POST["password2"])) {
       $validArray["passerror2"] = "signup-validate-div";
     }else{
       if ($_POST["password1"] != $_POST["password2"]) {

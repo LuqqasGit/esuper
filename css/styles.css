@@ -326,9 +326,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .signup-imput-ok{
-  border: 1px solid #46a74e;
-  color: #35b33f;
-  background: url(../img/form-ok.png) 98% 5px no-repeat #ddf9e1;
+  border: solid 1px #46a74e !important;
+  background: url(../img/form-ok.png) 97% no-repeat #ddf9e1;
 }
 
 /* End of SignUp Form */
@@ -587,6 +586,9 @@ h1,h2,h3,h4,h5,h6{
 @media (max-width: 470px){
   .main-footer-icons, .main-footer-copyright {
     float: none;
+  }
+  .main-container-bg-site, .main-container-bg {
+  padding-bottom: 120px;
   }
 }
 

@@ -51,12 +51,12 @@ if (!$errores) {
   $arrayUser += ["id" => $userID, "email" => $email, "fname" => $fname, "lname" => $fname, "username" => $username, "password" => $userPassHash];
   $jsonUserPost = json_encode($arrayUser)."\n";
   addUser($json,$jsonUserPost);
-  // $jsonWriteDH = "https://sprint.digitalhouse.com/nuevoUsuario";
-  // addUser($jsonWriteDH,$jsonUserPost);
-  ?>
-  <script>
-  window.location.replace("success.php?fname=<?=$fname?>&lname=<?=$lname?>&email=<?=$email?>&userID=<?=$userID?>&userIDH=<?=$userIDH?>");
-  </script>
+  $jsonWriteDH = "https://sprint.digitalhouse.com/nuevoUsuario";
+  fopen($jsonWriteDH, "r");
+?>
+<script>
+window.location.replace("success.php?fname=<?=$fname?>&lname=<?=$lname?>&email=<?=$email?>&userID=<?=$userID?>&userIDH=<?=$userIDH?>");
+</script>
 <?}
 }?>
       <div class="main-container-bg-site">
@@ -99,11 +99,11 @@ if (!$errores) {
                     <li>
                       <input type="password" name="password1" placeholder="Crea una contraseña">
                     </li>
-                    <div id="uname-validate-div" class="<?=$validArray["passerror1"]?>"><p>Ingresa una contraseña con un minimo de 6 caracteres, conteniendo una mayúscula y un número.</p></div>
+                    <div id="pass-validate-div" class="<?=$validArray["passerror1"]?>"><p>Ingresa una contraseña con un mínimo de 6 caracteres, conteniendo uno o más números.</p></div>
                     <li>
                       <input type="password" name="password2" placeholder="Repite la contraseña">
                     </li>
-                    <div id="uname-validate-div" class="<?=$validArray["passerror2"]?>"><p>Las contraseñas no coinciden.</p></div>
+                    <div id="pass2-validate-div" class="<?=$validArray["passerror2"]?>"><p>Las contraseñas no coinciden.</p></div>
                   </ul>
                 </fieldset>
                 <button type="submit" class="signup-submit" name="submit">Continuar</button>

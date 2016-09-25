@@ -8,6 +8,8 @@ window.onload = function() {
     var selectedName = formSignUp.querySelector('input[name="fname"]');
     var selectedLname = formSignUp.querySelector('input[name="lname"]');
     var selectedUname = formSignUp.querySelector('input[name="username"]');
+    var selectedPassword1 = formSignUp.querySelector('input[name="password1"]');
+    var selectedPassword2 = formSignUp.querySelector('input[name="password2"]');
   }
   if (formLogin) {
     var selectedUlogin = formLogin.querySelector('input[name="userlogin"]');
@@ -17,8 +19,8 @@ window.onload = function() {
     var emailError = document.getElementById("email-validate-div");
     if (/^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/.test(selectedEmail.value)){
       emailError.className = "signup-validate-div-hidden";
+      selectedEmail.className = "signup-imput-ok";
     } else {
-      selectedEmail.value = "";
       emailError.className = "signup-validate-div";
     }
   }
@@ -27,9 +29,29 @@ window.onload = function() {
     var errorDiv = document.getElementById(evt.target.div);
     if (this.value){
       errorDiv.className = "signup-validate-div-hidden";
+      this.className = "signup-imput-ok";
     } else {
-      this.value = "";
       errorDiv.className = "signup-validate-div";
+    }
+  }
+
+  function passwordValidate(){
+    var passError = document.getElementById("pass-validate-div");
+    if (/(?=.*\d)(?=.*[a-z]).{6,}/.test(selectedPassword1.value)){
+      passError.className = "signup-validate-div-hidden";
+      selectedPassword1.className = "signup-imput-ok";
+    }else {
+      passError.className = "signup-validate-div";
+    }
+  }
+
+  function passwordMatchValidate(){
+    var passError2 = document.getElementById("pass2-validate-div");
+    if (selectedPassword1.value == selectedPassword2.value){
+      passError2.className = "signup-validate-div-hidden";
+      selectedPassword2.className = "signup-imput-ok";
+    }else {
+      passError2.className = "signup-validate-div";
     }
   }
 
@@ -48,6 +70,12 @@ window.onload = function() {
     // User name validate
     selectedUname.div = "uname-validate-div";
     selectedUname.addEventListener("blur", textFieldValidate);
+
+    // Password Strength Validate
+    selectedPassword1.addEventListener("blur", passwordValidate);
+
+    // Password Match Validate
+    selectedPassword2.addEventListener("blur", passwordMatchValidate);
 
     // // Submit button check
     // var submitButton = document.querySelector('.signup-submit');
