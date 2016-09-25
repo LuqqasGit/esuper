@@ -77,11 +77,22 @@ window.onload = function() {
   }
 
     //frequently asked questions
-    var accordionFaq = document.getElementsByClassName("accordionFaq");
-    for (var i = 0; i < accordionFaq.length; i++) {
-        accordionFaq[i].onclick = function() {
-            this.classList.toggle("active");
-            this.nextElementSibling.classList.toggle("show");
-        }
+    var accordionQ = document.getElementsByClassName("accordionFaq");
+
+    function toggleEvent(item, index, array) {
+        item.addEventListener("click", function() {
+            item.nextElementSibling.classList.toggle("show");
+            for (var i=index+1; i<array.length; i++) {
+                array[i].nextElementSibling.classList.remove("show");
+            }
+            for (var j=index-1; j>=0; j--) {
+                array[j].nextElementSibling.classList.remove("show");
+            }
+        })
     }
+    //convert HTMLCollections into arrays
+    var questions = Array.prototype.slice.call(accordionQ);
+
+    questions.forEach(toggleEvent);
+
 };
