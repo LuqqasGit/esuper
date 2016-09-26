@@ -18,8 +18,6 @@ a {
   text-decoration: none;
 }
 
-.show{display:block !important;}
-
 .wrapper {
   min-height: 100vh;
 	position: relative;
@@ -561,8 +559,20 @@ h1,h2,h3,h4,h5,h6{
   }
 
   .main-nav ul {
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s, opacity 0.5s ease;
+    transition: max-height 0.5s, opacity 0.5s ease;
     margin-bottom: 20px;
+  }
+
+  .show{
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: 166px !important;
   }
 
   .main-header img {
