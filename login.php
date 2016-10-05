@@ -24,7 +24,7 @@ require_once("header.php");
               <fieldset>
                 <ul>
                   <li>
-                    <input type="email" name="userlogin" placeholder="Correo electrónico / Usuario">
+                    <input type="text" name="userlogin" placeholder="Correo electrónico / Usuario">
                   </li>
                   <div id="userlogin-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un correo electrónico o un usuario válido.</p></div>
                   <li>

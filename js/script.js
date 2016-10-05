@@ -42,6 +42,8 @@ window.onload = function() {
       selectedPassword1.className = "signup-imput-ok";
     }else {
       passError.className = "signup-validate-div";
+      selectedPassword1.className = "";
+      selectedPassword1.value = "";
     }
   }
 
@@ -52,6 +54,8 @@ window.onload = function() {
       selectedPassword2.className = "signup-imput-ok";
     }else {
       passError2.className = "signup-validate-div";
+      selectedPassword2.className = "";
+      selectedPassword2.value = "";
     }
   }
 
