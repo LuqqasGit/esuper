@@ -1,5 +1,13 @@
 <?php
-require_once("functions.php");
+require_once("soporte.php");
+
+$repoUsuarios = $repo->getRepositorioUsuarios();
+$usuarioLogueado = $auth->traerUsuarioLogueado($repoUsuarios);
+
+// if ($usuarioLogueado) {
+//   $imagenPerfil = $usuarioLogueado->getAvatar();
+// }
+
 ?>
 
 <!DOCTYPE html>

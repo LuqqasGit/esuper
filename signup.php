@@ -1,64 +1,68 @@
 <?php
 $title = "eSUPER - Signup";
-require_once("header.php");
-$validArray = validarUsuario();
+require_once("soporte.php");
+require_once("classes/validadorUsuario.php");
+
+$repoUsuarios = $repo->getRepositorioUsuarios();
+
+if ($auth->estaLogueado()) {
+  header("Location:index.php");exit;
+}
+
+
 $camposValue = [
   "fnamevalue" => "",
   "lnamevalue" => "",
   "emailvalue" => "",
-  "uservalue" => "",
+  "uservalue" => ""
 ];
+
 if ($_POST) {
+  $validador = new ValidadorUsuario();
+  $validArray = $validador->validar($_POST, $repo);
+
+
   if ($validArray["fnameerror"] == "signup-validate-div-hidden") {
-    $camposValue["fnamevalue"] = "$_POST[fname]";
+    $camposValue["fnamevalue"] = $_POST["fname"];
   }
   if ($validArray["lnameerror"] == "signup-validate-div-hidden") {
-    $camposValue["lnamevalue"] = "$_POST[lname]";
+    $camposValue["lnamevalue"] = $_POST["lname"];
   }
   if ($validArray["emailerror"] == "signup-validate-div-hidden") {
-    $camposValue["emailvalue"] = "$_POST[email]";
+    $camposValue["emailvalue"] = $_POST["email"];
   }
   if ($validArray["usererror"] == "signup-validate-div-hidden") {
-    $camposValue["uservalue"] = "$_POST[username]";
+    $camposValue["uservalue"] = $_POST["username"];
   }
 
-$errores = 0;
-foreach ($validArray as $key => $value) {
-  if ($value == "signup-validate-div") {
-    $errores++;
-    continue;
-  }
+
+  //Se envió información
+
+  if (empty($errores)) {
+      //No hay Errores
+
+      //Primero: Lo registro
+      $usuario = new Usuario(
+          null,
+          $_POST["fname"],
+          $_POST["lname"],
+          $_POST["email"],
+          $_POST["username"],
+          $_POST["password1"]
+      );
+      $usuario->setPassword($_POST["password1"]);
+      $usuario->guardar($repoUsuarios);
+      // $usuario->setAvatar($_FILES["avatar"]);
+
+      //Segundo: Lo envio al exito
+      header("Location:index.php");exit;
+
+    }
 }
-if (!$errores) {
-  $fname = $_POST["fname"];
-  $lname = $_POST["lname"];
-  $email = $_POST["email"];
-  $username = $_POST["username"];
-  $userPassHash = password_hash($_POST["password1"], PASSWORD_DEFAULT);
-  $userID = 1;
 
-  $json = "usuarios.json";
-  $getJSON = file_get_contents($json);
-  $usuariosJSON = explode("\n", $getJSON);
-  $userID = count($usuariosJSON);
+require_once("header.php");
 
-  $jsonReadDH = "https://sprint.digitalhouse.com/getUsuarios";
-  $getJSONDH = file_get_contents($jsonReadDH);
-  $usuariosJSONDH = json_decode($getJSONDH, true);
-  $userIDH = $usuariosJSONDH["cantidad"]+1;
-
-  $arrayUser = [];
-  $arrayUser += ["id" => $userID, "email" => $email, "fname" => $fname, "lname" => $fname, "username" => $username, "password" => $userPassHash];
-  $jsonUserPost = json_encode($arrayUser)."\n";
-  addUser($json,$jsonUserPost);
-  $jsonWriteDH = "https://sprint.digitalhouse.com/nuevoUsuario";
-  fopen($jsonWriteDH, "r");
 ?>
-<script>
-window.location.replace("success.php?fname=<?=$fname?>&lname=<?=$lname?>&email=<?=$email?>&userID=<?=$userID?>&userIDH=<?=$userIDH?>");
-</script>
-<?}
-}?>
       <div class="main-container-bg-site">
         <div class="main-container">
           <div class="signup-main-container">
@@ -84,6 +88,7 @@ window.location.replace("success.php?fname=<?=$fname?>&lname=<?=$lname?>&email=<
                       <input autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="<?=$camposValue["emailvalue"]?>">
                     </li>
                     <div id="email-validate-div" class="<?=$validArray["emailerror"]?>"><p>Ingresa un correo electrónico válido.</p></div>
+                    <div id="email-validate-div2" class="<?=$validArray["emailerror2"]?>"><p>El correo electronico ya esta registrado.</p></div>
                     <li>
                       <input autocomplete="off" type="text" name="fname" placeholder="Ingresa tu nombre" value="<?=$camposValue["fnamevalue"]?>">
                     </li>
