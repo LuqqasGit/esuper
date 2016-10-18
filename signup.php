@@ -9,7 +9,6 @@ if ($auth->estaLogueado()) {
   header("Location:index.php");exit;
 }
 
-
 $camposValue = [
   "fnamevalue" => "",
   "lnamevalue" => "",
@@ -48,11 +47,11 @@ if ($_POST) {
           $_POST["lname"],
           $_POST["email"],
           $_POST["username"],
-          $_POST["password1"]
+          $_POST["password1"],
+          "default.jpg"
       );
       $usuario->setPassword($_POST["password1"]);
       $usuario->guardar($repoUsuarios);
-      // $usuario->setAvatar($_FILES["avatar"]);
 
       //Segundo: Lo envio al exito
       header("Location:index.php");exit;
@@ -68,7 +67,7 @@ require_once("header.php");
           <div class="signup-main-container">
 
             <div class="signup-text-box">
-              <h1 class="signup-title">Regístrate en eSuper</h1>
+              <h1 class="title signup">Regístrate en eSuper</h1>
               <h2 class="signup-subtitle">Supermercado desde la comodidad de tu casa.</h2>
             </div>
 
@@ -81,7 +80,7 @@ require_once("header.php");
 
               <div class="signup-line"><span>ó</span></div>
 
-              <form class="signup-form" id="signup" method="post">
+              <form class="signup-form" id="signup" method="post" enctype="multipart/form-data">
                 <fieldset>
                   <ul>
                     <li>

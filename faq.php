@@ -6,7 +6,7 @@ require_once("header.php");
     <div class="main-container-bg-site">
       <div class="main-container">
         <div class="faq-main-container">
-            <h1 class="faq-title">Preguntas frecuentes</h1>
+            <h1 class="title faq">Preguntas frecuentes</h1>
             <section class="questions">
                 <article class="questions-and-answers">
                     <button class="accordionFaq">¿Qué es eSUPER?</button>

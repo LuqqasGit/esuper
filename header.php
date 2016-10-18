@@ -35,8 +35,10 @@ $usuarioLogueado = $auth->traerUsuarioLogueado($repoUsuarios);
         <ul id="nav-div">
           <a href="index.php"><li>Home</li></a>
           <a href="faq.php"><li>Faq</li></a>
-          <a href="login.php"><li>Log in</li></a>
-          <a href="signup.php"><li>Sign up</li></a>
+          <a href="login.php" <?php if($auth->estaLogueado()) { echo "style=\"display:none\""; }; ?>><li>Log in</li></a>
+          <a href="signup.php" <?php if($auth->estaLogueado()) { echo "style=\"display:none\""; }; ?>><li>Sign up</li></a>
+          <a href="profile.php" <?php if(!$auth->estaLogueado()) { echo "style=\"display:none\""; }; ?>><li>My Account</li></a>
+          <a href="logout.php" <?php if(!$auth->estaLogueado()) { echo "style=\"display:none\""; }; ?>><li>Logout</li></a>
         </ul>
       </nav>
     </header>

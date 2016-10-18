@@ -1,7 +1,7 @@
-<?php 
+<?php
 	require_once("usuario.php");
 	require_once("repositorioUsuarios.php");
-	
+
 	class Auth {
 
 		public static $instancia;
@@ -20,10 +20,10 @@
 		}
 
 		public function loguear(Usuario $usuario) {
-        	$_SESSION["usuarioLogueado"] = $usuario->getEmail();
-    	}
+    	$_SESSION["usuarioLogueado"] = $usuario->getEmail();
+    }
 
-    	public function traerUsuarioLogueado(RepositorioUsuarios $repo) {
+    public function traerUsuarioLogueado(RepositorioUsuarios $repo) {
 	        if (!$this->estaLogueado()) {
 	            return null;
 	        }

@@ -1,7 +1,7 @@
 <?php
   error_reporting(E_ALL);
   ini_set('display_errors', 1);
-  
+
 	require_once("classes/auth.php");
 	require_once("classes/repositorioJSON.php");
 
@@ -14,5 +14,6 @@
 	}
 
 	$auth = Auth::getInstancia($repo->getRepositorioUsuarios());
+  $loggedUser = $auth->traerUsuarioLogueado($repo->getRepositorioUsuarios());
 
 ?>

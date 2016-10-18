@@ -67,8 +67,12 @@
 	    		$usuario->setId($this->traerProximoId());
 	    	}
 
-	    	$usuarioJSON = json_encode($usuario->toArray());
-
+				$usuario = $usuario->toArray();
+				$usuario['avatar'] = "default.jpg";
+				if ($this->existeElMail($usuario['email']) || $this->existeElUsername($usuario['username'])) {
+					return false;
+				}
+	    	$usuarioJSON = json_encode($usuario);
 	    	file_put_contents("usuarios.json", $usuarioJSON . "\n", FILE_APPEND | LOCK_EX);
 	    }
 	}

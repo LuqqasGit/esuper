@@ -11,13 +11,14 @@ class Usuario {
   private $password;
   private $avatar;
 
-  public function __construct($id, $firstname, $lastname, $email, $username, $password, $avatar = null) {
+  public function __construct($id, $firstname, $lastname, $email, $username, $password, $avatar) {
     $this->id = $id;
     $this->firstname =$firstname;
     $this->lastname =$lastname;
     $this->email = $email;
     $this->username = $username;
     $this->password = $password;
+    $this->avatar = $avatar;
   }
 
   public function setFirstname($firstname){
@@ -57,17 +58,17 @@ class Usuario {
     return $this->password;
   }
 
-  // Agregar campo avatar en el signup form
+  public function getAvatar(){
+    $name = "img/" . $this->getId();
+    $matching = glob($name . ".*");
+    if (!empty($matching)) {
+      $info = pathinfo($matching[0]);
+      $ext = $info['extension'];
+      return $name . "." . $ext;
+    }
+    return "img/default.jpg";
+  }
 
-  // public function getAvatar(){
-  //   $name = "img/" . $this->getId();
-  //   $matching = glob($name . ".*");
-  //
-  //   $info = pathinfo($matching[0]);
-  //   $ext = $info['extension'];
-  //
-  //   return $name . "." . $ext;
-  // }
   public function setAvatar($avatar) {
     if ($avatar["error"] == UPLOAD_ERR_OK) {
 
@@ -79,7 +80,13 @@ class Usuario {
 
       $ext = pathinfo($avatar["name"], PATHINFO_EXTENSION);
 
-      move_uploaded_file($avatar["tmp_name"], $path . $this->getId() . "." . $ext);
+      if (strtolower($ext) == "jpg" || strtolower($ext) == "jpeg" || strtolower($ext) == "png") {
+        move_uploaded_file($avatar["tmp_name"], $path . $this->getId() . "." . $ext);
+        $this->avatar = $this->getId() . "." . $ext;
+        // traer usuario, cambiar $usuario['avatar'] y volverlo a guardar en el JSON
+        return true;
+      }
+      return false;
     }
   }
 
@@ -95,7 +102,7 @@ class Usuario {
       "username" => $this->getUsername(),
       "email" => $this->getEmail(),
       "password" => $this->getPassword(),
-      // "avatar" => $this->getAvatar(),
+      "avatar" => $this->getAvatar(),
     ];
   }
 }

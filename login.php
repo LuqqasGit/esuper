@@ -11,12 +11,11 @@ if ($_POST) {
   $validador = new ValidadorLogin();
   $errores = $validador->validar($_POST, $repo);
 
-  if (empty($errores))
+  if ($errores["emailerror"] == "signup-validate-div-hidden" &&  $errores["emailerror2"] == "signup-validate-div-hidden" && $errores["passworderror"] == "signup-validate-div-hidden" && $errores["passworderror2"] == "signup-validate-div-hidden")
   {
     $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
     $auth->loguear($usuario);
-    if ($validador->estaEnFormulario("session"))
-    {
+    if ($validador->estaEnFormulario("session")) {
       $auth->guardarCookie($usuario);
     }
     header("Location:index.php");exit;
@@ -31,7 +30,7 @@ require_once("header.php");
         <div class="signup-main-container">
 
           <div class="signup-text-box">
-            <h1 class="signup-title">Inicia sesión en eSuper</h1>
+            <h1 class="title signup">Inicia sesión en eSuper</h1>
           </div>
 
           <div class="signup-box">
