@@ -37,7 +37,7 @@ if ($_POST) {
 
   //Se envió información
 
-  if (empty($errores)) {
+  if (empty($validArray)) {
       //No hay Errores
 
       //Primero: Lo registro
@@ -84,28 +84,28 @@ require_once("header.php");
                 <fieldset>
                   <ul>
                     <li>
-                      <input autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="<?=$camposValue["emailvalue"]?>">
+                      <input required autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="<?=$camposValue["emailvalue"]?>">
                     </li>
                     <div id="email-validate-div" class="<?=$validArray["emailerror"]?>"><p>Ingresa un correo electrónico válido.</p></div>
                     <div id="email-validate-div2" class="<?=$validArray["emailerror2"]?>"><p>El correo electronico ya esta registrado.</p></div>
                     <li>
-                      <input autocomplete="off" type="text" name="fname" placeholder="Ingresa tu nombre" value="<?=$camposValue["fnamevalue"]?>">
+                      <input required autocomplete="off" type="text" name="fname" placeholder="Ingresa tu nombre" value="<?=$camposValue["fnamevalue"]?>">
                     </li>
                     <div id="fname-validate-div" class="<?=$validArray["fnameerror"]?>"><p>Ingresa un nombre válido.</p></div>
                     <li>
-                      <input autocomplete="off" type="text" name="lname" placeholder="Ingresa tu apellido" value="<?=$camposValue["lnamevalue"]?>">
+                      <input required autocomplete="off" type="text" name="lname" placeholder="Ingresa tu apellido" value="<?=$camposValue["lnamevalue"]?>">
                     </li>
                     <div id="lname-validate-div" class="<?=$validArray["lnameerror"]?>"><p>Ingresa un apellido válido.</p></div>
                     <li>
-                      <input autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="<?=$camposValue["uservalue"]?>">
+                      <input  autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="<?=$camposValue["uservalue"]?>">
                     </li>
                     <div id="uname-validate-div" class="<?=$validArray["usererror"]?>"><p>Ingresa un nombre de usuario válido.</p></div>
                     <li>
-                      <input type="password" name="password1" placeholder="Crea una contraseña">
+                      <input required type="password" name="password1" placeholder="Crea una contraseña">
                     </li>
                     <div id="pass-validate-div" class="<?=$validArray["passerror1"]?>"><p>Ingresa una contraseña con un mínimo de 6 caracteres, conteniendo uno o más números.</p></div>
                     <li>
-                      <input type="password" name="password2" placeholder="Repite la contraseña">
+                      <input required type="password" name="password2" placeholder="Repite la contraseña">
                     </li>
                     <div id="pass2-validate-div" class="<?=$validArray["passerror2"]?>"><p>Las contraseñas no coinciden.</p></div>
                   </ul>
