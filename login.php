@@ -9,9 +9,9 @@ if ($auth->estaLogueado()) {
 
 if ($_POST) {
   $validador = new ValidadorLogin();
-  $errores = $validador->validar($_POST, $repo);
+  $validArray = $validador->validar($_POST, $repo);
 
-  if ($errores["emailerror"] == "signup-validate-div-hidden" &&  $errores["emailerror2"] == "signup-validate-div-hidden" && $errores["passworderror"] == "signup-validate-div-hidden" && $errores["passworderror2"] == "signup-validate-div-hidden")
+  if ($validArray["emailerror"] == "signup-validate-div-hidden" &&  $validArray["emailerror2"] == "signup-validate-div-hidden" && $validArray["passworderror"] == "signup-validate-div-hidden" && $validArray["passworderror2"] == "signup-validate-div-hidden")
   {
     $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
     $auth->loguear($usuario);
