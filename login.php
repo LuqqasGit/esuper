@@ -1,5 +1,27 @@
 <?php
 $title = "eSUPER - Login";
+require_once("soporte.php");
+require_once("classes/validadorLogin.php");
+
+if ($auth->estaLogueado()) {
+  header("Location:index.php");exit;
+}
+
+if ($_POST) {
+  $validador = new ValidadorLogin();
+  $validArray = $validador->validar($_POST, $repo);
+
+  if ($validArray["emailerror"] == "signup-validate-div-hidden" &&  $validArray["emailerror2"] == "signup-validate-div-hidden" && $validArray["passworderror"] == "signup-validate-div-hidden" && $validArray["passworderror2"] == "signup-validate-div-hidden")
+  {
+    $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
+    $auth->loguear($usuario);
+    if ($validador->estaEnFormulario("session")) {
+      $auth->guardarCookie($usuario);
+    }
+    header("Location:index.php");exit;
+  }
+}
+
 require_once("header.php");
 ?>
 
@@ -8,7 +30,7 @@ require_once("header.php");
         <div class="signup-main-container">
 
           <div class="signup-text-box">
-            <h1 class="signup-title">Inicia sesión en eSuper</h1>
+            <h1 class="title signup">Inicia sesión en eSuper</h1>
           </div>
 
           <div class="signup-box">
@@ -24,12 +46,15 @@ require_once("header.php");
               <fieldset>
                 <ul>
                   <li>
-                    <input type="text" name="userlogin" placeholder="Correo electrónico / Usuario">
+                    <input type="text" name="email" placeholder="Email">
                   </li>
-                  <div id="userlogin-validate-div" class="signup-validate-div-hidden"><p>Por favor ingresa un correo electrónico o un usuario válido.</p></div>
+                  <div class="<?=$validArray["emailerror"]?>"><p>Por favor ingresa un correo electrónico.</p></div>
+                  <div class="<?=$validArray["emailerror2"]?>"><p>El correo electronico no existe.</p></div>
                   <li>
                     <input type="password" name="password" placeholder="Contraseña">
                   </li>
+                  <div class="<?=$validArray["passworderror"]?>"><p>Por favor ingrese una contraseña.</p></div>
+                  <div class="<?=$validArray["passworderror2"]?>"><p>Contraseña incorrecta.</p></div>
                 </ul>
                 <div class="login-menu">
                   <div class="login-remember">

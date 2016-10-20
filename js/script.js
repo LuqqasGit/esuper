@@ -22,6 +22,7 @@ window.onload = function() {
       selectedEmail.className = "signup-imput-ok";
     } else {
       emailError.className = "signup-validate-div";
+      selectedEmail.className = "";
     }
   }
 
@@ -32,6 +33,7 @@ window.onload = function() {
       this.className = "signup-imput-ok";
     } else {
       errorDiv.className = "signup-validate-div";
+      this.className = "";
     }
   }
 

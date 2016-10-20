@@ -90,16 +90,24 @@ a {
   overflow: hidden;
 }
 
-.home-main-container {
+.home-main-container, .profile-main-container, .faq-main-container {
   padding: 2em;
   text-align: center;
 }
 
-.home-title {
+.title {
   font-size: 6em;
   color: #1abc9c;
   padding-bottom: 60px;
   text-shadow: 2px 2px #34495e;
+}
+
+.faq {
+  margin-bottom: 0.5em;
+}
+
+.signup {
+  padding-bottom: 20px;
 }
 
 .location-form {
@@ -162,6 +170,10 @@ a {
   width: 100%;
 }
 
+.acc-profile-pic {
+  width: 100%;
+}
+
 /* Start of SignUp Form */
 .signup-form input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea{
   font-weight: lighter;
@@ -188,13 +200,6 @@ fieldset{
 h1,h2,h3,h4,h5,h6{
   margin: 0;
   padding: 0;
-}
-
-.signup-title {
-  font-size: 6em;
-  color: #1abc9c;
-  padding-bottom: 20px;
-  text-shadow: 2px 2px #34495e;
 }
 
 .signup-subtitle {
@@ -333,10 +338,6 @@ h1,h2,h3,h4,h5,h6{
 /* End of SignUp Form */
 
 /* faq styles */
-.faq-main-container {
-    padding: 2em;
-    text-align: center;
-}
 
 .questions {
     padding: 1em;
@@ -373,13 +374,6 @@ h1,h2,h3,h4,h5,h6{
 .panel.show {
     opacity: 1;
     max-height: 500px;
-}
-
-.faq-title {
-  font-size: 6em;
-  color: #1abc9c;
-  margin-bottom: 0.5em;
-  text-shadow: 2px 2px #34495e;
 }
 
 .questions-and-answers {

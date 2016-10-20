@@ -6,7 +6,7 @@ require_once("header.php");
     <div class="main-container-bg">
       <div class="main-container">
         <div class="home-main-container">
-          <h1 class="home-title">Al súper... Desde casa!</h1>
+          <h1 class="title">Al súper... Desde casa!</h1>
           <form class="location-form" action="" method="post">
             <div class="labels-div">
             <label>Escribí tu dirección<br>
