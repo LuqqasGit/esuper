@@ -8,7 +8,7 @@
   <div class="main-container">
     <div class="profile-main-container">
       <h1 class="title">Bienvenido <?php echo $loggedUser->getUsername(); ?></h1>
-      <div style="width: 400px; margin: auto;">
+      <div style="width: 100%; max-width: 400px; margin: auto;">
         <img style="" class="acc-profile-pic" <?php echo "src=\"" . $loggedUser->getAvatar() . "\"" ?> alt="profile picture">
         <form action="uploadImage.php" method="post" enctype="multipart/form-data">
           <fieldset>
