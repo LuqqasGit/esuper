@@ -11,7 +11,7 @@ if ($_POST) {
   $validador = new ValidadorLogin();
   $validArray = $validador->validar($_POST, $repo);
 
-  if ($validArray["emailerror"] == "signup-validate-div-hidden" &&  $validArray["emailerror2"] == "signup-validate-div-hidden" && $validArray["passworderror"] == "signup-validate-div-hidden" && $validArray["passworderror2"] == "signup-validate-div-hidden")
+  if ($validArray["errorvalidate"] == 0)
   {
     $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
     $auth->loguear($usuario);

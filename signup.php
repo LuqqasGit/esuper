@@ -37,7 +37,7 @@ if ($_POST) {
 
   //Se envió información
 
-  if (empty($validArray)) {
+  if ($validArray["errorvalidate"] == 0) {
       //No hay Errores
 
       //Primero: Lo registro
