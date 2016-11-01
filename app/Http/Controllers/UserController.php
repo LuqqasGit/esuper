@@ -12,23 +12,24 @@ use Response;
 
 class UserController extends Controller
 {
+
   public function updateAvatar(Request $request)
   {
     if (File::exists($request->file('avatar')))
     {
-      dd(Storage::delete("10.jpg"));
+      Storage::delete("public/img/avatars/".Auth::user()->id.".".$request->file('avatar')->getClientOriginalExtension());
     }
     $path = $request->file('avatar')->store('img/avatars');
-    Storage::move($path, "img/avatars/".Auth::user()->id.".".$request->file('avatar')->getClientOriginalExtension());
+    Storage::move($path, "public/img/avatars/".Auth::user()->id.".".$request->file('avatar')->getClientOriginalExtension());
     $user = User::find(Auth::user()->id);
     $user->avatar = Auth::user()->id .".". $request->file('avatar')->getClientOriginalExtension();
     $user->save();
 
-    return $path;
+    return redirect('/profile');
   }
 
   public function getImage($filename) {
-    $path = storage_path() . '/app/img/avatars/' . $filename;
+    $path = storage_path() . '/app/public/img/avatars/' . $filename;
 
     if(!File::exists($path)) abort(404);
 
@@ -37,7 +38,11 @@ class UserController extends Controller
 
     $response = Response::make($file, 200);
     $response->header("Content-Type", $type);
-
     return $response;
+  }
+
+  public function profile()
+  {
+    return view('front.profile');
   }
 }

@@ -10,10 +10,14 @@
     <ul id="nav-div">
       <a href="/"><li>Home</li></a>
       <a href="/faq"><li>Faq</li></a>
-      <a href="/login"><li>Log in</li></a>
-      <a href="/register"><li>Register</li></a>
-      <a href="/profile"><li>My Account</li></a>
-      <a href="/logout"><li>Logout</li></a>
+      @if (!Auth::check())
+        <a href="/login"><li>Log in</li></a>
+        <a href="/register"><li>Register</li></a>
+      @endif
+      @if (Auth::check())
+        <a href="/profile"><li>My Account</li></a>
+        <a href="/logout"><li>Logout</li></a>
+      @endif
     </ul>
   </nav>
 </header>

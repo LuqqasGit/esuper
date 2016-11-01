@@ -13,21 +13,16 @@
 
 Route::get('/', 'HomeController@home');
 
-Route::post('/updateAvatar', 'UserController@updateAvatar');
-
-Route::get('images/{filename}', 'UserController@getImage');
-
-Route::get('/logout', function() {
-  Auth::logout();
-  return redirect('/');
-});
-
 Route::get('/faq', function () {
     return view('front.faq');
 });
 
-Route::get('/profile', function () {
-    return view('front.profile');
-});
+Route::get('/profile', 'UserController@profile');
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::post('/updateAvatar', 'UserController@updateAvatar');
+
+Route::get('images/{filename}', 'UserController@getImage');
 
 Auth::routes();
