@@ -13,15 +13,15 @@
 
 Route::get('/', 'HomeController@home');
 
-Route::get('/faq', function () {
+Route::get('faq', function () {
     return view('front.faq');
 });
 
-Route::get('/profile', 'UserController@profile');
+Route::get('profile', 'UserController@profile');
 
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('logout', 'Auth\LoginController@logout');
 
-Route::post('/updateAvatar', 'UserController@updateAvatar');
+Route::post('updateAvatar', 'UserController@updateAvatar');
 
 Route::get('images/{filename}', 'UserController@getImage');
 

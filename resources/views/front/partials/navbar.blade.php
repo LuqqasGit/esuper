@@ -1,5 +1,5 @@
 <header class="main-header">
-  <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+  <a href="/"><img src="img/logo.png" alt="logo"></a>
   <div class="toggle-nav-div">
     <button class="toggle-nav" id="toggle-nav-button">
       <i class="fa fa-bars" aria-hidden="true"></i>
