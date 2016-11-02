@@ -32,7 +32,7 @@
                     <li>
                       <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
                       @if ($errors->has('email'))
-                          <span class="help-block">
+                          <span class="signup-validate-div">
                               <strong>{{ $errors->first('email') }}</strong>
                           </span>
                       @endif
@@ -43,7 +43,7 @@
                       <input type="password" name="password" placeholder="Contraseña" required>
 
                       @if ($errors->has('password'))
-                          <span class="help-block">
+                          <span class="signup-validate-div">
                               <strong>{{ $errors->first('password') }}</strong>
                           </span>
                       @endif

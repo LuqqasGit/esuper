@@ -30,7 +30,7 @@
                 <li>
                   <input class="{{ $errors->has('email') ? ' has-error' : '' }}" autofocus required autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="{{ old('email') }}">
                   @if ($errors->has('email'))
-                      <span class="help-block">
+                      <span class="signup-validate-div">
                           <strong>{{ $errors->first('email') }}</strong>
                       </span>
                   @endif
@@ -38,7 +38,7 @@
                 <li>
                   <input autofocus class="{{ $errors->has('name') ? ' has-error' : '' }}" required autocomplete="off" type="text" name="name" placeholder="Ingresa tu nombre completo" value="{{ old('name') }}">
                   @if ($errors->has('name'))
-                      <span class="help-block">
+                      <span class="signup-validate-div">
                           <strong>{{ $errors->first('name') }}</strong>
                       </span>
                   @endif
@@ -46,7 +46,7 @@
                 <li>
                   <input autofocus autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="{{ old('username') }}">
                   @if ($errors->has('username'))
-                      <span class="help-block">
+                      <span class="signup-validate-div">
                           <strong>{{ $errors->first('username') }}</strong>
                       </span>
                   @endif
@@ -54,7 +54,7 @@
                 <li>
                   <input id="password" class="{{ $errors->has('password') ? ' has-error' : '' }}" autofocus required type="password" name="password" placeholder="Crea una contraseña">
                   @if ($errors->has('password'))
-                      <span class="help-block">
+                      <span class="signup-validate-div">
                           <strong>{{ $errors->first('password') }}</strong>
                       </span>
                   @endif

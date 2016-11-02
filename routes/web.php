@@ -25,4 +25,6 @@ Route::post('updateAvatar', 'UserController@updateAvatar');
 
 Route::get('images/{filename}', 'UserController@getImage');
 
+Route::resource('mercado', 'MarketController');
+
 Auth::routes();
