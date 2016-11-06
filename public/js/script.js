@@ -1,6 +1,4 @@
 window.onload = function() {
-  var btnNav = document.getElementById('toggle-nav-button');
-  var navDiv = document.getElementById('nav-div');
   var formLogin = document.getElementById("login");
   var formSignUp = document.getElementById("signup");
   if (formSignUp) {
@@ -98,10 +96,6 @@ window.onload = function() {
   selectedUlogin.addEventListener("blur", textFieldValidate);
   }
 
-  btnNav.addEventListener('click', function() {
-    navDiv.classList.toggle("show");
-  });
-
   if (formSignUp) {
     signupValidate();
   }
@@ -122,7 +116,7 @@ window.onload = function() {
             for (var j=index-1; j>=0; j--) {
                 array[j].nextElementSibling.classList.remove("show");
             }
-        })
+        });
     }
     //convert HTMLCollections into arrays
     var questions = Array.prototype.slice.call(accordionQ);

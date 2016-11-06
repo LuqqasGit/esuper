@@ -24,56 +24,66 @@ a {
 	position: relative;
 }
 
-.main-header, .main-footer {
+.main-footer {
   padding: 0 10px;
-  overflow: hidden;
   background-color: #1abc9c;
 }
 
-.main-header img {
+.logo {
   padding: 18px 13px;
   width: 250px;
   position: absolute;
-  top: 4px;
+  top: -7px;
 }
 
-.main-nav {
-  float: right;
+.dropdown>a {
+  padding-right: 70px !important;
 }
 
-.main-nav li {
+.avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
   display: inline-block;
-  text-transform: uppercase;
-  padding: 20px 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 15px;
 }
 
-.main-nav li:hover {
+.avatar img {
+  height: 40px;
+  transform: translateX(-19%);
+}
+
+.navbar {
+  border: none;
+  margin: 0;
+  background-color: #1abc9c;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: white;
   background-color: #18a78a;
 }
 
-.main-nav a, .toggle-nav {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.8em;
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
 }
 
-.main-nav ul {
-  margin: 0;
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
 }
 
-.toggle-nav-div {
-  width: 90px;
-  float: right;
-}
-
-.toggle-nav {
-  border: none;
-  font-size: 2.5em;
-  margin: 18px 0;
-  display: none;
-  background-color: rgba(26,188,156,0.75);
-  text-align: center;
-  padding: 9px 13.5px;
+.navbar-default .navbar-toggle {
+  border-color: #fff;
 }
 
 .main-container-bg {
@@ -102,6 +112,7 @@ a {
   color: #1abc9c;
   padding-bottom: 60px;
   text-shadow: 2px 2px #34495e;
+  font-weight: bold;
 }
 
 .faq {
@@ -195,7 +206,6 @@ fieldset{
 
 .signup-main-container{
   max-width: 1200px;
-  /*min-width: 571px;*/
   margin: auto;
 }
 
@@ -222,18 +232,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .signup-form button{
-  /* old style
-  font-size: 1em;
-  font-weight: 500;
-  width: 98%;
-  color: #fff;
-  border: 1px solid #00b22d;
-  padding: 11px 35px;
-  margin: 0;
-  display: inline-block;
-  border-radius: 3px;
-  text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
-  background: linear-gradient(#35c350, #03b525);*/
   width: 100%;
   height: 50px;
   font-size: 1.2em;
@@ -526,70 +524,27 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-@media (max-width: 627px){
+@media (max-width: 767px) {
+  .logo {
+    width: auto;
+    height: 70px;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus, .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+  }
+
+  .avatar {
+    top: 0;
+  }
+}
+
+@media (max-width: 627px) {
   .super-logo {
     width: 48%;
     margin: 5px 1%;
     float: left;
   }
-
-  .toggle-nav{
-    display: inline-block;
-  }
-
-  .main-nav{
-    float: none;
-  }
-
-  .main-nav li {
-    display: block;
-    list-style-type: none;
-    width: 55%;
-    font-size: 1.6em;
-    margin: 0 auto 10px;
-    padding: 0;
-    background-color: rgba(26,188,156,0.55);
-    border-left: #12876f solid 8px;
-    border-radius: 2px;
-  }
-
-  .main-nav ul {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    max-height: 0;
-    -webkit-transition: max-height 0.5s, opacity 0.5s ease;
-    transition: max-height 0.5s, opacity 0.5s ease;
-    margin-bottom: 20px;
-  }
-
-  .show{
-    position: static !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-height: 166px !important;
-  }
-
-  .main-header img {
-    padding: 18px 13px;
-    width: 230px;
-    float: left;
-    position: relative;
-    top: 0;
-  }
-
-  .main-header {
-    text-align: center;
-    padding: 0;
-    background: none;
-  }
-}
-
-@media (max-width: 550px){
-  .signup-text-box{
-    margin-top: -15px;
-  }
-
 }
 
 @media (max-width: 470px){
@@ -598,10 +553,6 @@ h1,h2,h3,h4,h5,h6{
   }
   .main-container-bg-site, .main-container-bg {
   padding-bottom: 120px;
-  }
-
-  .main-nav li {
-    font-size: 1.2em;
   }
 }
 
@@ -630,10 +581,3 @@ h1,h2,h3,h4,h5,h6{
     float: left;
   }
 }
-/*@media (max-width: 315px){
-  .main-header img {
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
-}*/
