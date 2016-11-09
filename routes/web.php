@@ -17,14 +17,16 @@ Route::get('faq', function () {
     return view('front.faq');
 });
 
-Route::get('profile', 'UserController@profile');
+Route::get('profile', 'UserController@profile')->middleware('auth');
 
-Route::get('logout', 'Auth\LoginController@logout');
+Route::get('logout', 'Auth\LoginController@logout')->middleware('auth');
 
-Route::post('updateAvatar', 'UserController@updateAvatar');
+Route::post('updateAvatar', 'UserController@updateAvatar')->middleware('auth');
 
 Route::get('images/{filename}', 'UserController@getImage');
 
 Route::resource('market', 'MarketController');
+
+Route::resource('product', 'ProductController');
 
 Auth::routes();

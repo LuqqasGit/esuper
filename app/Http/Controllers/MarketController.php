@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Market;
 
 class MarketController extends Controller
 {
+
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('admin');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class MarketController extends Controller
      */
     public function index()
     {
-      
+      $markets = Market::all();
+      return view('back.markets.index', compact('markets'));
     }
 
     /**

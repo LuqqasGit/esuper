@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-  protected $fillable = [];
+  protected $fillable = ['name_id', 'latitude', 'longitude', 'address'];
 
-  public function genero()
+  public function products()
   {
-    return $this->belongsTo('App\Genero', 'id_genero');
-  }
-
-  public function actores()
-  {
-    return $this->belongsToMany('App\Actor', 'actor_pelicula', 'id_pelicula', 'id_actor');
+    return $this->hasMany('App\Product');
   }
 }
