@@ -15,6 +15,16 @@ class UserController extends Controller
 
   public function updateAvatar(Request $request)
   {
+
+    // $product = Product::find($id);
+    // $file = $request->file('file');
+    // $ext = $file->extension();
+    // $name = uniqId();
+    // $file->storeAs('images/'.$product->id , $name.'.'.$ext);
+    // $image = new \App\Image(['src' => $name.'.'.$ext]);
+    // $product->images()->save($image);
+
+
     if (File::exists($request->file('avatar')))
     {
       Storage::delete("public/img/avatars/".Auth::user()->id.".".$request->file('avatar')->getClientOriginalExtension());

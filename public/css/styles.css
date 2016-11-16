@@ -84,6 +84,26 @@ a {
   border-color: #fff;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.cart-count {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  width: 22px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  color: #1abc9c;
+  font-weight: bold;
+  font-family: 'Raleway';
+}
+
+.cart-list {
+  font-size: 1.6em;
+}
+
 .main-container-bg {
   background-image: url(../img/bg.jpg);
   background-size: cover;
@@ -128,6 +148,7 @@ a {
   font-size: 2em;
   overflow: hidden;
   padding: 20px;
+  margin-bottom: 40px;
 }
 
 .location-form label {
@@ -139,7 +160,7 @@ a {
 
 .location-form input, .button button {
   width: 100%;
-  font-size: 1em;
+  color: #ccc;
 }
 
 .labels-div {
@@ -147,7 +168,6 @@ a {
   width: 50%;
   padding-right: 10px;
   float: left;
-  margin-top: 11px;
 }
 
 .button {
@@ -167,7 +187,6 @@ a {
 
 .super-logo-container {
   width: 100%;
-  margin-top: 40px;
   overflow: hidden;
 }
 
@@ -332,11 +351,10 @@ h1,h2,h3,h4,h5,h6{
   border: solid 1px #46a74e !important;
   background: url(../img/form-ok.png) 97% no-repeat #ddf9e1;
 }
+/* End of Signup Form */
 
-/* End of SignUp Form */
 
-/* faq styles */
-
+/* FAQ Styles */
 .questions {
     padding: 1em;
     margin: 1em;
@@ -382,7 +400,6 @@ h1,h2,h3,h4,h5,h6{
     display: inline-block;
 }
 
-
 .questions-and-answers button {
     font-size: 2.2em;
     color: black;
@@ -394,15 +411,14 @@ h1,h2,h3,h4,h5,h6{
     outline: none;
 }
 
-
 .questions-and-answers p {
     font-size: 1.8em;
     padding: 0.5em;
 }
-/* End of faq styles */
+/* End of FAQ Styles */
 
 
-/* Start of LogIn Form */
+/* Start of Login Form */
 .login-menu{
   overflow: hidden;
   font-size: 0.7em;
@@ -420,8 +436,10 @@ h1,h2,h3,h4,h5,h6{
 .login-forgot{
   float: right;
 }
-/* End of LogIn Form */
+/* End of Login Form */
 
+
+/* Footer */
 .main-footer {
   padding: 0 20px;
   text-align: center;
@@ -489,66 +507,92 @@ h1,h2,h3,h4,h5,h6{
   margin-right:8px;
 }
 
-/* Media Screen resizes */
+
+/* LOADER*/
+.loader-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10000;
+}
+
+.loader-container {
+  margin-top: 15%;
+  text-align: center;
+}
+
+.loader-container span {
+  color: white;
+  font-size: 70px;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #1abc9c;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/****************************** Media Screen resizes ******************************/
+/****************************** Media Screen resizes ******************************/
+/****************************** Media Screen resizes ******************************/
+/****************************** Media Screen resizes ******************************/
+/****************************** Media Screen resizes ******************************/
+/****************************** Media Screen resizes ******************************/
 
 @media (max-width: 900px){
   .home-title {
     font-size: 4.3em;
     padding-bottom: 20px;
   }
-
   .super-logo {
     width: 31.32%;
     margin: 5px 1%;
     float: left;
   }
-
   .labels-div {
     width: 100%;
     padding: 0;
   }
-
   .button {
     width: 50%;
   }
-
   .faq-title {
     font-size: 4.3em;
     margin-top: 0em;
   }
-
-/*.preguntas-y-respuestas {*/
-    /*margin-top: 0;*/
-    /*margin-bottom: 1em;*/
-/*}*/
-
   .signup-title {
     font-size: 4.3em;
-    /*padding-bottom: 20px;*/
     padding: 0;
     margin: 28px 0 10px 0;
   }
-
   .signup-subtitle {
     font-size: 2.5em;
     padding-bottom: 10px;
   }
-
   .home-main-container {
     padding: 30px 0;
   }
-
   .location-form {
     width: 98%;
   }
-
   .location-form button{
     float: none;
     display: block;
     clear: both;
     margin: auto;
   }
-
   .location-form label{
     display: inline-block;
     margin: 0 auto 20px;
@@ -561,11 +605,9 @@ h1,h2,h3,h4,h5,h6{
     width: auto;
     height: 70px;
   }
-
   .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus, .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     color: #fff;
   }
-
   .avatar {
     top: 0;
   }
@@ -626,23 +668,18 @@ h1,h2,h3,h4,h5,h6{
   .button button {
     font-size: 0.8em;
   }
-
   .signup-box{
     margin: 0 25px 35px;
   }
-
   .signup-text-box{
     margin: -15px 1px 0;
   }
-
   .signup-fb, .signup-ggl, .signup-lnk{
     width: 100%;
   }
-
   .login-remember{
     margin-bottom: 10px;
   }
-
   .login-forgot{
     float: left;
   }

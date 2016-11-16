@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@home');
+Route::post('/', 'HomeController@homeLocale');
 
 Route::get('faq', function () {
     return view('front.faq');
@@ -33,5 +34,10 @@ Route::resource('market', 'MarketController');
 
 
 Route::resource('product', 'ProductController');
+
+Route::delete('cart', 'CartController@destroy');
+Route::resource('cart', 'CartController');
+
+Route::patch('add-to-cart/{id}', 'CartController@addToCart')->middleware('auth');
 
 Auth::routes();
