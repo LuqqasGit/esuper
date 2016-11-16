@@ -1,6 +1,6 @@
 window.onload = function() {
-  var formLogin = document.getElementById("login");
-  var formSignUp = document.getElementById("signup");
+  var formLogin = document.getElementById('login');
+  var formSignUp = document.getElementById('signup');
   if (formSignUp) {
     var selectedEmail = formSignUp.querySelector('input[name="email"]');
     var selectedName = formSignUp.querySelector('input[name="fname"]');
@@ -10,7 +10,7 @@ window.onload = function() {
     var selectedPassword2 = formSignUp.querySelector('input[name="password2"]');
   }
   if (formLogin) {
-    var selectedUlogin = formLogin.querySelector('input[name="userlogin"]');
+    var selectedUlogin = formLogin.querySelector('input[name="email"]');
   }
 
   function emailValidate() {
@@ -25,11 +25,12 @@ window.onload = function() {
   }
 
   function textFieldValidate(evt) {
-    var errorDiv = document.getElementById(evt.target.div);
+    var errorDiv = evt.target.div;
     if (this.value){
       errorDiv.className = "signup-validate-div-hidden";
       this.className = "signup-imput-ok";
     } else {
+      console.log(errorDiv);
       errorDiv.className = "signup-validate-div";
       this.className = "";
     }
