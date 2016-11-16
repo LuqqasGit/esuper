@@ -30,10 +30,11 @@ Route::get('market/{name_id}', 'MarketController@index');
 
 Route::get('market/{name_id}/{id}', 'MarketController@show');
 
-Route::resource('market', 'MarketController');
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('market', 'MarketController');
+    Route::resource('product', 'ProductController');
+});
 
-
-Route::resource('product', 'ProductController');
 
 Route::delete('cart', 'CartController@destroy');
 Route::resource('cart', 'CartController');

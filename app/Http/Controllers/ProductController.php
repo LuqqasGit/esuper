@@ -2,10 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
+use App\Http\Requests\ProductRequest;
+use App\Product;
+use App\Market;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Event\PostResponseEvent;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +23,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('back.products.index', compact('products'));
     }
 
     /**
@@ -23,18 +34,23 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $brands = Brand::all();
+        $markets = Market::all();
+        return view('back.products.create', compact('markets', 'brands'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\
+    Product::create($request->all());
+    Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        Product::create($request->all());
+        return redirect()->route('product.index');
     }
 
     /**
@@ -54,9 +70,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $brands = Brand::all();
+        $markets = Market::all();
+        return view('back.products.edit', compact('product', 'brands', 'markets'));
     }
 
     /**
@@ -66,9 +84,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        return redirect()->route('product.index');
     }
 
     /**
@@ -77,8 +96,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }
