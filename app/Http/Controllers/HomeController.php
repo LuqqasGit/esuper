@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\MarketName;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('front.home');
+      $markets = MarketName::all();
+      return view('front.home', compact('markets'));
     }
 }

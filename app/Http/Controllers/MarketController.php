@@ -10,18 +10,18 @@ class MarketController extends Controller
 
   public function __construct()
   {
-    $this->middleware('auth');
-    $this->middleware('admin');
+    // $this->middleware('auth');
+    // $this->middleware('admin');
   }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($name_id)
     {
-      $markets = Market::all();
-      return view('back.markets.index', compact('markets'));
+      $markets = Market::where('name_id', $name_id)->get();
+      return view('front.markets.markets', compact('markets'));
     }
 
     /**
@@ -51,10 +51,12 @@ class MarketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name_id, $id)
     {
-        //
+      $market = Market::find($id);
+      return view('front.markets.market', compact('market'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

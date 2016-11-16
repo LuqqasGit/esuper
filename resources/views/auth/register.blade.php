@@ -15,13 +15,13 @@
         </div>
 
         <div class="signup-box">
-          <div class="social-signup">
+          {{-- <div class="social-signup">
             <div class="signup-fb"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></div>
             <div class="signup-ggl"><i class="fa fa-google fa-2x" aria-hidden="true"></i></div>
-            <!-- <div class="signup-lnk"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></div> -->
+            <div class="signup-lnk"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></div>
           </div>
 
-          <div class="signup-line"><span>ó</span></div>
+          <div class="signup-line"><span>ó</span></div> --}}
 
           <form class="signup-form" id="signup" method="post" enctype="multipart/form-data" action="{{ url('/register') }}">
             <fieldset>
@@ -75,6 +75,7 @@
 
       </div> <!-- end signup-main-container -->
     </div> <!-- end main-container -->
+    <div class="clear"></div>
   </div>
 
 @endsection

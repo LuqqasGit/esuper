@@ -1,9 +1,0 @@
-LD
-
-- Navbar admin
-- Footer robar
-- Market Controller (LLENAR)
-- Flujo:
-    Home con 3 markets
-    Lista de address en each market (crear view)
-    Lista de products en market (crear view)

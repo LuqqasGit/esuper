@@ -25,7 +25,12 @@ Route::post('updateAvatar', 'UserController@updateAvatar')->middleware('auth');
 
 Route::get('images/{filename}', 'UserController@getImage');
 
+Route::get('market/{name_id}', 'MarketController@index');
+
+Route::get('market/{name_id}/{id}', 'MarketController@show');
+
 Route::resource('market', 'MarketController');
+
 
 Route::resource('product', 'ProductController');
 

@@ -42,7 +42,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"><img class="logo" src="img/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
       </div>
       <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right">

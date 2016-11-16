@@ -43,5 +43,6 @@
           </section>
       </div><!-- .home-main-container -->
     </div><!-- .main-container -->
+    <div class="clear"></div>
   </div><!-- .main-container-bg -->
 @endsection

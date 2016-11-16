@@ -25,69 +25,27 @@
           </div>
         </form>
         <section class="super-logo-container">
-          <a href="">
-            <article class="super-logo">
-              <img src="img/coto.jpg" alt="coto">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/disco.jpg" alt="disco">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/jumbo.jpg" alt="jumbo">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/coto.jpg" alt="coto">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/disco.jpg" alt="disco">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/jumbo.jpg" alt="jumbo">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/coto.jpg" alt="coto">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/disco.jpg" alt="disco">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/jumbo.jpg" alt="jumbo">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/coto.jpg" alt="coto">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/disco.jpg" alt="disco">
-            </article>
-          </a>
-          <a href="">
-            <article class="super-logo">
-              <img src="img/jumbo.jpg" alt="jumbo">
-            </article>
-          </a>
+
+          <div class="list-group">
+            {{-- {{dd($markets)}} --}}
+
+              @foreach ($markets as $market)
+                @if (is_object($market))
+
+
+                      <a href="{{ url('/market/' . $market->id) }}">
+                        <article class="super-logo">
+                          <img src="{{ '/img/markets/' . $market->id . '.jpg'}}" alt="{{$market->name}}" />
+                        </article>
+                      </a>
+
+                @endif
+              @endforeach
+          </div>
         </section>
       </div><!-- .home-main-container -->
     </div><!-- .main-container -->
+    <div class="clear"></div>
   </div><!-- .main-container-bg -->
 @endsection
 
