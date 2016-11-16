@@ -25,8 +25,10 @@ Route::post('updateAvatar', 'UserController@updateAvatar')->middleware('auth');
 
 Route::get('images/{filename}', 'UserController@getImage');
 
-Route::resource('market', 'MarketController');
+Route::group(['prefix' => 'admin'], function () {
 
-Route::resource('product', 'ProductController');
+    Route::resource('market', 'MarketController');
+    Route::resource('product', 'ProductController');
+});
 
 Auth::routes();
