@@ -22,7 +22,7 @@
           <li><a href="/cart">Cart <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              {{str_limit(Auth::user()->name, 15)}}
+              {{str_limit(Auth::user()->username, 15)}}
               <span class="caret"></span>
               <div class="avatar">
                 <img src="images/{{Auth::user()->avatar}}" alt="avatar"/>

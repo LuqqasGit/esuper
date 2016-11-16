@@ -1,3 +1,8 @@
+/* AJAX HEADERS SETUP */
+$.ajaxSetup({
+  headers: { 'X-CSRF-TOKEN': "{{csrf_token()}}" }
+});
+
 window.onload = function() {
   var formLogin = document.getElementById('login');
   var formSignUp = document.getElementById('signup');
@@ -12,6 +17,8 @@ window.onload = function() {
   if (formLogin) {
     var selectedUlogin = formLogin.querySelector('input[name="email"]');
   }
+  var loading = $('#loading-div');
+  var auth = $('#auth');
 
   function emailValidate() {
     var emailError = document.getElementById("email-validate-div");
@@ -105,23 +112,53 @@ window.onload = function() {
     loginValidate();
   }
 
-    //frequently asked questions
-    var accordionQ = document.getElementsByClassName("accordionFaq");
+  //frequently asked questions
+  var accordionQ = document.getElementsByClassName("accordionFaq");
 
-    function toggleEvent(item, index, array) {
-        item.addEventListener("click", function() {
-            item.nextElementSibling.classList.toggle("show");
-            for (var i=index+1; i<array.length; i++) {
-                array[i].nextElementSibling.classList.remove("show");
-            }
-            for (var j=index-1; j>=0; j--) {
-                array[j].nextElementSibling.classList.remove("show");
-            }
-        });
-    }
-    //convert HTMLCollections into arrays
-    var questions = Array.prototype.slice.call(accordionQ);
+  function toggleEvent(item, index, array) {
+    item.addEventListener("click", function() {
+      item.nextElementSibling.classList.toggle("show");
+      for (var i=index+1; i<array.length; i++) {
+        array[i].nextElementSibling.classList.remove("show");
+      }
+      for (var j=index-1; j>=0; j--) {
+        array[j].nextElementSibling.classList.remove("show");
+      }
+    });
+  }
+  //convert HTMLCollections into arrays
+  var questions = Array.prototype.slice.call(accordionQ);
 
-    questions.forEach(toggleEvent);
+  questions.forEach(toggleEvent);
 
+  /* FIRST TIME WELCOME MODAL */
+  if (!auth.data('auth')) {
+    setTimeout(function(){
+      $('#first-time-welcome').slideDown('slow');
+    }, 2000);
+  }
+
+
+  $('#close-modal').on('click', function () {
+    $('#first-time-welcome').slideUp('slow');
+  });
+  /* END FIRST TIME WELCOME MODAL */
+
+  /* ADD ITEM TO CART */
+  $('a[href="addToCart"]').on('click', function (e) {
+    e.preventDefault();
+    loading.slideDown('slow');
+    $.ajax({
+      url: '/add-to-cart/' + $(this).data('id'),
+      type: 'patch',
+      success: function (msg) {
+        $("#refresh-after-ajax").text(msg);
+        loading.slideUp('fast');
+      },
+      error: function () {
+        loading.slideUp('fast');
+      }
+    });
+  });
+  /* END ADD ITEM TO CART */
 };
