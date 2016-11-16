@@ -24,11 +24,11 @@ a {
 /* FIRST TIME WELCOME MODAL */
 #first-time-welcome {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1000000;
   background-color: #2ecc71;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Lato', sans-serif;
   color: #fff;
   text-align: center;
