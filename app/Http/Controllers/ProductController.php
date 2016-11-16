@@ -43,8 +43,6 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\
-    Product::create($request->all());
-    Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

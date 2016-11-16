@@ -5,7 +5,7 @@
 
 <div class="form-group">
     {{ Form::label('price', 'Price:') }}
-    {{ Form::number('price', null, ['class' => 'form-control']) }}
+    {{ Form::number('price', null, ['class' => 'form-control', 'step' => 'any']) }}
 </div>
 
 <div class="form-group">
@@ -20,7 +20,7 @@
 
 <div class="form-group">
     {{ Form::label('brand_id', 'Brand:') }}
-    <select name=brand_id"" class="form-control">
+    <select name="brand_id" class="form-control">
         @foreach($brands as $brand)
             <option value="{{ $brand->id }}">{{ $brand->name }}</option>
         @endforeach
@@ -29,7 +29,7 @@
 
 <div class="form-group">
     {{ Form::label('type_id', 'Product Type:')  }}
-    {{ Form::select('type_id', [1 => 'Bread', 2 => 'Rice', 3 => 'Milk'], null, ['placeholder' => 'Choose product type', 'class' => 'form-control', 'required' => 'required']) }}
+    {{ Form::select('type_id', [1 => 'Cookies', 2 => 'Bread'], null, ['placeholder' => 'Choose product type', 'class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">

@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             {{--{!! link_to_route('product.index', 'Inicio', [], ['class' => 'navbar-brand']) !!}--}}
-            <a href="" class="navbar-brand">Home</a>
+            <a href="/" class="navbar-brand">Home</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
