@@ -11,6 +11,14 @@ a {
   text-decoration: none;
 }
 
+.logo {
+  padding: 18px 13px;
+  width: 250px;
+  position: absolute;
+  top: -7px;
+  z-index: 1000;
+}
+
 .clear {
   clear: both;
   margin-bottom:50px;
@@ -23,6 +31,7 @@ a {
 
 /* FIRST TIME WELCOME MODAL */
 #first-time-welcome {
+  display: none;
   position: absolute;
   z-index: 1000000;
   background-color: #2ecc71;

@@ -6,19 +6,9 @@
   <meta id="auth" data-auth="{{Auth::check()}}">
   <title>@yield('title') - eSuper</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    #first-time-welcome {
-      display: none;
-    }
-
-    .logo {
-      padding: 18px 13px;
-      width: 250px;
-      position: absolute;
-      top: -7px;
-      z-index: 1000;
-    }
-  </style>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div class="wrapper">
@@ -57,6 +47,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/styles.css">
