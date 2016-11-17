@@ -23,7 +23,6 @@ a {
 
 /* FIRST TIME WELCOME MODAL */
 #first-time-welcome {
-  display: none;
   position: absolute;
   z-index: 1000000;
   background-color: #2ecc71;
@@ -77,14 +76,6 @@ a {
 .main-footer {
   padding: 0 10px;
   background-color: #1abc9c;
-}
-
-.logo {
-  padding: 18px 13px;
-  width: 250px;
-  position: absolute;
-  top: -7px;
-  z-index: 1000;
 }
 
 .dropdown>a {
