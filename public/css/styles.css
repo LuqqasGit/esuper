@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'PT Sans',sans-serif;
   font-size: 10px;
   background: url(../img/bg-site.png) #f7f7f7;
   min-width: 320px;
@@ -13,9 +13,9 @@ a {
 
 .logo {
   padding: 18px 13px;
-  width: 250px;
+  width: 190px;
   position: absolute;
-  top: -7px;
+  top: -12px;
   z-index: 1000;
 }
 
@@ -88,7 +88,10 @@ a {
 }
 
 .dropdown>a {
-  padding-right: 70px !important;
+  /*padding-right: 70px !important;*/
+}
+.dropdown-menu-2 {
+  right: auto!important;
 }
 
 .avatar {
@@ -117,7 +120,7 @@ a {
 .navbar-default .navbar-nav>li>a {
   color: white;
   font-size: 1.8em;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
@@ -256,6 +259,169 @@ a {
 .acc-profile-pic {
   width: 100%;
 }
+
+.market-list {
+  display:none;
+  width:100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.market-list-group {
+  margin: 20px auto 0;
+}
+
+.market-list-over {
+display: inline-block;
+width: 410px;
+border: 1px solid rgb(224, 224, 224);
+border-radius: 4px 4px 4px 4px;
+margin-right: 10px;
+}
+
+.market-list-over-div {
+float: left;
+height: 122px;
+position: relative;
+width: 124px;
+background: rgb(247, 247, 247) none repeat scroll 0% 0% / auto padding-box border-box;
+border-top: 0px none rgb(57, 57, 57);
+border-right: 1px solid rgb(224, 224, 224);
+border-bottom: 0px none rgb(57, 57, 57);
+border-left: 0px none rgb(57, 57, 57);
+}
+
+.market-list-over-img {
+    text-size-adjust: 100%;
+    width: 96px;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 14px / 20px "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 21px;
+}
+
+.market-list-over-div2 {
+float: left;
+padding: 15px 0px 15px 30px;
+}
+
+.market-list-over-h3 {
+color: rgb(66, 66, 66);
+text-align: left;
+font: normal normal bold normal 18px / 22px "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+margin: 0px 0px 2px;
+text-transform: capitalize;
+}
+
+.market-list-over-p {
+    color: rgb(57, 57, 57);
+    text-align: left;
+    font: normal normal normal normal 14px / 20px "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.market-separator {
+  width: 100%;
+  border-top: 1px solid rgb(224, 224, 224);
+  opacity: .56;
+  margin: 10px 0 10px;
+}
+
+.div-markets-small-container2 {
+    height: 110px;
+    width: 110px;
+    margin: 6px 0px 0 7px;
+    border-radius: 50%;
+    border: 2px solid rgb(239, 239, 239);
+}
+
+/* Modal start */
+
+.modal-index {
+  top:auto;
+  bottom:auto;
+}
+
+.modal-dialog-index {
+  border: 2px solid rgba(0,0,0,0.5);
+  border-radius: 6px;
+}
+
+.modal-header-index {
+  background: #e4e4e4;
+  border-color: #d4d4d4;
+  border-radius: 3px;
+}
+
+.modal-message {
+  text-align: left;
+}
+
+.modal-title-2 {
+  margin: -31px 0 0 68px;
+}
+
+.text-free {
+  color:#43B02A;
+  font-weight:bold;
+}
+
+.img-markets-small {
+  margin-top: 13px;
+  width: 80px;
+  border-radius: 100%;
+}
+
+.img-markets-small-container {
+    margin-top: 23px;
+    width: 120px;
+    border-radius: 100%;
+}
+
+.div-markets-small {
+  display: inline-block;
+  height: 80px;
+  text-align: center;
+  margin: 7px 10px;
+  border-radius: 50%;
+  border: 2px solid rgb(239, 239, 239);
+}
+
+.div-markets-small-container {
+    display: inline-block;
+    height: 130px;
+    width: 130px;
+    text-align: center;
+    margin: 7px 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(239, 239, 239);
+}
+
+.locations-cont {
+  font-size:1.9em;
+  display:inline-block;
+  margin-top: 15px;
+}
+
+.modal-jumbo {
+  background: rgb(1, 155, 103);
+}
+
+.modal-coto {
+  background: #fd0a02;
+}
+
+.modal-disco {
+  background: white;
+}
+
+.modal-p {
+  margin-top: 10px;
+  margin-bottom: auto;
+  text-align: right;
+}
+
+/* End modal */
 
 /* Start of SignUp Form */
 .signup-form input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea{
@@ -650,6 +816,9 @@ h1,h2,h3,h4,h5,h6{
     display: inline-block;
     margin: 0 auto 20px;
     float: none;
+  }
+  .modal-index {
+    top: 0;
   }
 }
 

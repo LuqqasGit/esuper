@@ -45,5 +45,10 @@
   <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
   @yield('scripts')
   <script src="js/script.js"></script>
+  <script type="text/javascript">
+$(window).load(function(){
+  $('#myModal').modal('show');
+});
+</script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 
 @section('title')
-  Login
+  Ingresar
 @endsection
 
 @section('content')

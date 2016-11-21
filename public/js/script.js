@@ -161,4 +161,11 @@ window.onload = function() {
     });
   });
   /* END ADD ITEM TO CART */
+
+  // Modal box show
+  if (!auth.data('auth')) {
+  $('#esuper-intro').modal('show');
+  }
+  // End Modal box show
+
 };

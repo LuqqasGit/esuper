@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-  Register
+  Registrarse
 @endsection
 
 @section('content')
