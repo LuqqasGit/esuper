@@ -17,7 +17,7 @@
 
   <div id="market-list" class="market-list" >
     <h2>Elegí un supermercado para <b>Capital Federal</b></h2>
-    <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Mas ubicaciones pronto</p>
+    <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Pronto más ubicaciones</p>
     <div class="market-separator"></div>
 
     <div class="market-list-group">
@@ -61,7 +61,7 @@
               <div class="modal-body">
                 <div class="modal-message">
                   <img src="/img/quote.png" alt="esuper" style="width: 50px;opacity: 0.4;" />
-                    <h4 class="modal-title modal-title-2">eSuper es tu manera de ir al supermercado, online. Envío <span class="text-free">GRATIS</span> en tu primera orden. <b>Entrá, elegí, pedí, disfrutá.</b><br><br> Para empezar, elegí un supermercado, o buscá tu dirección en el <a href="#" data-dismiss="modal">mapa</a>.</h4>
+                    <h4 class="modal-title modal-title-2">eSuper es tu manera de ir al supermercado, online. Envío <span class="text-free">GRATIS</span> en tu primera orden. <b>Entrá, elegí, pedí, disfrutá.</b><br><br> Para empezar, elegí un supermercado, o buscá tu dirección en el <a href="#" id="test" data-dismiss="modal">mapa</a>.</h4>
 
                     <div style="text-align: center;">
                     	<div class="div-markets-small modal-coto">

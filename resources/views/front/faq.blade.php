@@ -1,14 +1,14 @@
 @extends('front.master')
 
 @section('title')
-  Preguntas Frecuentes
+  Ayuda
 @endsection
 
 @section('content')
   <div class="main-container-bg-site">
     <div class="main-container">
       <div class="faq-main-container">
-          <h1 class="title faq">Preguntas frecuentes</h1>
+        <h2>Ayuda - eSuper</h2>
           <section class="questions">
               <article class="questions-and-answers">
                   <button class="accordionFaq">¿Qué es eSUPER?</button>
