@@ -14,7 +14,6 @@
 
 
   </style>
-  <div class="main-container-bg">
 
   <div id="market-list" class="market-list" >
     <h2>Elegí un supermercado para <b>Capital Federal</b></h2>
@@ -43,7 +42,8 @@
     </div>
   </div>
 
-    <div id="main-container-bg" class="main-container">
+  <div id="main-container-bg" class="main-container-bg">
+    <div class="main-container">
       <div class="home-main-container">
         <h1 class="title"> </h1>
 
