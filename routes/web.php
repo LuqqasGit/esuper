@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('product', 'ProductController');
 });
 
+Route::get('getMarkets', 'MarketController@getMarkets');
 
 Route::delete('cart', 'CartController@destroy');
 Route::resource('cart', 'CartController');

@@ -46,7 +46,7 @@
   @yield('scripts')
   <script src="js/script.js"></script>
   <script type="text/javascript">
-$(window).load(function(){
+$(window).on('load', function(){
   $('#myModal').modal('show');
 });
 </script>

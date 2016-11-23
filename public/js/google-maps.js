@@ -25,27 +25,47 @@ autocomplete.addListener('place_changed', fillInAddress);
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.549, lng: -58.443},
-    zoom: 14
+    center: {lat: -34.6159541, lng: -58.4395003},
+    zoom: 15
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+      pos = {lat: position.coords.latitude, lng: position.coords.longitude};
+      map.setCenter(pos);
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
-      map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+  var markets = [];
+
+  $.ajax({
+    url: '/getMarkets',
+    type: 'get',
+    success: function (msg) {
+      markets = msg;
+      console.log(markets);
+    },
+    error: function () {
+      alert('Error');
+    }
+  });
+
+  for (var i = 0; i < markets.length; i++) {
+    var market = markets[i];
+    var marker = new google.maps.Marker({
+      position: {lat: market[1], lng: market[2]},
+      map: map,
+      title: market[0]
+    });
   }
 }
 
