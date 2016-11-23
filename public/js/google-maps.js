@@ -11,6 +11,19 @@ postal_code: 'short_name'
 };
 var pos;
 var map;
+var markets = [];
+
+$.ajax({
+  url: '/getMarkets',
+  type: 'get',
+  success: function (msg) {
+    markets = msg;
+    console.log(markets);
+  },
+  error: function () {
+    alert('Error');
+  }
+});
 
 function initAutocomplete() {
 // Create the autocomplete object, restricting the search to geographical
@@ -25,8 +38,8 @@ autocomplete.addListener('place_changed', fillInAddress);
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.6159541, lng: -58.4395003},
-    zoom: 15
+    center: {lat: -34.567950, lng: -58.457611},
+    zoom: 13
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -44,20 +57,6 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
-
-  var markets = [];
-
-  $.ajax({
-    url: '/getMarkets',
-    type: 'get',
-    success: function (msg) {
-      markets = msg;
-      console.log(markets);
-    },
-    error: function () {
-      alert('Error');
-    }
-  });
 
   for (var i = 0; i < markets.length; i++) {
     var market = markets[i];
@@ -108,8 +107,3 @@ function geolocate() {
   }
 }
 // [END region_geolocation]
-
-function initialize() {
-  initMap();
-  initAutocomplete();
-}

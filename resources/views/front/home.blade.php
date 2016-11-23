@@ -116,16 +116,15 @@
 
 @section('scripts')
   <script src="js/google-maps.js"></script>
-  {{-- https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10 --}}
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initialize" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initAutocomplete" async defer></script>
   <script>
     $('#test').on('click', function (e) {
       e.preventDefault();
+      initMap();
       // $('#market-list').slideUp('fast');
       $('#map').slideDown('fast');
       setTimeout(function(){
         google.maps.event.trigger(map, 'resize');
-        map.setCenter(pos);
       }, 300);
     });
 

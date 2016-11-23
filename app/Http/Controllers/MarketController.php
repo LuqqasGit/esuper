@@ -106,12 +106,9 @@ class MarketController extends Controller
   public function getMarkets()
   {
     $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
-    $markets = $markets->toArray();
-    // foreach ($markets as $market) {
-    //   // dd($market);
-    //   $marketsArray[] = $market->toArray();
-    // }
-    // dd($markets);
-    return $markets;
+    foreach ($markets as $market) {
+      $marketsArray[] = [$market->name, $market->lat, $market->lng];
+    }
+    return $marketsArray;
   }
 }
