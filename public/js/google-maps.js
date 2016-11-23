@@ -18,7 +18,10 @@ $.ajax({
   type: 'get',
   success: function (msg) {
     markets = msg;
-    console.log(markets);
+    initMap();
+    setTimeout(function(){
+      google.maps.event.trigger(map, 'resize');
+    }, 400);
   },
   error: function () {
     alert('Error');
@@ -107,3 +110,7 @@ function geolocate() {
   }
 }
 // [END region_geolocation]
+
+function initialize() {
+  initAutocomplete();
+}

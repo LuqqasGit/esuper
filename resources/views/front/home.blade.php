@@ -6,7 +6,6 @@
 @section('content')
   <style>
     #map {
-      display: none;
       height: 600px;
       width: 95.8%;
       margin: 0 auto;
@@ -116,17 +115,15 @@
 
 @section('scripts')
   <script src="js/google-maps.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initAutocomplete" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initialize" async defer></script>
   <script>
-    $('#test').on('click', function (e) {
-      e.preventDefault();
-      initMap();
-      // $('#market-list').slideUp('fast');
-      $('#map').slideDown('fast');
-      setTimeout(function(){
-        google.maps.event.trigger(map, 'resize');
-      }, 300);
-    });
+    // $('#test').on('click', function (e) {
+    //   e.preventDefault();
+    //
+    //   // $('#market-list').slideUp('fast');
+    //   $('#map').slideDown('fast');
+    //
+    // });
 
     $('#supermarkets-home').on('click', function (e) {
       e.preventDefault();

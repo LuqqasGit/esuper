@@ -13,19 +13,6 @@
 <body>
   <div class="wrapper">
 
-    <div id="first-time-welcome">
-      <img src="/img/ftwbg.jpg" alt="guy ordering from esuper">
-      <div id="close-modal"><i class="fa fa-times" aria-hidden="true"></i></div>
-      <h1>Bienvenido a eSUPER</h1>
-      <h2>Hacé las compras, desde la comodidad de tu casa!</h2>
-      <ol>
-        <li>Elegí tu cadena favorita</li>
-        <li>Buscá los productos que quieras</li>
-        <li>Agregalos al carrito</li>
-        <li>Comprá desde la comodidad de tu casa y esperá el pedido!</li>
-      </ol>
-    </div>
-
   @include('front.partials.navbar')
 
   @yield('content')
@@ -45,10 +32,5 @@
   <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
   @yield('scripts')
   <script src="/js/script.js"></script>
-  <script type="text/javascript">
-$(window).on('load', function(){
-  $('#myModal').modal('show');
-});
-</script>
 </body>
 </html>

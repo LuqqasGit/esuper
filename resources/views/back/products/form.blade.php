@@ -13,7 +13,7 @@
 {{--    {{ Form::select('market_id', [1 => 'Disco', 2 => 'Jumbo', 3 => 'Carrefour'], null, ['placeholder' => 'Choose market', 'class' => 'form-control', 'required' => 'required']) }}--}}
     <select class="form-control" name="market_id">
         @foreach($markets as $market)
-            <option value="{{$market->id}}">{{$market->name_id}}</option>
+            <option value="{{$market->id}}">{{$market->name}} ({{$market->address}})</option>
         @endforeach
     </select>
 </div>

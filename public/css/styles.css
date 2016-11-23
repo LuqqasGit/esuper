@@ -29,59 +29,6 @@ a {
 	position: relative;
 }
 
-/* FIRST TIME WELCOME MODAL */
-#first-time-welcome {
-  display: none;
-  position: absolute;
-  z-index: 1000000;
-  background-color: #2ecc71;
-  width: 100vw;
-  min-height: 100vh;
-  font-family: 'Lato', sans-serif;
-  color: #fff;
-  text-align: center;
-}
-
-#first-time-welcome img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  min-height: 100vh;
-  opacity: 0.1;
-}
-
-#first-time-welcome h1, #first-time-welcome h2, #first-time-welcome ol {
-  font-weight: 100;
-}
-
-#first-time-welcome h1 {
-  padding: 100px 0;
-  font-size: 72px;
-}
-
-#first-time-welcome h2 {
-  font-size: 40px;
-  margin-bottom: 50px;
-}
-
-#first-time-welcome ol {
-  padding: 0 10%;
-  font-size: 35px;
-  line-height: 75px;
-  text-align: left;
-}
-
-#close-modal {
-  font-weight: 100;
-  position: absolute;
-  top: 0;
-  right: 15px;
-  font-size: 50px;
-  cursor: pointer;
-}
-/* END FIRST TIME WELCOME MODAL */
-
 .main-footer {
   padding: 0 10px;
   background-color: #1abc9c;

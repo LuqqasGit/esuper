@@ -35,7 +35,7 @@ class ProductController extends Controller
     public function create()
     {
         $brands = Brand::all();
-        $markets = Market::all();
+        $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
         return view('back.products.create', compact('markets', 'brands'));
     }
 

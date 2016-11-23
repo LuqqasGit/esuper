@@ -131,19 +131,6 @@ window.onload = function() {
 
   questions.forEach(toggleEvent);
 
-  /* FIRST TIME WELCOME MODAL */
-  // if (!auth.data('auth')) {
-  //   setTimeout(function(){
-  //     $('#first-time-welcome').slideDown('slow');
-  //   }, 2000);
-  // }
-
-
-  $('#close-modal').on('click', function () {
-    $('#first-time-welcome').slideUp('slow');
-  });
-  /* END FIRST TIME WELCOME MODAL */
-
   /* ADD ITEM TO CART */
   $('a[href="addToCart"]').on('click', function (e) {
     e.preventDefault();
