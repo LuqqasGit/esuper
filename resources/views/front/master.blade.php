@@ -14,7 +14,7 @@
   <div class="wrapper">
 
     <div id="first-time-welcome">
-      <img src="img/ftwbg.jpg" alt="guy ordering from esuper">
+      <img src="/img/ftwbg.jpg" alt="guy ordering from esuper">
       <div id="close-modal"><i class="fa fa-times" aria-hidden="true"></i></div>
       <h1>Bienvenido a eSUPER</h1>
       <h2>Hacé las compras, desde la comodidad de tu casa!</h2>
@@ -44,7 +44,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/2390ddd5c7.js"></script>
   @yield('scripts')
-  <script src="js/script.js"></script>
+  <script src="/js/script.js"></script>
   <script type="text/javascript">
 $(window).on('load', function(){
   $('#myModal').modal('show');

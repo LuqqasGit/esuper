@@ -18,21 +18,10 @@ class MarketController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
-  {
-    $markets = Market::all();
-    return view('front.markets.markets', compact('markets'));
-  }
-
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function indexUnique($name_id)
+  public function index($name_id)
   {
     $markets = Market::where('name_id', $name_id)->get();
-    return view('front.markets.markets', compact('markets'));
+    return view('front.markets.index', compact('markets'));
   }
 
   /**
@@ -65,7 +54,7 @@ class MarketController extends Controller
   public function show($name_id, $id)
   {
     $market = Market::find($id);
-    return view('front.markets.market', compact('market'));
+    return view('front.markets.show', compact('market'));
   }
 
 
