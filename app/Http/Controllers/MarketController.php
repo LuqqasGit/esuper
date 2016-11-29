@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Market;
+use App\MarketName;
+use App\Product;
 
 class MarketController extends Controller
 {
@@ -21,7 +23,8 @@ class MarketController extends Controller
   public function index($name_id)
   {
     $markets = Market::where('name_id', $name_id)->get();
-    return view('front.markets.index', compact('markets'));
+    $marketname = MarketName::where('id', $name_id)->get();
+    return view('front.markets.index', compact('markets'), compact('marketname'));
   }
 
   /**
@@ -54,7 +57,8 @@ class MarketController extends Controller
   public function show($name_id, $id)
   {
     $market = Market::find($id);
-    return view('front.markets.show', compact('market'));
+    $products = Product::where('market_id', '=', $id)->get();
+    return view('front.markets.show', compact('market'), compact('products'));
   }
 
 

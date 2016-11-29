@@ -1,4 +1,5 @@
 <header>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,11 +11,6 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
-        <div class="navbar-collapse collapse" id="navbar-prev" aria-expanded="false" style="height: 1px;margin-left: 175px;">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a id="supermarkets-home" href="#">Supermercados <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
       </div>
       <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right">

@@ -1,14 +1,14 @@
 @extends('front.master')
 
 @section('title')
-  Shopping Cart
+  Compra - 
 @endsection
 
 @section('content')
-  <div class="main-container-bg-site">
-    <div class="main-container">
-      <div class="faq-main-container">
-          <h1 class="title faq">Shopping Cart</h1>
+
+          <h2 class="h2-title">Shopping Cart</h2>
+          <div class="line-separator"></div>
+
           <div class="container">
             <ul class="list-group cart-list">
               @php
@@ -28,9 +28,7 @@
               </li>
             </ul>
           </div>
-      </div><!-- .home-main-container -->
-    </div><!-- .main-container -->
-  </div><!-- .main-container-bg -->
+
 @endsection
 
 @section('scripts')

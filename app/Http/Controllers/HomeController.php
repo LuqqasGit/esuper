@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MarketName;
+use App\Market;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,10 @@ class HomeController extends Controller
     public function home()
     {
       $markets = MarketName::all();
-      return view('front.home', compact('markets'));
+        foreach ($markets as $market) {
+          $count = Market::where('name_id', '=', $market->id)->count();
+          $marketcount[$market->id] = $count;
+        }
+      return view('front.home', compact('markets'), compact('marketcount'));
     }
 }

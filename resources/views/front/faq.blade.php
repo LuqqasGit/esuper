@@ -1,14 +1,13 @@
 @extends('front.master')
 
 @section('title')
-  Ayuda
+Ayuda -
 @endsection
 
 @section('content')
-  <div class="main-container-bg-site">
-    <div class="main-container">
       <div class="faq-main-container">
-        <h2>Ayuda - eSuper</h2>
+        <h2 class="h2-title">Ayuda</h2>
+        <div class="line-separator"></div>
           <section class="questions">
               <article class="questions-and-answers">
                   <button class="accordionFaq">¿Qué es eSUPER?</button>
@@ -41,8 +40,5 @@
                   </div>
               </article>
           </section>
-      </div><!-- .home-main-container -->
-    </div><!-- .main-container -->
-    <div class="clear"></div>
-  </div><!-- .main-container-bg -->
+      </div><!-- .faq-main-container -->
 @endsection
