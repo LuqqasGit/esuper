@@ -12,6 +12,8 @@ class Brand extends Model
 
     ];
 
+    public $timestamps = false;
+
 //    public function products()
 //    {
 //        return $this->hasMany('App\Product');

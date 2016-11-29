@@ -10,36 +10,39 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
+        <div class="navbar-collapse collapse" id="navbar-prev" aria-expanded="false" style="height: 1px;margin-left: 175px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="supermarkets-home" href="#">Supermercados <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
       </div>
       <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Home</a></li>
-          <li><a href="/faq">Faq</a></li>
+          <li><a href="/faq">Ayuda</a></li>
           @if (!Auth::check())
-          <li><a href="/login">Log in</a></li>
-          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Ingresar</a></li>
+          <li><a href="/register">Registrarse</a></li>
           @else
-          <li><a href="/cart">Cart <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              {{str_limit(Auth::user()->username, 15)}}
-              <span class="caret"></span>
-              <div class="avatar">
-                <img src="images/{{Auth::user()->avatar}}" alt="avatar"/>
-              </div>
+              Cuenta <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="/profile">My account</a></li>
+          {{-- <span class="caret"></span> --}}
+          {{-- <div class="avatar"><img src="images/{{Auth::user()->avatar}}" alt="avatar"/></div> --}}
+            <ul class="dropdown-menu dropdown-menu-2">
+              <li><a href="/profile">Hola, {{str_limit(Auth::user()->username, 15)}}</a></li>
               @if (Auth::user()->type == 2)
               <li role="separator" class="divider"></li>
-              <li><a href="/admin/market">Markets</a></li>
-              <li><a href="/admin/product">Products</a></li>
+              <li><a href="/profile">Mi cuenta</a></li>
+              <li><a href="/orders">Mis pedidos</a></li>
+              <li><a href="/admin/market">Supermercados</a></li>
               @endif
               <li role="separator" class="divider"></li>
-              <li><a href="/logout">Logout</a></li>
+              <li><a href="/logout">Salir</a></li>
             </ul>
           </li>
           @endif
+          <li><a href="/cart">Carrito <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
         </ul>
       </div>
     </div><!-- /.container-fluid -->

@@ -28,8 +28,3 @@
     <div class="clear"></div>
   </div><!-- .main-container-bg -->
 @endsection
-
-@section('scripts')
-  <script src="js/google-maps.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuSadsJWqoMilFsznFp2U0TcSKwb_zTc&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
-@endsection

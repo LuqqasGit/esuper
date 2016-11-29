@@ -2,9 +2,9 @@
 <footer class="main-footer">
   <div class="footer-links">
     <ul style="list-style: none;">
-      <li><a href="#">Privacy Policy</a></li><span class="footer-pipe">|</span>
-      <li><a href="#">Terms and Conditions</a></li><span class="footer-pipe">|</span>
-      <li><a href="#">Contact us</a></li>
+      <li><a href="#">Política de privacidad</a></li><span class="footer-pipe">|</span>
+      <li><a href="#">Términos</a></li><span class="footer-pipe">|</span>
+      <li><a href="#">Contacto</a></li>
     </ul>
 
     <img src="/img/logo_black.png" class="footer-logo" alt="esuper" />

@@ -16,7 +16,7 @@ class Market extends Model
 
   public function name()
   {
-    return $this->belongsTo('App\MarketName','id');
+    return $this->hasOne('App\MarketName','id');
   }
 
 }

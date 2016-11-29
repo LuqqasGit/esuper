@@ -6,6 +6,7 @@ use App\Brand;
 use App\Http\Requests\ProductRequest;
 use App\Product;
 use App\Market;
+use App\Product_Types;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
 
@@ -35,8 +36,9 @@ class ProductController extends Controller
     public function create()
     {
         $brands = Brand::all();
-        $markets = Market::all();
-        return view('back.products.create', compact('markets', 'brands'));
+        $product_types = Product_Types::all();
+        $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
+        return view('back.products.create', compact('markets', 'brands', 'product_types'));
     }
 
     /**
@@ -47,7 +49,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        $product = New Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->market_id = $request->market_id;
+        if(Brand::find($request->brand_id)) {
+            $product->brand_id = $request->brand_id;
+        } else {
+            $brand = New Brand();
+            $brand->name = $request->brand_id;
+            $brand->save();
+            $product->brand_id = $brand->id;
+        }
+        if(Product_Types::find($request->type_id)) {
+            $product->type_id = $request->type_id;
+        } else {
+            $product_type = New Product_Types();
+            $product_type->name = $request->type_id;
+            $product_type->save();
+            $product->type_id = $product_type->id;
+        }
+        $product->description = $request->description;
+        $product->save();
+//        Product::create($request->all());
         return redirect()->route('product.index');
     }
 
@@ -72,7 +96,8 @@ class ProductController extends Controller
     {
         $brands = Brand::all();
         $markets = Market::all();
-        return view('back.products.edit', compact('product', 'brands', 'markets'));
+        $product_types = Product_Types::all();
+        return view('back.products.edit', compact('product', 'brands', 'markets', 'product_types'));
     }
 
     /**
@@ -84,7 +109,27 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->market_id = $request->market_id;
+        if(Brand::find($request->brand_id)) {
+            $product->brand_id = $request->brand_id;
+        } else {
+            $brand = New Brand();
+            $brand->name = $request->brand_id;
+            $brand->save();
+            $product->brand_id = $brand->id;
+        }
+        if(Product_Types::find($request->type_id)) {
+            $product->type_id = $request->type_id;
+        } else {
+            $product_type = New Product_Types();
+            $product_type->name = $request->type_id;
+            $product_type->save();
+            $product->type_id = $product_type->id;
+        }
+        $product->description = $request->description;
+        $product->save();
         return redirect()->route('product.index');
     }
 

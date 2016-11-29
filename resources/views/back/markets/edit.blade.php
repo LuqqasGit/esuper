@@ -1,18 +1,18 @@
 @extends('back.master')
 
 @section('title')
-    Edit Market
+    Editar Market
 @endsection
 
 @section('content')
 
-{!! Form::model($product, ['method' => 'PATCH', 'route' => ['product.update', 'id' => $product->id]]) !!}
+{!! Form::model($market, ['method' => 'PATCH', 'route' => ['market.update', 'id' => $market->id]]) !!}
 
-    <h2>Edit product: {{ $product->name }}</h2>
+    <h2>Editar Market: {{ $name }} - {{ $market->address }}</h2>
 
-    @include('back.products.form')
+    @include('back.markets.form')
 
-    {{ Form::submit('Edit product', ['class' => 'btn btn-primary']) }}
+    {{ Form::submit('Editar Market', ['class' => 'btn btn-primary']) }}
 
 {!! Form::close() !!}
 

@@ -2,7 +2,7 @@
 
 
 @section('title')
-  Login
+  Ingresar
 @endsection
 
 @section('content')
@@ -12,7 +12,8 @@
         <div class="signup-main-container">
 
           <div class="signup-text-box">
-            <h1 class="title signup">Inicia sesión en eSuper</h1>
+            <h2><b>¡Bienvenido de nuevo!</b></h2>
+            <h2 style="margin-bottom: 25px;">Ingresa con tu usuario y contraseña</h2>
           </div>
 
           <div class="signup-box">

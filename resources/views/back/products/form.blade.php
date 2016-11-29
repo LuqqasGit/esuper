@@ -1,26 +1,28 @@
 <div class="form-group">
-    {{ Form::label('name', 'Name:')  }}
+    {{ Form::label('name', 'Nombre:')  }}
     {{ Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) }}
 </div>
 
 <div class="form-group">
-    {{ Form::label('price', 'Price:') }}
+    {{ Form::label('price', 'Precio:') }}
     {{ Form::number('price', null, ['class' => 'form-control', 'step' => 'any']) }}
 </div>
 
 <div class="form-group">
     {{ Form::label('market_id', 'Market:')  }}
 {{--    {{ Form::select('market_id', [1 => 'Disco', 2 => 'Jumbo', 3 => 'Carrefour'], null, ['placeholder' => 'Choose market', 'class' => 'form-control', 'required' => 'required']) }}--}}
-    <select class="form-control" name="market_id">
+    <select class="form-control" name="market_id" id="market_list">
+        <option value=""></option>
         @foreach($markets as $market)
-            <option value="{{$market->id}}">{{$market->name_id}}</option>
+            <option value="{{$market->id}}">{{$market->name}} ({{$market->address}})</option>
         @endforeach
     </select>
 </div>
 
 <div class="form-group">
-    {{ Form::label('brand_id', 'Brand:') }}
-    <select name="brand_id" class="form-control">
+    {{ Form::label('brand_id', 'Marca:') }}
+    <select name="brand_id" class="form-control" id="brand_list">
+        <option value=""></option>
         @foreach($brands as $brand)
             <option value="{{ $brand->id }}">{{ $brand->name }}</option>
         @endforeach
@@ -28,12 +30,18 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('type_id', 'Product Type:')  }}
-    {{ Form::select('type_id', [1 => 'Cookies', 2 => 'Bread'], null, ['placeholder' => 'Choose product type', 'class' => 'form-control', 'required' => 'required']) }}
+    {{ Form::label('type_id', 'Tipo de Producto:') }}
+    <select name="type_id" class="form-control" id="type_list">
+        <option value=""></option>
+        @foreach($product_types as $type)
+            <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endforeach
+    </select>
+{{--    {{ Form::select('type_id', [1 => 'Cookies', 2 => 'Bread'], null, ['placeholder' => '', 'class' => 'form-control', 'id' => 'product_list', 'required' => 'required']) }}--}}
 </div>
 
 <div class="form-group">
-    {{ Form::label('description', 'Description:')  }}
+    {{ Form::label('description', 'Descripcion:')  }}
     {{ Form::textarea('description', null, ['class' => 'form-control', 'size' => '30x5']) }}
 </div>
 

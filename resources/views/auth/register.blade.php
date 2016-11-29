@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-  Register
+  Registrarse
 @endsection
 
 @section('content')
@@ -10,8 +10,8 @@
       <div class="signup-main-container">
 
         <div class="signup-text-box">
-          <h1 class="title signup">Regístrate en eSuper</h1>
-          <h2 class="signup-subtitle">Supermercado desde la comodidad de tu casa.</h2>
+          <h2>Registrate en eSuper</h2>
+          <h2 style="margin-bottom: 25px;"><b>Recibí tus compras en menos de 1 hora</b></h2>
         </div>
 
         <div class="signup-box">

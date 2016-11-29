@@ -14,6 +14,6 @@ class MarketName extends Model
 
   public function market()
   {
-    return $this->hasMany('App\Market', 'name_id');
+    return $this->belongsToMany('App\Market', 'name_id');
   }
 }
