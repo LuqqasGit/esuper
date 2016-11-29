@@ -1,18 +1,18 @@
 @extends('back.master')
 
 @section('title')
-    Create Market
+    Crear Nuevo Market
 @endsection
 
 @section('content')
 
-    {!! Form::open(['route' => 'product.store', 'files' => true]) !!}
+    {!! Form::open(['route' => 'market.store', 'files' => true]) !!}
     {{-- Agregar un select para asociar product con Market --}}
-    <h2>Create new product</h2>
+    <h2>Crear nuevo market</h2>
 
-    @include('back.products.form')
+    @include('back.markets.form')
 
-    {{ Form::submit('Create Product', ['class' => 'btn btn-primary']) }}
+    {{ Form::submit('Crear Market', ['class' => 'btn btn-primary']) }}
 
     {!! Form::close() !!}
 
