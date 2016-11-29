@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-  Compra - 
+Compra - 
 @endsection
 
 @section('content')

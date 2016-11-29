@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-  Home -
+Home -
 @endsection
 
 @section('header-divs')

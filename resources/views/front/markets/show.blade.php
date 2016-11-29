@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-  {{$market->name->name}} ({{$market->address}}) -
+{{ucwords($market->name->name)}} ({{ucwords($market->address)}}) -
 @endsection
 
 @section('header-divs')

@@ -1,13 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 
 body {
-  font-family: 'PT Sans',sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 10px;
   min-width: 320px;
-}
-
-a {
-  text-decoration: none;
 }
 
 .logo {
