@@ -6,6 +6,7 @@ $.ajax({
   url: '/getMarkets',
   type: 'get',
   success: function (msg) {
+    console.log($(location).attr('href'));
     markets = msg;
     initMap();
     setTimeout(function(){
@@ -68,7 +69,7 @@ function setMarkers (map, markets, infoWindow) {
                       '<div class="iw-title">'+ market['name']+ ' - '+ market['address'] +'</div>' +
                       '<div class="iw-content">' +
                         '<div class="iw-subTitle"><a href="/market/'+market['name_id']+'/'+market['id']+'">Ver Productos</a></div>' +
-                        '<img src="img/markets/'+market['name_id']+'.jpg" alt="Porcelain Factory of Vista Alegre" width="100">' +
+                        '<img src="/img/markets/'+market['name_id']+'.jpg" alt="'+market['name']+'" width="100">' +
                         '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur perferendis modi asperiores explicabo provident atque aspernatur saepe nobis tempore nisi, sit quia excepturi odio ut in maxime eveniet animi totam!</p>' +
                         '<div class="iw-subTitle">Subtitulo</div>' +
                         '<p>Lorem ipsum dolor.<br>Sit amet, consectetur<br>'+

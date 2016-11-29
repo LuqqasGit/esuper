@@ -9,13 +9,6 @@
 @endsection
 
 @section('content')
-<style>
-  #map {
-    height: 600px;
-    width: 95.8%;
-    margin: 0 auto;
-  }
-</style>
 
       <h2 class="h2-title"><b style="text-transform:capitalize;">{{$marketname[0]->name}}</b> en Capital Federal</h2>
         <div class="line-separator"></div>
@@ -52,5 +45,5 @@
 
 @section('scripts')
   <script src="/js/google-maps.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initialize" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places" async defer></script>
 @endsection
