@@ -54,7 +54,8 @@ class MarketController extends Controller
   public function show($name_id, $id)
   {
     $market = Market::find($id);
-    return view('front.markets.show', compact('market'));
+    // $products = Product::where();
+    return view('front.markets.show', compact('market', 'products'));
   }
 
 
@@ -96,7 +97,7 @@ class MarketController extends Controller
   {
     $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
     foreach ($markets as $market) {
-      $marketsArray[] = [$market->name, $market->lat, $market->lng];
+      $marketsArray[] = ['id' => $market->id, 'name' => $market->name, 'lat' => $market->lat, 'lng' => $market->lng, 'name_id' => $market->name_id, 'address' => $market->address];
     }
     return $marketsArray;
   }
