@@ -1,22 +1,19 @@
 @extends('front.master')
 
-
 @section('title')
-  Ingresar
+  Ingresar -
 @endsection
 
 @section('content')
 
-    <div class="main-container-bg-site">
-      <div class="main-container">
         <div class="signup-main-container">
-
           <div class="signup-text-box">
-            <h2><b>¡Bienvenido de nuevo!</b></h2>
-            <h2 style="margin-bottom: 25px;">Ingresa con tu usuario y contraseña</h2>
+            <h2 class="h2-title"><b>¡Bienvenido de nuevo!</b></h2>
+            <h2 class="h2-title">Ingresa con tu usuario y contraseña</h2>
           </div>
-
+          <div class="line-separator"></div>
           <div class="signup-box">
+
             {{-- <div class="social-signup">
               <div class="signup-fb"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></div>
               <div class="signup-ggl"><i class="fa fa-google fa-2x" aria-hidden="true"></i></div>
@@ -68,8 +65,4 @@
             </div>
           </div> <!-- end signup-box -->
         </div> <!-- end signup-main-container -->
-      </div>
-      <div class="clear"></div>
-    </div>
-
 @endsection

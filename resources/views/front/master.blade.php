@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta charset="utf-8">
   <meta id="auth" data-auth="{{Auth::check()}}">
-  <title>@yield('title') - eSuper</title>
+  <title>@yield('title')eSuper</title>
   <link rel="icon" type="image/png" href="/favicon.png">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,11 +13,17 @@
 <body>
   <div class="wrapper">
 
-  @include('front.partials.navbar')
+    @yield('header-divs', '<div class="main-container"><div class="black-overlay">')
 
-  @yield('content')
+        @include('front.partials.navbar')
 
-  @include('front.partials.footer')
+        @yield('content')
+
+        @include('front.partials.footer')
+
+      </div> {{-- end black-overlay --}}
+    </div> {{-- end main-container --}}
+
 
     <div id="loading-div" class="loader-overlay">
       <div class="loader-container">

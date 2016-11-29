@@ -1,18 +1,18 @@
 @extends('front.master')
 
 @section('title')
-  Registrarse
+  Registrarse -
 @endsection
 
 @section('content')
-  <div class="main-container-bg-site">
-    <div class="main-container">
-      <div class="signup-main-container">
 
+      <div class="signup-main-container">
         <div class="signup-text-box">
-          <h2>Registrate en eSuper</h2>
-          <h2 style="margin-bottom: 25px;"><b>Recibí tus compras en menos de 1 hora</b></h2>
+          <h2 class="h2-title">Registrate en eSuper</h2>
+          <h2  class="h2-title"><b>Recibí tus compras en menos de 1 hora</b></h2>
         </div>
+
+        <div class="line-separator"></div>
 
         <div class="signup-box">
           {{-- <div class="social-signup">
@@ -74,8 +74,5 @@
         </div> <!-- end signup-box -->
 
       </div> <!-- end signup-main-container -->
-    </div> <!-- end main-container -->
-    <div class="clear"></div>
-  </div>
 
 @endsection
