@@ -5,35 +5,10 @@
 @endsection
 
 @section('header-divs')
-<div style="    height: 100%;
-    background: url(/img/bg.jpg);
-    text-align: center;background-size: cover;">
-    <div style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);height:100%;    padding-top: 5px;">
-
-
+<div class="main-container-market"><div class="black-overlay-market">
 @endsection
 
 @section('content')
-
-  <style media="screen">
-
-  .item-card {
-      display: inline-block;
-      position: relative;
-      width: 206px;
-      height: 336px;
-      vertical-align: top;
-      background: #fff;
-      border: 1px solid #e5edec;
-      text-align: left;
-      color: #5a5a5a;
-      font-weight: 400;
-      margin: 0 -1px -1px 0;
-      cursor: pointer;
-      white-space: initial;
-  }
-
-  </style>
 
   <div class="div-markets-small-container3 modal-{{$market->name->name}}">
   <img src="{{ '/img/markets/' . $market->name_id . '.jpg'}}" alt="{{$market->name_id}}" class="img-markets-small2" />
@@ -55,7 +30,9 @@
         @foreach ($products as $product)
 
           <li class="item-card">
-            {{$product->name}}
+            <h4 style="text-transform:capitalize;">{{$product->name}}</h4>
+            <img src="{{ '/img/products/' . $product->id . '.jpg'}}" alt="{{$product->name}}" class="product-list-img" />
+            <span style="display:block">${{$product->price}}</span>
           </li>
 
         @endforeach

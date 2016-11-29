@@ -195,11 +195,26 @@ a {
   position: relative;
 }
 
+.main-container-market {
+  width:100%;
+  height: 100%;
+  background: url(/img/bg.jpg);
+  text-align: center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
 .black-overlay {
   background: linear-gradient(to bottom, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
   height: 100%;
   width: 100%;
+  padding-top: 5px;
+}
+
+.black-overlay-market {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
+  height:100%;
   padding-top: 5px;
 }
 
@@ -293,6 +308,21 @@ a {
 
 .instructions {
   margin-bottom: 10px;
+}
+
+.product-list-img {
+  width: 190px;
+}
+
+.item-card {
+  display: inline-block;
+  width: 206px;
+  height: 265px;
+  background: #fff;
+  border: 1px solid #e5edec;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
 }
 
 /* Modal start */
