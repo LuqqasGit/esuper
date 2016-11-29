@@ -82,6 +82,6 @@
 @endsection
 
 @section('scripts')
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places" async defer></script>
   <script src="/js/google-maps.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initialize" async defer></script>
 @endsection
