@@ -2,18 +2,7 @@
 
 <title>eSuper</title>
 
-
 @section('content')
-  <style>
-    #map {
-      height: 600px;
-      width: 95.8%;
-      margin: 0 auto;
-    }
-
-
-  </style>
-
   <div id="market-list" class="market-list" >
     <h2>Elegí un supermercado para <b>Capital Federal</b></h2>
     <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Pronto más ubicaciones</p>
@@ -117,14 +106,6 @@
   <script src="js/google-maps.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa13vAwhZI6q0hGqdVnz_kYYV8OHPGi10&libraries=places&callback=initialize" async defer></script>
   <script>
-    // $('#test').on('click', function (e) {
-    //   e.preventDefault();
-    //
-    //   // $('#market-list').slideUp('fast');
-    //   $('#map').slideDown('fast');
-    //
-    // });
-
     $('#supermarkets-home').on('click', function (e) {
       e.preventDefault();
       $('#main-container-bg').slideToggle(1);

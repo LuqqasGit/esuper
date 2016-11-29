@@ -37,6 +37,7 @@ class MarketController extends Controller
         return view('back.markets.create', compact('markets'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +48,7 @@ class MarketController extends Controller
     {
         $market = New Market();
         $market->name_id = $request->name_id;
-        if(MarketName::find($request->name_id)) {
+        if (MarketName::find($request->name_id)) {
             $market->name_id = $request->name_id;
         } else {
             $marketName = New MarketName();
@@ -98,7 +99,7 @@ class MarketController extends Controller
     public function update(Request $request, Market $market)
     {
         $market->name_id = $request->name_id;
-        if(MarketName::find($request->name_id)) {
+        if (MarketName::find($request->name_id)) {
             $market->name_id = $request->name_id;
         } else {
             $marketName = New MarketName();
@@ -124,12 +125,12 @@ class MarketController extends Controller
         //
     }
 
+
     public function getMarkets()
     {
         $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
         foreach ($markets as $market) {
-            $marketsArray[] = [$market->name, $market->lat, $market->lng];
+            $marketsArray[] = ['id' => $market->id, 'name' => $market->name, 'lat' => $market->lat, 'lng' => $market->lng, 'name_id' => $market->name_id, 'address' => $market->address];
         }
-        return $marketsArray;
     }
 }
