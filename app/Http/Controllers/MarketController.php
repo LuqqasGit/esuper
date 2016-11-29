@@ -132,5 +132,6 @@ class MarketController extends Controller
         foreach ($markets as $market) {
             $marketsArray[] = ['id' => $market->id, 'name' => $market->name, 'lat' => $market->lat, 'lng' => $market->lng, 'name_id' => $market->name_id, 'address' => $market->address];
         }
+        return $marketsArray;
     }
 }
