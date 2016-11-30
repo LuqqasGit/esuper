@@ -54,7 +54,7 @@ Home -
               @if (is_object($market))
               <a href="{{ url('/market/' . $market->id) }}" class="market-list-over">
           		<div class="market-list-over-div">
-                <div class="div-markets-small-container2 modal-{{$market->name}}">
+                <div class="div-markets-small-container2 modal-{{strtolower($market->name)}}">
           			<img src="{{ '/img/markets/' . $market->id . '.jpg'}}" alt="{{$market->name}}" class="market-list-over-img" />
           		</div></div>
           		<div class="market-list-over-div2">
