@@ -404,15 +404,19 @@ body {
 }
 
 .modal-jumbo {
-  background: rgb(1, 155, 103);
+  background-color: #019b67;
 }
 
 .modal-coto {
-  background: #fd0a02;
+  background-color: #fd0a02;
 }
 
 .modal-disco {
-  background: white;
+  background-color: #ffffff;
+}
+
+.modal-walmart {
+  background-color: #004f8f;
 }
 
 .modal-p {
