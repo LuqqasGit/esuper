@@ -16,7 +16,7 @@ class Market extends Model
 
   public function name()
   {
-    return $this->hasOne('App\MarketName','id');
+    return $this->hasOne('App\MarketName', 'id', 'name_id');
   }
 
 }

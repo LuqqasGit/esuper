@@ -72,7 +72,13 @@ class MarketController extends Controller
    */
   public function show($name_id, $id)
   {
-    $market = Market::find($id);
+    $market = Market::where([
+      ['name_id', $name_id],
+      ['id', $id],
+    ])->first();
+    if (!$market) {
+      abort(404);
+    }
     $products = Product::where('market_id', '=', $id)->get();
     return view('front.markets.show', compact('market'), compact('products'));
   }

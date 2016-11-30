@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-Hubo un error -
+No tienes permisos para hacer esto -
 @endsection
 
 @section('header-divs')
@@ -10,6 +10,6 @@ Hubo un error -
 
 @section('content')
 
-      <h2 class="h2-title"><b style="text-transform:capitalize;"></b>Hubo un error, tal vez quieras volver al <a href="/">Inicio</a>.</h2>
+      <h2 class="h2-title"><b style="text-transform:capitalize;"></b>No tienes permisos para hacer esto, tal vez quieras volver al <a href="/">Inicio</a>.</h2>
         <div class="line-separator"></div>
 @endsection

@@ -12,7 +12,7 @@ class MarketName extends Model
 
   public $timestamps = false;
 
-  public function market()
+  public function markets()
   {
     return $this->belongsToMany('App\Market', 'name_id');
   }
