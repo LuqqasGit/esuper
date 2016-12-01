@@ -63,16 +63,11 @@ function setMarkers (map, markets, infoWindow) {
       icon: "/img/markets/" + market.name_id + ".png"
     });
 
-    // var content = "<div id=\"iw-container\"><div class=\"iw-title\">"+ market.name +"</div><br><h6>"+ market.address +"</h6><br><br><a href=\"/market/" + market.name_id + "/" + market.id + "\">Ir a este Market</a></div>";
-
     var content = '<div id="iw-container">' +
-                      '<div class="iw-title">'+ market['name']+ ' - '+ market['address'] +'</div>' +
+                      '<div class="iw-title">'+ market['name']+ '<br>'+ market['address'] +'</div>' +
                       '<div class="iw-content">' +
                         '<div class="iw-subTitle"><a href="/market/'+market['name_id']+'/'+market['id']+'">Ver Productos</a></div>' +
-                        '<img src="/img/markets/'+market['name_id']+'.jpg" alt="'+market['name']+'" width="100">' +
-                        '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur perferendis modi asperiores explicabo provident atque aspernatur saepe nobis tempore nisi, sit quia excepturi odio ut in maxime eveniet animi totam!</p>' +
-                        '<div class="iw-subTitle">Subtitulo</div>' +
-                        '<p>Lorem ipsum dolor.<br>Sit amet, consectetur<br>'+
+                        '<p>Hoy descuento del 20% con tarjetas Clarin 365 y La Nación! Y 25% con VISA del Banco Galicia!</p>' +
                       '</div>' +
                       '<div class="iw-bottom-gradient"></div>' +
                     '</div>';
@@ -110,11 +105,11 @@ function setMarkers (map, markets, infoWindow) {
     // Moves the infoWindow 115px to the right.
     iwOuter.parent().parent().css({left: '115px'});
 
-    // Moves the shadow of the arrow 76px to the left margin.
-    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    // Moves the shadow of the arrow 20px to the left margin.
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 20px !important;'});
 
-    // Moves the arrow 76px to the left margin.
-    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    // Moves the arrow 20px to the left margin.
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 20px !important;'});
 
     // Changes the desired tail shadow color.
     iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
