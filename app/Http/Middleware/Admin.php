@@ -16,9 +16,13 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
+      if (!\Auth::check()) {
+        abort(404);
+      } else {
         if (\Auth::user()->type != 2) {
           abort(404);
         }
-        return $next($request);
+      }
+      return $next($request);
     }
 }
