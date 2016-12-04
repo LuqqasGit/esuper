@@ -31,8 +31,11 @@ Route::get('market/{name_id}', 'MarketController@index');
 Route::get('market/{name_id}/{id}', 'MarketController@show');
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::resource('market', 'MarketController');
-    Route::resource('product', 'ProductController');
+  Route::get('/', 'HomeController@admin');
+  Route::get('market/{name_id}', 'MarketController@index');
+  Route::get('market/{name_id}/{id}', 'MarketController@show');
+  Route::resource('market', 'MarketController');
+  Route::resource('product', 'ProductController');
 });
 
 Route::get('getMarkets', 'MarketController@getMarkets');
@@ -40,6 +43,10 @@ Route::get('getMarkets', 'MarketController@getMarkets');
 Route::delete('cart', 'CartController@destroy');
 Route::resource('cart', 'CartController');
 
+Route::resource('order', 'OrderController');
+
 Route::patch('add-to-cart/{id}', 'CartController@addToCart')->middleware('auth');
+
+Route::get('products/search/{query}', 'ProductController@search');
 
 Auth::routes();

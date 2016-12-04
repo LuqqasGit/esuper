@@ -143,4 +143,10 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index');
     }
+
+    public function search($query)
+    {
+      $products = Product::where('name', 'LIKE', '%'.$query.'%')->limit(5)->get();
+      return view('front.products.search', compact('products'));
+    }
 }

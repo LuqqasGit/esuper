@@ -41,6 +41,23 @@
           <li><a href="/cart">Carrito <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
         </ul>
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <form id="navbar-search" class="navbar-form navbar-right" action="/products/search/">
+            <div class="form-group">
+              <input id="navbar-search-query" type="text" class="form-control" placeholder="Buscar Productos">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </form>
+          {{-- <div style="position: absolute; right: 400px; top: 45px; background-color: rgba(255, 255, 255, 0.4)">
+            <ul>
+              <li>hola</li>
+              <li>hola</li>
+              <li>hola</li>
+            </ul>
+          </div> --}}
+        </div>
+      </div>
     </div><!-- /.container-fluid -->
   </nav>
 </header>

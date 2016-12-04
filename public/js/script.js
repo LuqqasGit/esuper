@@ -149,6 +149,26 @@ window.onload = function() {
   });
   /* END ADD ITEM TO CART */
 
+  /* SEARCH */
+  $('#navbar-search').on('submit', function (e) {
+    e.preventDefault();
+    window.location.href = "/products/search/" + $('#navbar-search-query').val();
+  });
+
+  // $('#navbar-search-query').on('keypress', function(){
+  //   $.ajax({
+  //     url: '/products/search/'+ $(this).val(),
+  //     type: 'get',
+  //     success: function (msg) {
+  //       console.log(msg);
+  //     },
+  //     error: function () {
+  //       console.log("Error");
+  //     }
+  //   });
+  // });
+  /* END SEARCH */
+
   // Modal box show
   if (!auth.data('auth')) {
   $('#esuper-intro').modal('show');
