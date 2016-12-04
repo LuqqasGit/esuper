@@ -36,7 +36,10 @@
               {{ csrf_field() }}
               <ul>
                 <li>
-                  <input class="{{ $errors->has('email') ? ' has-error' : '' }}" autofocus required autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="{{ old('email') }}">
+                  <input class="{{ $errors->has('email') ? ' has-error' : '' }}" required autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" value="{{ old('email') }}">
+                  <div id="email-validate-div" class="signup-validate-div-hidden">
+                    Por favor introduce un correo electrónico válido.
+                  </div>
                   @if ($errors->has('email'))
                       <span class="signup-validate-div">
                           <strong>{{ $errors->first('email') }}</strong>
@@ -45,6 +48,9 @@
                 </li>
                 <li>
                   <input autofocus class="{{ $errors->has('name') ? ' has-error' : '' }}" required autocomplete="off" type="text" name="name" placeholder="Ingresa tu nombre completo" value="{{ old('name') }}">
+                  <div id="name-validate-div" class="signup-validate-div-hidden">
+                    Por favor introduce tu nombre.
+                  </div>
                   @if ($errors->has('name'))
                       <span class="signup-validate-div">
                           <strong>{{ $errors->first('name') }}</strong>
@@ -53,6 +59,9 @@
                 </li>
                 <li>
                   <input autofocus autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="{{ old('username') }}">
+                  <div id="username-validate-div" class="signup-validate-div-hidden">
+                    Por favor crea un usuario.
+                  </div>
                   @if ($errors->has('username'))
                       <span class="signup-validate-div">
                           <strong>{{ $errors->first('username') }}</strong>
@@ -61,6 +70,9 @@
                 </li>
                 <li>
                   <input id="password" class="{{ $errors->has('password') ? ' has-error' : '' }}" autofocus required type="password" name="password" placeholder="Crea una contraseña">
+                  <div id="password-validate-div" class="signup-validate-div-hidden">
+                    La contraseña debe tener mínimo 6 caracteres, un número y una letra.
+                  </div>
                   @if ($errors->has('password'))
                       <span class="signup-validate-div">
                           <strong>{{ $errors->first('password') }}</strong>
@@ -69,6 +81,9 @@
                 </li>
                 <li>
                   <input id="password-confirm" autofocus required type="password" name="password_confirmation" placeholder="Repite la contraseña">
+                  <div id="password2-validate-div" class="signup-validate-div-hidden">
+                    Las contraseñas no coinciden.
+                  </div>
                 </li>
               </ul>
             </fieldset>

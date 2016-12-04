@@ -36,7 +36,10 @@
                 <ul>
                   <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
                     <li>
-                      <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                      <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required >
+                      <div id="login-validate-div" class="signup-validate-div-hidden">
+                        Por favor introduce tu email.
+                      </div>
                       @if ($errors->has('email'))
                           <span class="signup-validate-div">
                               <strong>{{ $errors->first('email') }}</strong>
