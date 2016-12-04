@@ -1,6 +1,12 @@
 /* AJAX HEADERS SETUP */
-$.ajaxSetup({
-  headers: { 'X-CSRF-TOKEN': "{{csrf_token()}}" }
+// $.ajaxSetup({
+//   headers: { 'X-CSRF-TOKEN': "{{csrf_token()}}" }
+// });
+
+$(function () {
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('content') }
+    });
 });
 
 window.onload = function() {
@@ -148,6 +154,21 @@ window.onload = function() {
     });
   });
   /* END ADD ITEM TO CART */
+
+  /* EMPTY CART */
+  $('#empty-cart').on('click', function () {
+    // loading.slideDown('slow');
+    $.ajax({
+      url: 'cart',
+      type: 'delete',
+      success: function (msg) {
+        $("#refresh-after-ajax").text(msg);
+        $(".list-group").html('<li class="list-group-item">No hay productos en el Cart</li>');
+        loading.slideUp('fast');
+      }
+    });
+  });
+  /* END EMPTY CART */
 
   // Modal box show
   if (!auth.data('auth')) {

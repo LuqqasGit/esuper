@@ -17,7 +17,7 @@
       <a href=""><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
     </div>
     <div class="main-footer-copyright">
-      <p>{{date('Y')}} &copy; Copyright eSuper</p>
+      <p>{{date('Y')}} &copy; eSuper</p>
     </div>
   </div>
 </footer>

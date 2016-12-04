@@ -4,12 +4,20 @@
   Registrarse -
 @endsection
 
+@section('navColor')
+  class="navbar-black"
+@endsection
+
+@section('header-divs')
+<div class="main-container-auth"><div>
+@endsection
+
 @section('content')
 
       <div class="signup-main-container">
         <div class="signup-text-box">
-          <h2 class="h2-title">Registrate en eSuper</h2>
-          <h2  class="h2-title"><b>Recibí tus compras en menos de 1 hora</b></h2>
+          <h2 class="h2-title-grey">Registrate en eSuper</h2>
+          <h2  class="h2-title-grey"><b>Recibí tus compras en menos de 1 hora</b></h2>
         </div>
 
         <div class="line-separator"></div>
@@ -75,4 +83,8 @@
 
       </div> <!-- end signup-main-container -->
 
+@endsection
+
+@section('footerColor')
+  class="footer-black"
 @endsection

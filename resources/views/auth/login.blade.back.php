@@ -4,20 +4,12 @@
   Ingresar -
 @endsection
 
-@section('navColor')
-  class="navbar-black"
-@endsection
-
-@section('header-divs')
-<div class="main-container-auth"><div>
-@endsection
-
 @section('content')
 
         <div class="signup-main-container">
           <div class="signup-text-box">
-            <h2 class="h2-title-grey"><b>¡Bienvenido de nuevo!</b></h2>
-            <h2 class="h2-title-grey">Ingresa con tu usuario y contraseña</h2>
+            <h2 class="h2-title"><b>¡Bienvenido de nuevo!</b></h2>
+            <h2 class="h2-title">Ingresa con tu usuario y contraseña</h2>
           </div>
           <div class="line-separator"></div>
           <div class="signup-box">
@@ -73,8 +65,4 @@
             </div>
           </div> <!-- end signup-box -->
         </div> <!-- end signup-main-container -->
-@endsection
-
-@section('footerColor')
-  class="footer-black"
 @endsection

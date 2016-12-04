@@ -25,20 +25,16 @@ Home -
                     <h4 class="modal-title modal-title-2">eSuper es tu manera de ir al supermercado, online. Envío <span class="text-free">GRATIS</span> en tu primera compra. <b>Entrá, elegí, pedí, disfrutá.</b><br><br> Para empezar, elegí un supermercado, o buscá una sucursal en el <a href="#" data-dismiss="modal">mapa</a>.</h4>
 
                     <div style="text-align: center;">
-                      <div class="div-markets-small modal-coto">
-                        <a href="/market/1"><img src="/img/markets/1.jpg" class="img-markets-small" alt='Coto' /></a>
-                      </div>
-
-                      <div class="div-markets-small modal-jumbo">
-                        <a href="/market/2"><img src="/img/markets/2.jpg" class="img-markets-small" alt='Jumbo' /></a>
-                      </div>
-
-                      <div class="div-markets-small modal-disco">
-                        <a href="/market/3"><img src="/img/markets/3.jpg" class="img-markets-small" alt='Disco' /></a>
-                      </div>
+                      @foreach ($markets as $market)
+                        @if (is_object($market))
+                        <div class="div-markets-small modal-{{strtolower($market->name)}}">
+                          <a href="/market/{{$market->id}}"><img src="/img/markets/{{$market->id}}.jpg" class="img-markets-small" alt='{{strtolower($market->name)}}' /></a>
+                        </div>
+                        @endif
+                      @endforeach
                     </div>
                     <p class="modal-p">
-                      No volver a mostrar este mensaje
+
                     </p>
                   </div>
                 </div>
@@ -69,7 +65,6 @@ Home -
               @endif
             @endforeach
           </div>
-          <div class="line-separator"></div>
 
           <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Supermercados en tu área. Pronto más ubicaciones</p>
 

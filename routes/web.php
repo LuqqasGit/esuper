@@ -40,6 +40,7 @@ Route::get('getMarkets', 'MarketController@getMarkets');
 Route::delete('cart', 'CartController@destroy');
 Route::resource('cart', 'CartController');
 
-Route::patch('add-to-cart/{id}', 'CartController@addToCart')->middleware('auth');
+Route::patch('add-to-cart/{id}', 'CartController@addToCart');
+// ->middleware('auth');
 
 Auth::routes();

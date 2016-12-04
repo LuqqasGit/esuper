@@ -4,11 +4,14 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        {{-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+        </button> --}}
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
       </div>
@@ -38,7 +41,7 @@
             </ul>
           </li>
           @endif
-          <li><a href="/cart">Carrito <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
+          <li class="navbar-cart"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito<span class="cart-count" id="refresh-after-ajax">{{Cart::count()}}</span></a></li>
         </ul>
       </div>
     </div><!-- /.container-fluid -->

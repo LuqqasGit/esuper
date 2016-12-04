@@ -83,9 +83,16 @@ class CartController extends Controller
       return \Cart::content()->count();
     }
 
+    // public function addToCart($id)
+    // {
+    //   \Cart::add($id, 'Product X', 1, 7.99)->associate('Product');
+    //   return \Cart::content()->count();
+    // }
+
     public function addToCart($id)
     {
-      \Cart::add($id, 'Product X', 1, 7.99)->associate('Product');
-      return \Cart::content()->count();
+      $pieces = explode("-", $id);
+      \Cart::add($pieces[0], $pieces[2] . ' ' . $pieces[1] . ' (' . $pieces[4] . ')', 1, $pieces[3])->associate('Product');
+      return \Cart::count();
     }
 }
