@@ -45,7 +45,7 @@
                 @php
                 $cart_array = $product->id . '-' . $product->name . '-' . $product->brand->name . '-' . $product->price . '-' . $product->amount;
                 @endphp
-                <a class="cart-hover-btn" href="addToCart" data-id="{{$cart_array}}" data-qty="">
+                <a class="cart-hover-btn" href="addToCart" data-id="{{$product->id}}" data-qty="">
                   <i class="fa fa-plus" aria-hidden="true"></i> AGREGAR
                 </a>
               </div>

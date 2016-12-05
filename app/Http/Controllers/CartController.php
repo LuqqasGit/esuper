@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class CartController extends Controller
 {
@@ -91,8 +92,8 @@ class CartController extends Controller
 
     public function addToCart($id)
     {
-      $pieces = explode("-", $id);
-      \Cart::add($pieces[0], $pieces[2] . ' ' . $pieces[1] . ' (' . $pieces[4] . ')', 1, $pieces[3])->associate('Product');
+      $product = Product::where('id', $id)->first();
+      \Cart::add($product->id, $product->name, 1, $product->price, ['brand' => $product->brand->name, 'amount' => $product->amount])->associate('Product');
       return \Cart::count();
     }
 }

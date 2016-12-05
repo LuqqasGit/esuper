@@ -28,7 +28,7 @@ Compra -
                 <li class="list-group-item">
                   <span class="badge">{{$item->qty}}</span>
                   <img style="width: 30px;float:left;margin: -5px 0 0 5px;" src="/img/products/{{$item->id}}.jpg" alt="">
-                  {{$item->name}} <b>${{number_format($item->price, 2, '.', '')}}</b>
+                  {{$item->options->brand . ' ' . $item->name . ' <span style="font-size:1.5em">(' .$item->options->amount . ')</span> -'}} <b>${{number_format($item->price, 2, '.', '')}}</b>
                 </li>
               @empty
                 <li class="list-group-item">No tenes productos en tu carrito de compras. Empezá a comprar <a class="cart-no" href="/">acá</a>.</li>
