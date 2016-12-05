@@ -40,6 +40,9 @@ Compra -
                   <button id="empty-cart" type="button" class="btn btn-danger">Vaciar carrito <i class="fa fa-trash" aria-hidden="true"></i></button>
                   <button id="checkout-cart" type="button" class="btn btn-success">Pagar ${{$cart_total}}  <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
                 </li>
+                <p style="font-size: 0.7em;"class="modal-p">
+                  * Impuesto del 21% aplicado. <img style="margin-top: -4px;" src="/img/ar.gif" alt="AR">
+                </p>
 
               @php } @endphp
 

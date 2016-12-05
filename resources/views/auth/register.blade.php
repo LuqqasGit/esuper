@@ -47,7 +47,7 @@
                   @endif
                 </li>
                 <li>
-                  <input autofocus class="{{ $errors->has('name') ? ' has-error' : '' }}" required autocomplete="off" type="text" name="name" placeholder="Ingresa tu nombre completo" value="{{ old('name') }}">
+                  <input  class="{{ $errors->has('name') ? ' has-error' : '' }}" required autocomplete="off" type="text" name="name" placeholder="Ingresa tu nombre completo" value="{{ old('name') }}">
                   <div id="name-validate-div" class="signup-validate-div-hidden">
                     Por favor introduce tu nombre.
                   </div>
@@ -58,7 +58,7 @@
                   @endif
                 </li>
                 <li>
-                  <input autofocus autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="{{ old('username') }}">
+                  <input  autocomplete="off" type="text" name="username" placeholder="Crea un usuario" value="{{ old('username') }}">
                   <div id="username-validate-div" class="signup-validate-div-hidden">
                     Por favor crea un usuario.
                   </div>
@@ -69,7 +69,7 @@
                   @endif
                 </li>
                 <li>
-                  <input id="password" class="{{ $errors->has('password') ? ' has-error' : '' }}" autofocus required type="password" name="password" placeholder="Crea una contraseña">
+                  <input id="password" class="{{ $errors->has('password') ? ' has-error' : '' }}"  required type="password" name="password" placeholder="Crea una contraseña">
                   <div id="password-validate-div" class="signup-validate-div-hidden">
                     La contraseña debe tener mínimo 6 caracteres, un número y una letra.
                   </div>
@@ -80,7 +80,7 @@
                   @endif
                 </li>
                 <li>
-                  <input id="password-confirm" autofocus required type="password" name="password_confirmation" placeholder="Repite la contraseña">
+                  <input id="password-confirm"  required type="password" name="password_confirmation" placeholder="Repite la contraseña">
                   <div id="password2-validate-div" class="signup-validate-div-hidden">
                     Las contraseñas no coinciden.
                   </div>

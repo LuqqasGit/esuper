@@ -42,7 +42,6 @@ window.onload = function() {
       errorDiv.className = "signup-validate-div-hidden";
       this.className = "signup-imput-ok";
     } else {
-      console.log(errorDiv);
       errorDiv.className = "signup-validate-div";
       this.className = "";
     }
@@ -158,7 +157,7 @@ window.onload = function() {
       type: 'delete',
       success: function (msg) {
         $("#refresh-after-ajax").text(msg);
-        $(".list-group").html('<li class="list-group-item">No hay productos en el Cart</li>');
+        $(".list-group").html('<li class="list-group-item">No tenes productos en tu carrito de compras. Empezá a comprar <a class="cart-no" href="/">acá</a>.</li>');
         loading.slideUp('fast');
       }
     });
