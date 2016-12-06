@@ -84,6 +84,9 @@ Checkout -
       </div>
       <div style="clear:both"></div>
     </div> {{-- end list-group cart-list --}}
+    <p class="modal-p">
+      * Impuesto del 21% aplicado. <img style="margin-top: -4px;" src="/img/ar.gif" alt="AR">
+    </p>
   </div> {{-- end container-checkout --}}
 
 @endsection

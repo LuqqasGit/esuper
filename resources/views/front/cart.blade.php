@@ -18,7 +18,7 @@ Compra -
   <div class="line-separator"></div>
 
   <div class="container-cart">
-    <ul class="list-group cart-list">
+    <div class="list-group cart-list">
       @php
         $cart = Cart::content();
         $cart_total = Cart::total(2,'.');
@@ -43,7 +43,7 @@ Compra -
             <button id="checkout-cart" type="submit" class="btn btn-success">Pagar ${{$cart_total}}  <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
           </form>
         </li>
-        </ul>
+      </div>
         <p class="modal-p">
           * Impuesto del 21% aplicado. <img style="margin-top: -4px;" src="/img/ar.gif" alt="AR">
         </p>
