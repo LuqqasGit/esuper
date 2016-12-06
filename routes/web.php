@@ -46,4 +46,4 @@ Route::patch('add-to-cart/{id}', 'CartController@addToCart');
 
 Auth::routes();
 
-Route::resource('checkout', 'CheckoutController');
+Route::get('checkout', 'CheckoutController@index')->middleware('auth');
