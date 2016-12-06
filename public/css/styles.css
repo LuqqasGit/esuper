@@ -282,13 +282,6 @@ body {
   width: 100%;
   padding-top: 5px;
 }
-.jeje {
-  background: linear-gradient(to bottom, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
-  height: 100%;
-  width: 100%;
-  padding-top: 5px;
-}
 
 .black-overlay-market {
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) -90%,rgba(0,0,0,0.6) 100%);
@@ -309,6 +302,20 @@ body {
   border-top: 1px solid rgb(224, 224, 224);
   opacity: .56;
   margin: 10px 0 20px;
+}
+
+.line-separator-malo {
+  width: 840px;
+  border-top: 1px solid rgb(224, 224, 224);
+  opacity: .56;
+  margin: 10px 0 20px -30px;
+}
+
+
+.line-separator-malo2 {
+  display: none;
+  border-top: 1px solid rgb(224, 224, 224);
+  margin: 10px 0 20px -30px;
 }
 
 .market-list-group {
@@ -509,12 +516,6 @@ body {
   font-size:0.7em;
 }
 
-.checkout-form {
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-bottom: 30px;
-}
-
 .list-group-item {
   border-top: 1px solid #ddd;
 }
@@ -534,22 +535,29 @@ body {
 .checkout-header {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   height: 35px;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
 }
 
 .checkout-title {
   text-align: left;
-  margin: 10px 0 10px 30px;
+  margin: 10px 0 10px;
 }
 
 .checkout-address {
   float: left;
   width: 418px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 30px;
 }
 
 .checkout-payment {
   float: left;
   width: 419px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
 }
 
 .input-checkout {
@@ -571,6 +579,12 @@ body {
   font-size: 0.9em;
   display: block;
   margin-bottom: 5px;
+}
+
+.success-img {
+  width:200px;
+  height:200px;
+  margin-top: 40px;
 }
 
 /* Modal start */
@@ -1215,6 +1229,9 @@ h1,h2,h3,h4,h5,h6{
   .container-checkout {
     max-width: 738px;
   }
+  .line-separator-malo {
+    width: 676px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -1290,12 +1307,22 @@ h1,h2,h3,h4,h5,h6{
   .checkout-payment {
     width: 322px;
   }
+  .line-separator-malo {
+    width: 647px;
+  }
 }
 
 
 @media (max-width: 810px) {
   .container-checkout {
     max-width: 416px;
+  }
+  .line-separator-malo {
+    width: 327px;
+  }
+  .line-separator-malo2 {
+    width: 327px;
+    display: block;
   }
 }
 
