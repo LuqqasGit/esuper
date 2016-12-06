@@ -14,38 +14,75 @@ Checkout -
 
 @section('content')
 
-  {{-- {{dd(Auth::user()->name)}} --}}
-
           <h2 class="h2-title-grey">Entrega de tu pedido</h2>
           <div class="line-separator"></div>
 
-          <div class="container-cart">
+          <div class="container-checkout">
             <input type="hidden" name="_token" content="{{csrf_token()}}">
-            <ul class="list-group cart-list">
+
+            <div class="list-group cart-list">
               @php
                 $cart = Cart::content();
                 $cart_total = Cart::total(2,'.');
               @endphp
-
-              <form class="checkout-form" action="index.html" method="post">
-                <div style="text-align:left;font-weight:bold;margin-bottom:10px;">
-                  <span style="color:#34bb9c;"><i class="fa fa-map-marker" aria-hidden="true"></i></span> Dirección de entrega <br>
+              <div class="checkout-address">
+                <div class="checkout-header">
+                  <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-map-marker" aria-hidden="true"></i> Información de entrega</p>
                 </div>
-                <input type="text" name="" value="" placeholder="Direccion">
+                <form class="checkout-form" action="index.html" method="post">
+                  <label class="checkout-label" for="address">
+                   Dirección
+                  </label>
+                  <input class="form-control input-checkout" type="text" name="address" id="address" value="" placeholder="Sarmiento 3323">
 
-              </form>
+                  <label class="checkout-label" for="apartment">
+                    Piso/Departamento
+                  </label>
+                  <input class="form-control input-checkout" type="text" name="apartment" id="apartment" value="" placeholder="1D (opcional)">
 
-                <li class="list-group-item">
-                  <button id="empty-cart" type="button" class="btn btn-danger">Volver atrás</button>
-                  <button id="checkout-cart" type="button" class="btn btn-success">Tarjeta ${{$cart_total}}  <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
-                  <button id="checkout-cart" type="button" class="btn btn-success">Efectivo ${{$cart_total}}  <i class="fa fa-money" aria-hidden="true"></i></button>
-                </li>
-              </ul>
+                  <label class="checkout-label" for="cp-barrio">
+                   Codigo postal/Barrio
+                  </label>
+                  <input class="form-control input-checkout" type="text" name="cp-barrio" id="cp-barrio" value="" placeholder="1018 Recoleta">
 
-              <p class="modal-p">
-                * Impuesto del 21% aplicado. <img style="margin-top: -4px;" src="/img/ar.gif" alt="AR">
-              </p>
-          </div>
+                  <label class="checkout-label" for="cp-barrio">
+                   Cuidad
+                  </label>
+                  <input class="form-control input-checkout" type="text" name="ciudad" id="ciudad" value="CABA" placeholder="CABA" disabled="disabled">
+                </form>
+              </div>
+
+              <div class="checkout-payment">
+                <div class="checkout-header">
+                  <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-credit-card-alt" aria-hidden="true"></i> Información de pago</p>
+                </div>
+                <form class="checkout-form" action="index.html" method="post">
+
+                  <label class="checkout-label" for="card-number">
+                   Numero
+                  </label>
+                  <input class="form-control input-checkout" type="number" name="card-number" id="card-number" value="" placeholder="Numero de la tarjeta">
+
+                  <label class="checkout-label" for="card-date">
+                   Fecha de vencimiento
+                  </label>
+                  <input class="form-control input-checkout" type="number" name="card-date" id="card-date" value="" placeholder="MM/AA">
+
+                  <label class="checkout-label" for="card-cvv">
+                   Código de seguridad
+                  </label>
+                  <input class="form-control input-checkout" type="number" name="card-cvv" id="card-cvv" value="" placeholder="CVV">
+
+                  <div class="checkout-button">
+                    <span class="checkout-total">Total: ${{$cart_total}}</span>
+                    <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
+                    <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
+                  </div>
+                </form>
+              </div>
+              <div style="clear:both"></div>
+            </div> {{-- end list-group cart-list --}}
+          </div> {{-- end container-checkout --}}
 
 @endsection
 

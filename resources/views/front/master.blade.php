@@ -27,7 +27,7 @@
 
     <div id="loading-div" class="loader-overlay">
       <div class="loader-container">
-        <span>Un momento... <div class="loader"></div></span>
+        <div class="loader"></div>
       </div>
     </div>
   </div>

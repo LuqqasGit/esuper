@@ -50,7 +50,7 @@
             <div class="form-group">
               <input id="navbar-search-query" type="text" class="form-control" placeholder="Buscar Productos">
             </div>
-            <button type="submit" class="btn btn-default">Buscar</button>
+            <button type="submit" class="btn btn-default btn-esupers">Buscar</button>
           </form>
           {{-- <div style="position: absolute; right: 400px; top: 45px; background-color: rgba(255, 255, 255, 0.4)">
             <ul>

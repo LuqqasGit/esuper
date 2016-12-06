@@ -59,7 +59,10 @@ Route::patch('add-to-cart/{id}', 'CartController@addToCart');
 
 Route::get('products/search/{query}', 'ProductController@search');
 
-
 Auth::routes();
 
 Route::get('checkout', 'OrderController@store')->middleware('auth');
+
+Route::get('exito', function () {
+    return view('front.success');
+});

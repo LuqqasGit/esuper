@@ -134,20 +134,25 @@ window.onload = function() {
   /* ADD ITEM TO CART */
   $('a[href="addToCart"]').on('click', function (e) {
     e.preventDefault();
-    loading.slideDown('slow');
+    loading.toggle();
+    // loading.slideDown('fast');
     $.ajax({
       url: '/add-to-cart/' + $(this).data('id'),
       type: 'patch',
       success: function (msg) {
         $("#refresh-after-ajax").text(msg);
-        loading.slideUp('fast');
+        loading.toggle();
+        // loading.slideUp('fast');
       },
       error: function () {
-        loading.slideUp('fast');
+        loading.toggle();
+        // loading.slideUp('fast');
       }
     });
   });
   /* END ADD ITEM TO CART */
+
+
 
   /* SEARCH */
   $('#navbar-search').on('submit', function (e) {
