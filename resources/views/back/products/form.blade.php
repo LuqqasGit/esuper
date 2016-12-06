@@ -10,7 +10,6 @@
 
 <div class="form-group">
     {{ Form::label('market_id', 'Market:')  }}
-{{--    {{ Form::select('market_id', [1 => 'Disco', 2 => 'Jumbo', 3 => 'Carrefour'], null, ['placeholder' => 'Choose market', 'class' => 'form-control', 'required' => 'required']) }}--}}
     <select class="form-control" name="market_id" id="market_list">
         <option value=""></option>
         @foreach($markets as $market)
@@ -37,15 +36,9 @@
             <option value="{{ $type->id }}">{{ $type->name }}</option>
         @endforeach
     </select>
-{{--    {{ Form::select('type_id', [1 => 'Cookies', 2 => 'Bread'], null, ['placeholder' => '', 'class' => 'form-control', 'id' => 'product_list', 'required' => 'required']) }}--}}
 </div>
 
 <div class="form-group">
     {{ Form::label('description', 'Descripcion:')  }}
     {{ Form::textarea('description', null, ['class' => 'form-control', 'size' => '30x5']) }}
 </div>
-
-{{--<div class="form-group">--}}
-    {{--{{ Form::label('image', 'Image:') }}--}}
-    {{--{{ Form::file('image', ['class' => 'form-control']) }}--}}
-{{--</div>--}}

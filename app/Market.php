@@ -3,20 +3,25 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Market extends Model
 {
 
-  protected $fillable = ['name_id', 'lat', 'lng', 'address'];
+    use SoftDeletes;
 
-  public function products()
-  {
-    return $this->hasMany('App\Product');
-  }
+    protected $dates = ['deleted_at'];
 
-  public function name()
-  {
-    return $this->hasOne('App\MarketName', 'id', 'name_id');
-  }
+    protected $fillable = ['name_id', 'lat', 'lng', 'address'];
+
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
+
+    public function name()
+    {
+        return $this->hasOne('App\MarketName', 'id', 'name_id');
+    }
 
 }

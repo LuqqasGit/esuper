@@ -30,12 +30,21 @@ Route::get('market/{name_id}', 'MarketController@index');
 
 Route::get('market/{name_id}/{id}', 'MarketController@show');
 
+
 Route::group(['prefix' => 'admin'], function () {
-  Route::get('/', 'HomeController@admin');
-  Route::get('market/{name_id}', 'MarketController@index');
-  Route::get('market/{name_id}/{id}', 'MarketController@show');
-  Route::resource('market', 'MarketController');
-  Route::resource('product', 'ProductController');
+
+    Route::get('/', 'HomeController@backhome')->name('backhome')->middleware('admin');;
+    Route::get('markets', 'MarketController@markets')->name('markets');
+    Route::get('brand', 'BrandController@index')->name('brand.index');
+    Route::get('brand/create', 'BrandController@create')->name('brand.create');
+    Route::post('brand/store', 'BrandController@store')->name('brand.store');
+    Route::resource('market', 'MarketController');
+    Route::resource('product', 'ProductController');
+    Route::get('market/{name_id}/{id}', 'MarketController@show');
+    Route::get('market/{name_id}', 'MarketController@index');
+
+    Route::post('product/storeProductImages', 'ProductImagesController@storeProductImages')->name('storeProductImages');
+    Route::delete('product/destroyImage/{id}', 'ProductImagesController@destroyImage')->name('destroyImage');
 });
 
 Route::get('getMarkets', 'MarketController@getMarkets');
@@ -49,6 +58,7 @@ Route::resource('order', 'OrderController');
 Route::patch('add-to-cart/{id}', 'CartController@addToCart');
 
 Route::get('products/search/{query}', 'ProductController@search');
+
 
 Auth::routes();
 

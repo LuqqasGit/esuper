@@ -32,4 +32,9 @@ class HomeController extends Controller
         }
       return view('front.home', compact('markets'), compact('marketcount'));
     }
+
+    public function backhome()
+    {
+        return view('back.backhome');
+    }
 }

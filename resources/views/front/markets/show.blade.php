@@ -32,6 +32,7 @@
       </div>
 
     </div></div>
+
     <div class="product-list">
       <input type="hidden" name="_token" content="{{csrf_token()}}">
       <ul style="padding-left: 0;">
@@ -40,7 +41,7 @@
           <h2 class="h2-title-products">{{$type}}</h2>
           @foreach ($product_collection as $product)
             <li class="item-card">
-              <img src="{{ '/img/products/' . $product->id . '.jpg'}}" alt="{{$product->name}}" class="product-list-img" />
+              <img src="{{ '/img/products/' . $product->images->first()->image_name}}" alt="{{$product->name}}" class="product-list-img" />
               <div class="cart-hover">
                 @php
                 $cart_array = $product->id . '-' . $product->name . '-' . $product->brand->name . '-' . $product->price . '-' . $product->amount;
@@ -56,6 +57,7 @@
               </div>
             </li>
           @endforeach
+
 
         @endforeach
       </ul>

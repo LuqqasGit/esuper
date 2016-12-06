@@ -1,13 +1,13 @@
 @extends('back.master')
 
 @section('title')
-    Products Dashboard
+    Panel de Control de Productos
 @endsection
 
 @section('content')
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Products Dashboard {!! link_to_route('product.create', 'Create Product', [],['class' => 'btn btn-success']) !!}
+        <div class="panel-heading">Panel de Control de Productos {!! link_to_route('product.create', 'Crear Producto', [],['class' => 'btn btn-success']) !!}
         </div>
         <table class="table">
             <thead id="THEAD_1">
@@ -16,28 +16,28 @@
                     #
                 </th>
                 <th id="TH_4">
-                    Name
+                    Nombre
                 </th>
                 <th id="TH_4">
-                    Type
+                    Tipo
                 </th>
                 <th id="TH_4">
-                    Brand
+                    Marca
                 </th>
                 <th id="TH_4">
                     Market
                 </th>
                 <th id="TH_5">
-                    Price
+                    Precio
                 </th>
                 <th id="TH_5">
-                    Description
+                    Descripción
                 </th>
                 <th id="TH_6">
-                    Edit
+                    Editar
                 </th>
                 <th id="TH_6">
-                    Delete
+                    Eliminar
                 </th>
             </tr>
             </thead>
@@ -51,7 +51,7 @@
                         {{ $product->name }}
                     </td>
                     <td id="TD_4">
-                        {{ $product->type_id }}
+                        {{ \App\Product_Types::find($product->type_id)->name }}
                     </td>
                     <td id="TD_4">
                         {{ $product->brand->name }}
@@ -66,11 +66,11 @@
                         {{ $product->description }}
                     </td>
                     <td id="TD_5">
-                        {!! link_to_route('product.edit', 'Edit', [$product->id], ['class' => 'btn btn-info']) !!}
+                        {!! link_to_route('product.edit', 'Editar', [$product->id], ['class' => 'btn btn-info']) !!}
                     </td>
                     <td id="TD_5">
                         {{ Form::open(['route' => ['product.destroy', $product->id], 'method' => 'delete']) }}
-                        <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-mini">Eliminar</button>
                         {{ Form::close() }}
                     </td>
                 </tr>
