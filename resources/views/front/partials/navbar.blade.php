@@ -32,7 +32,7 @@
               <li><a href="/profile">Hola, {{str_limit(Auth::user()->username, 15)}}</a></li>
               @if (Auth::user()->type == 2)
               <li role="separator" class="divider"></li>
-              <li><a href="/profile">Mi cuenta</a></li>
+              {{-- <li><a href="/profile">Mi cuenta</a></li> --}}
               <li><a href="/orders">Mis pedidos</a></li>
               <li><a href="/admin">Panel admin</a></li>
               @endif
@@ -50,7 +50,7 @@
             <div class="form-group">
               <input id="navbar-search-query" type="text" class="form-control" placeholder="Buscar Productos">
             </div>
-            <button type="submit" class="btn btn-default">Buscar</button>
+            <button type="submit" class="btn btn-default btn-esupers">Buscar</button>
           </form>
           {{-- <div style="position: absolute; right: 400px; top: 45px; background-color: rgba(255, 255, 255, 0.4)">
             <ul>

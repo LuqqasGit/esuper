@@ -34,7 +34,7 @@
     </div></div>
 
     <div class="product-list">
-      <input type="hidden" name="_token" content="{{csrf_token()}}">
+      <input type="hidden" name="_token" value="{{csrf_token()}}">
       <ul style="padding-left: 0;">
 
         @foreach ($products_array as $type => $product_collection)

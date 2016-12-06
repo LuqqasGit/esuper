@@ -5,7 +5,7 @@
 
 $(function () {
     $.ajaxSetup({
-        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('content') }
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 });
 
@@ -134,20 +134,25 @@ window.onload = function() {
   /* ADD ITEM TO CART */
   $('a[href="addToCart"]').on('click', function (e) {
     e.preventDefault();
-    loading.slideDown('slow');
+    loading.toggle();
+    // loading.slideDown('fast');
     $.ajax({
       url: '/add-to-cart/' + $(this).data('id'),
       type: 'patch',
       success: function (msg) {
         $("#refresh-after-ajax").text(msg);
-        loading.slideUp('fast');
+        loading.toggle();
+        // loading.slideUp('fast');
       },
       error: function () {
-        loading.slideUp('fast');
+        loading.toggle();
+        // loading.slideUp('fast');
       }
     });
   });
   /* END ADD ITEM TO CART */
+
+
 
   /* SEARCH */
   $('#navbar-search').on('submit', function (e) {
@@ -171,18 +176,32 @@ window.onload = function() {
 
   /* EMPTY CART */
   $('#empty-cart').on('click', function () {
-    // loading.slideDown('slow');
     $.ajax({
       url: 'cart',
       type: 'delete',
       success: function (msg) {
         $("#refresh-after-ajax").text(msg);
         $(".list-group").html('<li class="list-group-item">No tenes productos en tu carrito de compras. Empezá a comprar <a class="cart-no" href="/">acá</a>.</li>');
-        loading.slideUp('fast');
       }
     });
   });
   /* END EMPTY CART */
+
+  /* DELETE ORDER */
+  $('.delete-order').on('click', function () {
+    var i = $(this).data('id');
+    $.ajax({
+      url: 'orders/' + i,
+      type: 'delete',
+      success: function (msg) {
+        $("#order-"+i).remove();
+        if (msg.length <= 0) {
+          $('#orders-list').html('<li class="list-group-item">No hay ordenes</li>');
+        }
+      }
+    });
+  });
+  /* END DELETE ORDER */
 
   // Modal box show
   if (!auth.data('auth')) {
