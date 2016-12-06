@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-      $this->middleware('admin');
+      $this->middleware('admin')->except('search');
     }
     /**
      * Display a listing of the resource.
