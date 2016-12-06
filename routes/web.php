@@ -53,7 +53,7 @@ Route::delete('cart', 'CartController@destroy');
 
 Route::resource('cart', 'CartController');
 
-Route::resource('order', 'OrderController');
+Route::resource('orders', 'OrderController');
 
 Route::patch('add-to-cart/{id}', 'CartController@addToCart');
 
