@@ -520,6 +520,10 @@ body {
   border-top: 1px solid #ddd;
 }
 
+.list-group-item form {
+  display: inline-block;
+}
+
 .list-group-item>.badge {
   float: left;
 }

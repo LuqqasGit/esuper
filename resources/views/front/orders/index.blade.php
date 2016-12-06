@@ -44,7 +44,7 @@ Ordenes -
                       <form action="/checkout" method="post">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="hidden" name="order_id" value="{{$order->id}}">
-                        <button type="submit" class="btn btn-success">Pagar ${{$total}} <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
+                        <button type="submit" class="btn btn-success">Pagar ${{number_format($total *= 1.21, 2)}} <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
                       </form>
                     </li>
                   </ul>

@@ -3,6 +3,7 @@
   foreach ($order->products as $product) {
     $order_total += $product->price * $product->pivot->product_qty;
   }
+  $order_total *= 1.21;
 @endphp
 @extends('front.master')
 
@@ -75,7 +76,7 @@ Checkout -
           <input class="form-control input-checkout" type="number" name="card-cvv" id="card-cvv" value="" placeholder="CVV">
 
           <div class="checkout-button">
-            <span class="checkout-total">Total: ${{$order_total}}</span>
+            <span class="checkout-total">Total: ${{number_format($order_total, 2)}}</span>
             <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
             <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
           </div>

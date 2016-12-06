@@ -32,7 +32,7 @@
               <li><a href="/profile">Hola, {{str_limit(Auth::user()->username, 15)}}</a></li>
               @if (Auth::user()->type == 2)
               <li role="separator" class="divider"></li>
-              <li><a href="/profile">Mi cuenta</a></li>
+              {{-- <li><a href="/profile">Mi cuenta</a></li> --}}
               <li><a href="/orders">Mis pedidos</a></li>
               <li><a href="/admin">Panel admin</a></li>
               @endif
