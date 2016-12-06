@@ -15,11 +15,11 @@
 
     @yield('header-divs', '<div class="main-container"><div class="black-overlay">')
 
-        @include('front.partials.navbar')
+        <div @yield('navColor', 'class="navbar-white"')> @include('front.partials.navbar')</div>
 
         @yield('content')
 
-        @include('front.partials.footer')
+        <div @yield('footerColor', 'class="footer-white"')> @include('front.partials.footer')</div>
 
       </div> {{-- end black-overlay --}}
     </div> {{-- end main-container --}}

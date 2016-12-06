@@ -18,12 +18,12 @@
             @if (is_object($market))
             <a href="{{'/market/' . $market->name_id . '/' . $market->id}}" class="market-list-over">
             <div class="market-list-over-div">
-              <div class="div-markets-small-container2 modal-{{$marketname[0]->name}}">
+              <div class="div-markets-small-container2 modal-{{strtolower($marketname[0]->name)}}">
               <img src="{{ '/img/markets/' . $market->name_id . '.jpg'}}" alt="{{$market->name_id}}" class="market-list-over-img" />
             </div></div>
             <div class="market-list-over-div2">
               <h3 class="market-list-over-h3" style="text-transform:capitalize;">
-                {{$marketname[0]->name}} | {{$market->address}}
+                {{-- {{$marketname[0]->name}} |  --}}{{$market->address}}
               </h3>
                 <p class="market-list-over-p"><i class="fa fa-clock-o" aria-hidden="true"></i> abierto <b>hoy</b> de 8:00 a 19:30</p>
                 <p class="market-list-over-p"><i class="fa fa-motorcycle" aria-hidden="true"></i> entrega inmediata</p>
@@ -36,7 +36,7 @@
 
         <div class="line-separator"></div>
 
-        <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Elegí tu sucursal de {{$marketname[0]->name}} más cercana</p>
+        <p class="locations-cont"><i class="fa fa-map-marker" aria-hidden="true"></i>  Elegí tu sucursal de <b>{{ucwords($marketname[0]->name)}}</b> más cercana</p>
 
         <div class="main-map">
           <div id="map"></div>

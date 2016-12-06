@@ -10,7 +10,8 @@
             </button>
             {{--{!! link_to_route('product.index', 'Inicio', [], ['class' => 'navbar-brand']) !!}--}}
             {{--<a href="" class="navbar-brand">Home</a>--}}
-            {{ link_to_route('backhome', 'Home', null, ['class' => 'navbar-brand']) }}
+            <a href="/admin" class="navbar-brand">Home</a>
+{{--            {{ link_to_route('backhome', 'Home', null, ['class' => 'navbar-brand']) }}--}}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

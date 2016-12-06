@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 
-class CartController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class CartController extends Controller
      */
     public function index()
     {
-      return view('front.cart');
+      return view('front.checkout');
     }
 
     /**
@@ -24,7 +23,7 @@ class CartController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -35,7 +34,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -46,7 +45,7 @@ class CartController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -78,22 +77,8 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-      \Cart::destroy();
-      return \Cart::content()->count();
-    }
-
-    // public function addToCart($id)
-    // {
-    //   \Cart::add($id, 'Product X', 1, 7.99)->associate('Product');
-    //   return \Cart::content()->count();
-    // }
-
-    public function addToCart($id)
-    {
-      $product = Product::where('id', $id)->first();
-      \Cart::add($product->id, $product->name, 1, $product->price, ['brand' => $product->brand->name, 'amount' => $product->amount])->associate('Product');
-      return \Cart::count();
+        //
     }
 }

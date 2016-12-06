@@ -4,9 +4,17 @@
 Ayuda -
 @endsection
 
+@section('navColor')
+  class="navbar-black"
+@endsection
+
+@section('header-divs')
+<div class="main-container-auth"><div>
+@endsection
+
 @section('content')
       <div class="faq-main-container">
-        <h2 class="h2-title">Ayuda</h2>
+        <h2 class="h2-title-grey">Ayuda</h2>
         <div class="line-separator"></div>
           <section class="questions">
               <article class="questions-and-answers">
@@ -41,4 +49,8 @@ Ayuda -
               </article>
           </section>
       </div><!-- .faq-main-container -->
+@endsection
+
+@section('footerColor')
+  class="footer-black"
 @endsection

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Market;
 use App\MarketName;
 use App\Product;
+use App\Product_Types;
 
 class MarketController extends Controller
 {
@@ -64,24 +65,40 @@ class MarketController extends Controller
         return redirect()->route('markets');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($name_id, $id)
-    {
-        $market = Market::where([
-            ['name_id', $name_id],
-            ['id', $id],
-        ])->first();
-        if (!$market) {
-            abort(404);
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($name_id, $id)
+  {
+      $market = Market::where([
+        ['name_id', $name_id],
+        ['id', $id],
+      ])->first();
+      if (!$market) {
+        abort(404);
+      }
+
+      $product_types = Product_Types::select('id', 'name')->get();
+
+      $products_array = [];
+
+      foreach ($product_types as $product_type) {
+        $products = Product::
+        where('market_id', '=', $id)
+        ->where('type_id', '=', $product_type->id)
+        ->get();
+        if ($products->first()) {
+          $products_array[$product_type->name] = $products;
         }
-        $products = Product::where('market_id', '=', $id)->get();
-        return view('front.markets.show', compact('market'), compact('products'));
-    }
+      }
+
+      $products = Product::where('market_id', '=', $id)->get();
+      return view('front.markets.show', compact('market', 'products', 'products_array'));
+  }
+
 
     /**
      * Show the form for editing the specified resource.

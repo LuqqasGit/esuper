@@ -4,11 +4,14 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        {{-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+        </button> --}}
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
       </div>
@@ -38,8 +41,25 @@
             </ul>
           </li>
           @endif
-          <li><a href="/cart">Carrito <i class="fa fa-shopping-cart" aria-hidden="true"> <span class="cart-count" id="refresh-after-ajax">{{Cart::content()->count()}}</span></i></a></li>
+          <li class="navbar-cart"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito<span class="cart-count" id="refresh-after-ajax">{{Cart::count()}}</span></a></li>
         </ul>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <form id="navbar-search" class="navbar-form navbar-right" action="/products/search/">
+            <div class="form-group">
+              <input id="navbar-search-query" type="text" class="form-control" placeholder="Buscar Productos">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </form>
+          {{-- <div style="position: absolute; right: 400px; top: 45px; background-color: rgba(255, 255, 255, 0.4)">
+            <ul>
+              <li>hola</li>
+              <li>hola</li>
+              <li>hola</li>
+            </ul>
+          </div> --}}
+        </div>
       </div>
     </div><!-- /.container-fluid -->
   </nav>
