@@ -612,7 +612,7 @@ body {
 }
 
 .modal-p {
-  margin-top: 10px;
+  margin-top: -10px;
   margin-bottom: auto;
   text-align: right;
 }
