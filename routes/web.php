@@ -62,4 +62,4 @@ Route::get('products/search/{query}', 'ProductController@search');
 
 Auth::routes();
 
-Route::get('checkout', 'CheckoutController@index')->middleware('auth');
+Route::get('checkout', 'OrderController@store')->middleware('auth');
