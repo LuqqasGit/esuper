@@ -39,7 +39,8 @@ class ProductImagesController extends Controller
         if (!empty($images)) {
             foreach ($images as $image) {
                 $imagen = new ProductImage;
-                $image_name = $product->name . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+//                $image_name = $product->id . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image_name = $product->id . '.' . $image->getClientOriginalExtension();
                 //ojo aca arriba en el image_name con el tema de acentos y espacios del nombre del producto
                 //Mejorar: sanitizar string
                 $imagen->image_name = $image_name;
