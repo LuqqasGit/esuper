@@ -28,10 +28,10 @@
     </div></div>
       <ul>
         @foreach ($products as $product)
-
           <li class="item-card">
             <h4 style="text-transform:capitalize;">{{$product->name}}</h4>
-            <img src="{{ '/img/products/' . $product->id . '.jpg'}}" alt="{{$product->name}}" class="product-list-img" />
+            <img src="{{ URL::TO('img/products/' . $product->images->first()->image_name) }}" alt="{{$product->name}}" class="product-list-img" />
+            {{--<img src="{{ '/img/products/' . $product->id . '.jpg'}}" alt="{{$product->name}}" class="product-list-img" />--}}
             <span style="display:block">${{$product->price}}</span>
           </li>
 

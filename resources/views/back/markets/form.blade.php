@@ -2,8 +2,8 @@
     {{ Form::label('name_id', 'Cadena:')  }}
     <select class="form-control" name="name_id" id="name_list">
         <option value=""></option>
-        @foreach($markets as $market)
-            <option value="{{$market->id}}">{{$market->name}}</option>
+        @foreach($marketNames as $marketName)
+            <option value="{{$marketName->id}}">{{$marketName->name}}</option>
         @endforeach
     </select>
 </div>

@@ -11,22 +11,23 @@ class MarketController extends Controller
 {
 
 
-  public function __construct()
-  {
-    // $this->middleware('auth');
-    // $this->middleware('admin');
-  }
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index($name_id)
-  {
-    $markets = Market::where('name_id', $name_id)->get();
-    $marketname = MarketName::where('id', $name_id)->get();
-    return view('front.markets.index', compact('markets'), compact('marketname'));
-  }
+    public function __construct()
+    {
+        // $this->middleware('auth');
+        // $this->middleware('admin');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index($name_id)
+    {
+        $markets = Market::where('name_id', $name_id)->get();
+        $marketname = MarketName::where('id', $name_id)->get();
+        return view('front.markets.index', compact('markets'), compact('marketname'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -35,8 +36,8 @@ class MarketController extends Controller
      */
     public function create()
     {
-        $markets = MarketName::all();
-        return view('back.markets.create', compact('markets'));
+        $marketNames = MarketName::all();
+        return view('back.markets.create', compact('marketNames'));
     }
 
     /**
@@ -48,8 +49,7 @@ class MarketController extends Controller
     public function store(Request $request)
     {
         $market = New Market();
-        $market->name_id = $request->name_id;
-        if (MarketName::find($request->name_id)) {
+        if(is_numeric($request->name_id)) {
             $market->name_id = $request->name_id;
         } else {
             $marketName = New MarketName();
@@ -61,27 +61,27 @@ class MarketController extends Controller
         $market->lng = $request->lng;
         $market->address = $request->address;
         $market->save();
-        return redirect()->route('market.create');
+        return redirect()->route('markets');
     }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function show($name_id, $id)
-  {
-    $market = Market::where([
-      ['name_id', $name_id],
-      ['id', $id],
-    ])->first();
-    if (!$market) {
-      abort(404);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($name_id, $id)
+    {
+        $market = Market::where([
+            ['name_id', $name_id],
+            ['id', $id],
+        ])->first();
+        if (!$market) {
+            abort(404);
+        }
+        $products = Product::where('market_id', '=', $id)->get();
+        return view('front.markets.show', compact('market'), compact('products'));
     }
-    $products = Product::where('market_id', '=', $id)->get();
-    return view('front.markets.show', compact('market'), compact('products'));
-  }
 
     /**
      * Show the form for editing the specified resource.
@@ -91,9 +91,9 @@ class MarketController extends Controller
      */
     public function edit(Market $market)
     {
-        $markets = MarketName::all();
+        $marketNames = MarketName::all();
         $name = MarketName::find($market->name_id)->name;
-        return view('back.markets.edit', compact('market', 'markets', 'name'));
+        return view('back.markets.edit', compact('market', 'marketNames', 'name'));
     }
 
     /**
@@ -118,7 +118,7 @@ class MarketController extends Controller
         $market->lng = $request->lng;
         $market->address = $request->address;
         $market->save();
-        return redirect()->route('market.create');
+        return redirect()->route('markets');
     }
 
     /**
@@ -127,9 +127,10 @@ class MarketController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Market $market)
     {
-        //
+        $market->delete();
+        return redirect()->route('markets');
     }
 
 
@@ -141,4 +142,13 @@ class MarketController extends Controller
         }
         return $marketsArray;
     }
+
+    public function markets()
+    {
+        $markets = Market::all();
+        $marketNames = MarketName::all();
+        return view('back.markets.index', compact('markets', 'marketNames'));
+    }
+
+
 }

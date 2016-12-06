@@ -8,13 +8,16 @@ use App\Product;
 use App\Market;
 use App\Product_Types;
 use Illuminate\Http\Request;
+use App\ProductImage;
+use Illuminate\Support\Facades\File;
+
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
 
 class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
         $this->middleware('admin');
     }
     /**
@@ -24,6 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //un with asi trae la relacion con product_type?
         $products = Product::all();
         return view('back.products.index', compact('products'));
     }
@@ -95,7 +99,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $brands = Brand::all();
-        $markets = Market::all();
+        $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
         $product_types = Product_Types::all();
         return view('back.products.edit', compact('product', 'brands', 'markets', 'product_types'));
     }
@@ -141,6 +145,15 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+//        antes de eliminar el producto, se eliminan las imagenes relacionadas
+//        if($product->images) {
+//            foreach ($product->images as $imagen) {
+//                $imagen = ProductImage::find($imagen->id);
+//                $location = public_path('/img/products/' . $imagen->image_name);
+//                File::delete($location);
+//                $imagen->delete();
+//            }
+//        }
         $product->delete();
         return redirect()->route('product.index');
     }

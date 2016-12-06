@@ -9,7 +9,8 @@
                 <span class="icon-bar"></span>
             </button>
             {{--{!! link_to_route('product.index', 'Inicio', [], ['class' => 'navbar-brand']) !!}--}}
-            <a href="/" class="navbar-brand">Home</a>
+            {{--<a href="" class="navbar-brand">Home</a>--}}
+            {{ link_to_route('backhome', 'Home', null, ['class' => 'navbar-brand']) }}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,20 +19,26 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markets<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>{!! link_to_route('market.index', 'Markets Dashboard') !!}</li>
+                        <li>{!! link_to_route('markets', 'Panel de Markets') !!}</li>
                         <li role="separator" class="divider"></li>
-                        <li>{!! link_to_route('market.create', 'Create Market') !!}</li>
-                        <li><a href="#">Something else here</a></li>
+                        <li>{!! link_to_route('market.create', 'Crear Market') !!}</li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>{!! link_to_route('product.index', 'Products Dashboard') !!}</li>
+                        <li>{!! link_to_route('product.index', 'Panel de Productos') !!}</li>
                         <li role="separator" class="divider"></li>
-                        <li>{!! link_to_route('product.create', 'Create Product') !!}</li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li>{!! link_to_route('product.create', 'Crear Producto') !!}</li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadenas<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>{!! link_to_route('brand.index', 'Panel de Cadenas') !!}</li>
+                        <li role="separator" class="divider"></li>
+                        <li>{!! link_to_route('brand.create', 'Crear Cadena') !!}</li>
                     </ul>
                 </li>
 
@@ -40,9 +47,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        {{--<li><a href="#">Action</a></li>--}}
+                        {{--<li><a href="#">Another action</a></li>--}}
+                        {{--<li><a href="#">Something else here</a></li>--}}
                         <li role="separator" class="divider"></li>
                         <li>
                             <a href="{{route('logout')}}">Logout</a>
