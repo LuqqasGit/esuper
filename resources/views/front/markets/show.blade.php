@@ -1,7 +1,5 @@
 @extends('front.master')
 
-
-
 @section('title')
 {{ucwords($market->name->name)}} ({{ucwords($market->address)}}) -
 @endsection
@@ -9,8 +7,6 @@
 @section('header-divs')
 <div class="main-container-market"><div class="black-overlay-market">
 @endsection
-
-
 
 @section('content')
 

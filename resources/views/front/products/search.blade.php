@@ -22,15 +22,25 @@ Buscador -
       </div>
 
     </div></div>
-      <ul>
-        @foreach ($products as $product)
-
+    <div class="product-list">
+      <h2 class="h2-title-products">Resultados de búsqueda</h2> <br>
+      @foreach ($products as $product)
           <li class="item-card">
-            <h4 style="text-transform:capitalize;">{{$product->name}} - {{$product->market->name->name}}<br>({{$product->market->address}})</h4>
-            <img src="{{ '/img/products/' . $product->id . '.jpg'}}" alt="{{$product->name}}" class="product-list-img" />
-            <span style="display:block">${{$product->price}}</span>
+            <a style="text-decoration:none;" href="/market/{{$product->market->name_id}}/{{$product->market->id}}">
+              <img src="{{ '/img/products/' . $product->images->first()->image_name}}" alt="{{$product->name}}" class="product-list-img" />
+                <div class="item-text">
+                  <span class="products-price">${{$product->price}}</span>
+                  <div class="products-name">{{$product->name}}</div>
+                  <span class="products-brand">{{$product->brand->name}}</span> <span>({{$product->amount}})</span><br>
+                  <span>{{ucwords($product->market->name->name)}}</span>
+                  <span>({{ucwords($product->market->address)}})</span>
+                </div>
+            </a>
           </li>
+      @endforeach
+    </div>
+@endsection
 
-        @endforeach
-      </ul>
+@section('footerColor')
+  class="footer-black"
 @endsection
