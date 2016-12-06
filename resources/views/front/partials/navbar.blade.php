@@ -30,10 +30,10 @@
           {{-- <div class="avatar"><img src="images/{{Auth::user()->avatar}}" alt="avatar"/></div> --}}
             <ul class="dropdown-menu dropdown-menu-2">
               <li><a href="/profile">Hola, {{str_limit(Auth::user()->username, 15)}}</a></li>
+              <li><a href="/orders">Mis pedidos</a></li>
+              {{-- <li><a href="/profile">Mi cuenta</a></li> --}}
               @if (Auth::user()->type == 2)
               <li role="separator" class="divider"></li>
-              {{-- <li><a href="/profile">Mi cuenta</a></li> --}}
-              <li><a href="/orders">Mis pedidos</a></li>
               <li><a href="/admin">Panel admin</a></li>
               @endif
               <li role="separator" class="divider"></li>
