@@ -32,7 +32,7 @@ Checkout -
           <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-map-marker" aria-hidden="true"></i> Información de entrega</p>
           <div class="line-separator-malo"></div>
         </div>
-        <form class="checkout-form" action="/exito" method="post">
+        <form class="checkout-form" action="/exito" method="get">
           <label class="checkout-label" for="address">
            Dirección
           </label>
@@ -46,7 +46,7 @@ Checkout -
           <label class="checkout-label" for="cp-barrio">
            Codigo postal/Barrio
           </label>
-          <input class="form-control input-checkout" type="text" name="cp-barrio" id="cp-barrio" value="" placeholder="1018 Recoleta">
+          <input class="form-control input-checkout" type="text" name="cp-barrio" id="cp-barrio" value="" placeholder="1018 Recoleta" required>
 
           <label class="checkout-label" for="cp-barrio">
            Cuidad
@@ -63,22 +63,22 @@ Checkout -
           <label class="checkout-label" for="card-number">
            Numero
           </label>
-          <input class="form-control input-checkout" type="number" name="card-number" id="card-number" value="" placeholder="Numero de la tarjeta">
+          <input class="form-control input-checkout" type="number" name="card-number" id="card-number" value="" placeholder="Numero de la tarjeta" required>
 
           <label class="checkout-label" for="card-date">
            Fecha de vencimiento
           </label>
-          <input class="form-control input-checkout" type="number" name="card-date" id="card-date" value="" placeholder="MM/AA">
+          <input class="form-control input-checkout" type="number" name="card-date" id="card-date" value="" placeholder="MM/AA" required>
 
           <label class="checkout-label" for="card-cvv">
            Código de seguridad
           </label>
-          <input class="form-control input-checkout" type="number" name="card-cvv" id="card-cvv" value="" placeholder="CVV">
+          <input class="form-control input-checkout" type="number" name="card-cvv" id="card-cvv" value="" placeholder="CVV" required>
 
           <div class="checkout-button">
             <span class="checkout-total">Total: ${{number_format($order_total, 2)}}</span>
-            <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
-            <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
+            <a href="/exito"><button id="checkout-cart" type="submit" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
+            <a href="/exito"><button id="checkout-cart" type="submit" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
           </div>
         </form>
       </div>

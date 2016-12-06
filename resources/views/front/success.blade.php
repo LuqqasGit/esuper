@@ -15,7 +15,7 @@ Pedido completado -
 @section('content')
 
 
-  <h2 style="color:#1edc1e;" class="h2-title-grey">Pedido completado</h2>
+  <h2 style="color:#19bf19;" class="h2-title-grey">Pedido completado</h2>
   <div class="line-separator"></div>
 
   @php
