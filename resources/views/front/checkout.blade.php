@@ -28,12 +28,13 @@ Checkout -
       <div class="checkout-address">
         <div class="checkout-header">
           <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-map-marker" aria-hidden="true"></i> Información de entrega</p>
+          <div class="line-separator-malo"></div>
         </div>
-        <form class="checkout-form" action="index.html" method="post">
+        <form class="checkout-form" action="/exito" method="post">
           <label class="checkout-label" for="address">
            Dirección
           </label>
-          <input class="form-control input-checkout" type="text" name="address" id="address" value="" placeholder="Sarmiento 3323">
+          <input class="form-control input-checkout" type="text" name="address" id="address" value="" placeholder="Sarmiento 3323" required>
 
           <label class="checkout-label" for="apartment">
             Piso/Departamento
@@ -49,14 +50,13 @@ Checkout -
            Cuidad
           </label>
           <input class="form-control input-checkout" type="text" name="ciudad" id="ciudad" value="CABA" placeholder="CABA" disabled="disabled">
-        </form>
       </div>
 
       <div class="checkout-payment">
         <div class="checkout-header">
           <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-credit-card-alt" aria-hidden="true"></i> Información de pago</p>
+          <div class="line-separator-malo2"></div>
         </div>
-        <form class="checkout-form" action="index.html" method="post">
 
           <label class="checkout-label" for="card-number">
            Numero
@@ -75,8 +75,8 @@ Checkout -
 
           <div class="checkout-button">
             <span class="checkout-total">Total: ${{$cart_total}}</span>
-            <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
-            <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
+            <button id="checkout-cart" type="submit" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
+            <button id="checkout-cart" type="submit" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button>
           </div>
         </form>
       </div>
