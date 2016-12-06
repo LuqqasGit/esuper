@@ -41,12 +41,15 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('getMarkets', 'MarketController@getMarkets');
 
 Route::delete('cart', 'CartController@destroy');
+
 Route::resource('cart', 'CartController');
 
 Route::resource('order', 'OrderController');
 
-Route::patch('add-to-cart/{id}', 'CartController@addToCart')->middleware('auth');
+Route::patch('add-to-cart/{id}', 'CartController@addToCart');
 
 Route::get('products/search/{query}', 'ProductController@search');
 
 Auth::routes();
+
+Route::get('checkout', 'CheckoutController@index')->middleware('auth');

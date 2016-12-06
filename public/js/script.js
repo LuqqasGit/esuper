@@ -1,6 +1,12 @@
 /* AJAX HEADERS SETUP */
-$.ajaxSetup({
-  headers: { 'X-CSRF-TOKEN': "{{csrf_token()}}" }
+// $.ajaxSetup({
+//   headers: { 'X-CSRF-TOKEN': "{{csrf_token()}}" }
+// });
+
+$(function () {
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('content') }
+    });
 });
 
 window.onload = function() {
@@ -8,11 +14,10 @@ window.onload = function() {
   var formSignUp = document.getElementById('signup');
   if (formSignUp) {
     var selectedEmail = formSignUp.querySelector('input[name="email"]');
-    var selectedName = formSignUp.querySelector('input[name="fname"]');
-    var selectedLname = formSignUp.querySelector('input[name="lname"]');
+    var selectedName = formSignUp.querySelector('input[name="name"]');
     var selectedUname = formSignUp.querySelector('input[name="username"]');
-    var selectedPassword1 = formSignUp.querySelector('input[name="password1"]');
-    var selectedPassword2 = formSignUp.querySelector('input[name="password2"]');
+    var selectedPassword1 = formSignUp.querySelector('input[name="password"]');
+    var selectedPassword2 = formSignUp.querySelector('input[name="password_confirmation"]');
   }
   if (formLogin) {
     var selectedUlogin = formLogin.querySelector('input[name="email"]');
@@ -37,14 +42,13 @@ window.onload = function() {
       errorDiv.className = "signup-validate-div-hidden";
       this.className = "signup-imput-ok";
     } else {
-      console.log(errorDiv);
       errorDiv.className = "signup-validate-div";
       this.className = "";
     }
   }
 
   function passwordValidate(){
-    var passError = document.getElementById("pass-validate-div");
+    var passError = document.getElementById("password-validate-div");
     if (/(?=.*\d)(?=.*[a-z]).{6,}/.test(selectedPassword1.value)){
       passError.className = "signup-validate-div-hidden";
       selectedPassword1.className = "signup-imput-ok";
@@ -56,7 +60,7 @@ window.onload = function() {
   }
 
   function passwordMatchValidate(){
-    var passError2 = document.getElementById("pass2-validate-div");
+    var passError2 = document.getElementById("password2-validate-div");
     if (selectedPassword1.value == selectedPassword2.value){
       passError2.className = "signup-validate-div-hidden";
       selectedPassword2.className = "signup-imput-ok";
@@ -72,15 +76,11 @@ window.onload = function() {
     selectedEmail.addEventListener("blur", emailValidate);
 
     // First name validate
-    selectedName.div = "fname-validate-div";
+    selectedName.div = document.getElementById("name-validate-div");
     selectedName.addEventListener("blur", textFieldValidate);
 
-    // Last name validate
-    selectedLname.div = "lname-validate-div";
-    selectedLname.addEventListener("blur", textFieldValidate);
-
     // User name validate
-    selectedUname.div = "uname-validate-div";
+    selectedUname.div = document.getElementById("username-validate-div");
     selectedUname.addEventListener("blur", textFieldValidate);
 
     // Password Strength Validate
@@ -100,7 +100,7 @@ window.onload = function() {
 
   function loginValidate() {
   // User name validate (login)
-  selectedUlogin.div = "userlogin-validate-div";
+  selectedUlogin.div = document.getElementById("login-validate-div");
   selectedUlogin.addEventListener("blur", textFieldValidate);
   }
 
@@ -168,6 +168,21 @@ window.onload = function() {
   //   });
   // });
   /* END SEARCH */
+
+  /* EMPTY CART */
+  $('#empty-cart').on('click', function () {
+    // loading.slideDown('slow');
+    $.ajax({
+      url: 'cart',
+      type: 'delete',
+      success: function (msg) {
+        $("#refresh-after-ajax").text(msg);
+        $(".list-group").html('<li class="list-group-item">No tenes productos en tu carrito de compras. Empezá a comprar <a class="cart-no" href="/">acá</a>.</li>');
+        loading.slideUp('fast');
+      }
+    });
+  });
+  /* END EMPTY CART */
 
   // Modal box show
   if (!auth.data('auth')) {
