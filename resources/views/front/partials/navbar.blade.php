@@ -34,7 +34,7 @@
               <li role="separator" class="divider"></li>
               <li><a href="/profile">Mi cuenta</a></li>
               <li><a href="/orders">Mis pedidos</a></li>
-              <li><a href="/admin/market">Supermercados</a></li>
+              <li><a href="/admin">Panel admin</a></li>
               @endif
               <li role="separator" class="divider"></li>
               <li><a href="/logout">Salir</a></li>
