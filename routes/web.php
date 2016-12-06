@@ -30,7 +30,6 @@ Route::get('market/{name_id}', 'MarketController@index');
 
 Route::get('market/{name_id}/{id}', 'MarketController@show');
 
-
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/', 'HomeController@backhome')->name('backhome')->middleware('admin');;
@@ -61,7 +60,10 @@ Route::get('products/search/{query}', 'ProductController@search');
 
 Auth::routes();
 
-Route::get('checkout', 'OrderController@store')->middleware('auth');
+Route::post('checkout', 'OrderController@store')->middleware('auth');
+Route::get('checkout', function() {
+  abort(404);
+});
 
 Route::get('exito', function () {
     return view('front.success');

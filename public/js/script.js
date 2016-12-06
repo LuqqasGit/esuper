@@ -5,7 +5,7 @@
 
 $(function () {
     $.ajaxSetup({
-        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('content') }
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 });
 

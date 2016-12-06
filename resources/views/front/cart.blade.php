@@ -18,7 +18,6 @@ Compra -
   <div class="line-separator"></div>
 
   <div class="container-cart">
-    <input type="hidden" name="_token" content="{{csrf_token()}}">
     <ul class="list-group cart-list">
       @php
         $cart = Cart::content();
@@ -39,7 +38,10 @@ Compra -
 
         <li class="list-group-item">
           <button id="empty-cart" type="button" class="btn btn-danger">Vaciar carrito <i class="fa fa-trash" aria-hidden="true"></i></button>
-          <a href="/checkout"><button id="checkout-cart" type="button" class="btn btn-success">Pagar ${{$cart_total}}  <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
+          <form action="/checkout" method="post">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <button id="checkout-cart" type="submit" class="btn btn-success">Pagar ${{$cart_total}}  <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
+          </form>
         </li>
         </ul>
         <p class="modal-p">

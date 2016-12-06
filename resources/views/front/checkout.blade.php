@@ -1,3 +1,9 @@
+@php
+  $order_total = 0;
+  foreach ($order->products as $product) {
+    $order_total += $product->price * $product->pivot->product_qty;
+  }
+@endphp
 @extends('front.master')
 
 @section('title')
@@ -18,13 +24,8 @@ Checkout -
   <div class="line-separator"></div>
 
   <div class="container-checkout">
-    <input type="hidden" name="_token" content="{{csrf_token()}}">
 
     <div class="list-group cart-list">
-      @php
-        $cart = Cart::content();
-        $cart_total = Cart::total(2,'.');
-      @endphp
       <div class="checkout-address">
         <div class="checkout-header">
           <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-map-marker" aria-hidden="true"></i> Información de entrega</p>
@@ -57,6 +58,7 @@ Checkout -
           <p class="checkout-title"><i style="color:#34bb9c;" class="fa fa-credit-card-alt" aria-hidden="true"></i> Información de pago</p>
         </div>
         <form class="checkout-form" action="index.html" method="post">
+          <input type="hidden" name="_token" value="{{csrf_token()}}">
 
           <label class="checkout-label" for="card-number">
            Numero
@@ -74,7 +76,7 @@ Checkout -
           <input class="form-control input-checkout" type="number" name="card-cvv" id="card-cvv" value="" placeholder="CVV">
 
           <div class="checkout-button">
-            <span class="checkout-total">Total: ${{$cart_total}}</span>
+            <span class="checkout-total">Total: ${{$order_total}}</span>
             <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Tarjeta <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
             <a href="/exito"><button id="checkout-cart" type="button" class="btn btn-success">Efectivo  <i class="fa fa-money" aria-hidden="true"></i></button></a>
           </div>

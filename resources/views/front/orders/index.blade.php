@@ -41,7 +41,11 @@ Ordenes -
                     <li class="list-group-item list-group-item-success">
                       <button data-id="{{$order->id}}" type="button" class="btn btn-danger delete-order">Eliminar orden <i class="fa fa-trash" aria-hidden="true"></i></button>
                       <a href="/checkout"><button type="button" class="btn btn-info">Editar orden <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
-                      <a href="/checkout"><button type="button" class="btn btn-success">Pagar ${{$total}} <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button></a>
+                      <form action="/checkout" method="post">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="hidden" name="order_id" value="{{$order->id}}">
+                        <button type="submit" class="btn btn-success">Pagar ${{$total}} <i class="fa fa-credit-card-alt" aria-hidden="true"></i></button>
+                      </form>
                     </li>
                   </ul>
                 </li>
@@ -52,5 +56,4 @@ Ordenes -
         </div>
 
         <div class="line-separator"></div>
-        <input type="hidden" name="_token" content="{{csrf_token()}}">
 @endsection

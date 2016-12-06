@@ -33,16 +33,20 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-      $order = New Order();
-      $order->user_id = \Auth::user()->id;
-      $order->save();
-      foreach (\Cart::content() as $product) {
-        $order->products()->attach($product->id, ['product_qty' => $product->qty]);
+      if ($request->order_id) {
+        $order = Order::find($request->order_id);
+      } else {
+        $order = New Order();
+        $order->user_id = \Auth::user()->id;
         $order->save();
+        foreach (\Cart::content() as $product) {
+          $order->products()->attach($product->id, ['product_qty' => $product->qty]);
+          $order->save();
+        }
       }
-      return view('front.checkout');
+      return view('front.checkout', compact('order'));
     }
 
     /**
@@ -53,7 +57,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
