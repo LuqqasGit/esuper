@@ -34,14 +34,6 @@
                     </ul>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadenas<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>{!! link_to_route('brand.index', 'Panel de Cadenas') !!}</li>
-                        <li role="separator" class="divider"></li>
-                        <li>{!! link_to_route('brand.create', 'Crear Cadena') !!}</li>
-                    </ul>
-                </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

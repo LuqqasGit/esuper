@@ -22,21 +22,22 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js">
 
     <script type="text/javascript">
-        $('#market_list').select2({
-            placeholder: 'Elija un market',
-        });
-        $('#type_list').select2({
-            placeholder: 'Elija un tipo de producto',
-            tags: true
-        });
-        $('#brand_list').select2({
-            placeholder: 'Elija una marca',
-            tags: true
-        });
-        $('#name_list').select2({
-            placeholder: 'Elija una cadena',
-            tags: true
-        });
+//        $('#market_list').select2({
+//            placeholder: 'Elija un market',
+//            tags: true
+//        });
+//        $('#type_list').select2({
+//            placeholder: 'Elija un tipo de producto',
+//            tags: true
+//        });
+//        $('#brand_list').select2({
+//            placeholder: 'Elija una marca',
+//            tags: true
+//        });
+//        $('#name_list').select2({
+//            placeholder: 'Elija una cadena',
+//            tags: true
+//        });
 
     </script>
 
@@ -49,9 +50,34 @@
                 $($(this).parents('div').html()).appendTo('.modal-body');
                 $('#myModal').modal({show:true});
             });
-            $("#portada").flip();
+
+            $("#products").flip({trigger: 'hover'});
+            $("#markets").flip({trigger: 'hover'});
+
+            $('#market_list').select2({
+                placeholder: 'Elija un market',
+                tags: true
+            });
+            $('#type_list').select2({
+                placeholder: 'Elija un tipo de producto',
+                tags: true
+            });
+            $('#brand_list').select2({
+                placeholder: 'Elija una marca',
+                tags: true
+            });
+            $('#name_list').select2({
+                placeholder: 'Elija una cadena',
+                tags: true
+            });
+
         });
+
+
     </script>
+
+
+
 
 </body>
 </html>

@@ -58,6 +58,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->market_id = $request->market_id;
+        $product->amount = $request->amount;
         if(Brand::find($request->brand_id)) {
             $product->brand_id = $request->brand_id;
         } else {
@@ -99,6 +100,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+//        dd($product->market);
         $brands = Brand::all();
         $markets = Market::join('market_names', 'markets.name_id', '=', 'market_names.id')->select('markets.*', 'market_names.name')->get();
         $product_types = Product_Types::all();
@@ -117,6 +119,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->market_id = $request->market_id;
+        $product->amount = $request->amount;
         if(Brand::find($request->brand_id)) {
             $product->brand_id = $request->brand_id;
         } else {
