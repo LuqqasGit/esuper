@@ -14,11 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-      $orders = Order::with('products');
-      foreach ($orders as $order) {
-        dd($order->products);
-      }
-      return view('front.orders.index', compact('orders'));
+      return view('front.orders.index');
     }
 
     /**
@@ -39,6 +35,13 @@ class OrderController extends Controller
      */
     public function store()
     {
+      $order = New Order();
+      $order->user_id = \Auth::user()->id;
+      $order->save();
+      foreach (\Cart::content() as $product) {
+        $order->products()->attach($product->id, ['product_qty' => $product->qty]);
+        $order->save();
+      }
       return view('front.checkout');
     }
 
@@ -84,6 +87,8 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $order = Order::find($id);
+      $order->delete();
+      return \Auth::user()->orders;
     }
 }

@@ -23,7 +23,6 @@ class Product extends Model
         return $this->belongsTo('App\Brand');
     }
 
-
     public function images()
     {
         return $this->hasMany('App\ProductImage');
@@ -32,6 +31,10 @@ class Product extends Model
     public function type()
     {
         return $this->belongsTo('App\Product_Types');
+    }
 
+    public function orders()
+    {
+      return $this->belongsToMany('App\Order', 'order_products', 'product_id', 'order_id');
     }
 }

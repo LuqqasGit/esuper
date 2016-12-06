@@ -176,18 +176,32 @@ window.onload = function() {
 
   /* EMPTY CART */
   $('#empty-cart').on('click', function () {
-    // loading.slideDown('slow');
     $.ajax({
       url: 'cart',
       type: 'delete',
       success: function (msg) {
         $("#refresh-after-ajax").text(msg);
         $(".list-group").html('<li class="list-group-item">No tenes productos en tu carrito de compras. Empezá a comprar <a class="cart-no" href="/">acá</a>.</li>');
-        loading.slideUp('fast');
       }
     });
   });
   /* END EMPTY CART */
+
+  /* DELETE ORDER */
+  $('.delete-order').on('click', function () {
+    var i = $(this).data('id');
+    $.ajax({
+      url: 'orders/' + i,
+      type: 'delete',
+      success: function (msg) {
+        $("#order-"+i).remove();
+        if (msg.length <= 0) {
+          $('#orders-list').html('<li class="list-group-item">No hay ordenes</li>');
+        }
+      }
+    });
+  });
+  /* END DELETE ORDER */
 
   // Modal box show
   if (!auth.data('auth')) {
